@@ -2,7 +2,7 @@
     font-family: monospace;
     color: whitesmoke;
     font-size: 40px;
-    margin-left: 40%;
+    margin-left: 38%;
 }
 
 .nav-item{
@@ -23,6 +23,14 @@
 .edit-button{
     margin-left: 85%;
     margin-bottom: 2%;
+}
+
+.print-button{
+    margin-left: 45%;
+}
+
+.save-button{
+    margin-left: 5%;
 }
 
 
