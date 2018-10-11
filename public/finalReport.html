@@ -165,9 +165,15 @@
 </div>
     
 <div class = "row row-five">
-    <button type = "button" class = "btn btn-warning print-button">Print</button>
+    <button onclick="printPage()" type = "button" class = "btn btn-warning print-button">Print</button>
     <button type = "button" class = "btn btn-warning save-button" data-toggle="modal" data-target = "#saveModal">Submit</button>
 </div>
+    
+<script>
+    function printPage(){
+        window.print();
+    }
+</script>
     
 <!-- The Modal -->
 <div class="modal" id="saveModal">
