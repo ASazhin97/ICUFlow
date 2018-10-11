@@ -166,7 +166,34 @@
     
 <div class = "row row-five">
     <button type = "button" class = "btn btn-warning print-button">Print</button>
-    <button type = "button" class = "btn btn-warning save-button">Save</button>
+    <button type = "button" class = "btn btn-warning save-button" data-toggle="modal" data-target = "#saveModal">Submit</button>
+</div>
+    
+<!-- The Modal -->
+<div class="modal" id="saveModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Warning!</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        By Submitting this report you are stating that to the best of your knowledge all of the information is truthful and correct. Are you sure you want to submit?
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn" data-dismiss="modal">Submit</button>
+
+      </div>
+
+    </div>
+  </div>
 </div>
     
 
