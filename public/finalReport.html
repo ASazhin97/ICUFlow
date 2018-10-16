@@ -44,7 +44,7 @@
    <div class="panel panel-default">
     <div class="panel-heading">IV Madication Defibliration</div>
     <div class="panel-body">Doctors Comments about the UV</div>
-    <button type="button" class="btn btn-primary edit-button">Edit</button>
+    <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button">Edit</button>
   </div>
     
   </div>
@@ -58,7 +58,7 @@
     <div class="panel-body">Witnesses: None</div>
     <div class="panel-body">CPR Initiated:No</div>
     <div class="panel-body">Time of compression: N/A</div>
-    <button type="button" class="btn btn-primary edit-button">Edit</button>
+    <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button">Edit</button>
   </div>
     
   </div>
@@ -73,7 +73,7 @@
     <div class="panel-body">Comments</div>
     <div class="panel-body" style="margin-left: 10%">Knows nothing.</div>
 
-    <button type="button" class="btn btn-primary edit-button">Edit</button>
+    <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button">Edit</button>
   </div>
     
   </div>
@@ -84,7 +84,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">Code Team</div>
             <div class="panel-body">Nurse</div>
-            <button type="button" class="btn btn-primary edit-button" style="margin-left: 95.5%; margin-bottom: .5%">Edit</button>
+            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" style="margin-left: 95.5%; margin-bottom: .5%">Edit</button>
         </div>
     </div>
 </div>
@@ -97,7 +97,7 @@
             <div class="panel-body">ETT Size: 5mm</div>
             <div class="panel-body">Comments:</div>
             <div class="panel-body" style = "margin-left: 8%;">Doctors comments</div>
-            <button type="button" class="btn btn-primary edit-button" style = "margin-left: 91%; margin-bottom: 1%">Edit</button>
+            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" style = "margin-left: 91%; margin-bottom: 1%">Edit</button>
         </div>
     
     
@@ -109,7 +109,7 @@
             <div class="panel-body">IV Site: Arms</div>
             <div class="panel-body">IV Solution: H2O</div>
             <div class="panel-body">IV Administrator: Doctor Wales</div>
-            <button type="button" class="btn btn-primary edit-button" style = "margin-left: 91%; margin-bottom: 1%">Edit</button>
+            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" style = "margin-left: 91%; margin-bottom: 1%">Edit</button>
         </div>
     
     
@@ -146,7 +146,7 @@
                     </tbody>
                 </table>
             </div>
-            <button type="button" class="btn btn-primary edit-button" style="margin-left: 97%; margin-bottom: .2%">Edit</button>
+            <button type="button" class="btn btn-primary edit-button" data-toggle = "modal" data-target= "#editModal" style="margin-left: 97%; margin-bottom: .2%">Edit</button>
         </div>
             
             
@@ -159,7 +159,7 @@
         <div class = "panel panel-default">
             <div class = "panel-heading">Comments:</div>
             <div class = "panel-body">Doctors Comments</div>
-            <button type="button" class="btn btn-primary edit-button" style="margin-left: 96.5%; margin-bottom: .5%">Edit</button>
+            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" style="margin-left: 96.5%; margin-bottom: .5%">Edit</button>
         </div>
     </div>
 </div>
@@ -194,7 +194,33 @@
       <!-- Modal footer -->
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="button" class="btn" data-dismiss="modal">Submit</button>
+        <button href = "home.html" type="button" class="btn" data-dismiss="modal">Submit</button>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+    
+<div class="modal" id="editModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Title</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        body start
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn" data-dismiss="modal">Save</button>
 
       </div>
 
