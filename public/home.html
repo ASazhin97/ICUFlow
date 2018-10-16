@@ -2,16 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ICU Unit</title>
+    <title>Home Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>U.A High School</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="public/css/main.css">
+    <link rel="stylesheet" href="css/home.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+<div class="topnav">
+    <a href=home.html>Home</a>
+    <a href="#history">History</a>
+    <a href=help.html>Help</a>
+</div>  
+<div>
+    <form>
+        <label for="pname">Patient's Name</label>
+        <input type="text" id ="pname" name="patientname" placeholder="Patient's name...">
+        <label for="Nname">Nurse's Name</label>
+        <input type="text" id="Nname" name="nursename" placeholder="Recording nurse's name..">
+        <input type="submit" value="Submit">
+</form>
+</div>
 </body>
 </html>
