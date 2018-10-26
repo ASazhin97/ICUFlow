@@ -1,13 +1,10 @@
 .title{
-    font-family: monospace;
     color: whitesmoke;
     font-size: 40px;
     margin-left: 38%;
 }
 
-.nav-item{
-    font-family: monospace;
-}
+
 
 .row-one{
     margin-top: 10%;
@@ -35,6 +32,11 @@
 
 .save-button{
     margin-left: 5%;
+}
+
+.top-buffer {
+    margin-top:20px;
+    margin-bottom: 20px;
 }
 
 
