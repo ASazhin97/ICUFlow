@@ -2,9 +2,109 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Help Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>U.A High School</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/help.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-inverse navbar-fixed-top topbar">
+        <div class="container-fluid">
+            <img src="css/snakes.jpg" style="width: 5%; height: 5%" class="img-circle" alt="logo">
+            <a class="title">Help Page</a>
+            
+        </div>
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navHeaderCollapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navHeaderCollapse">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item"><a href="home.html">Home</a></li>
+                    <li class="nav-item"><a href="history.html">History</a></li>
+                    <li class="nav-item"><a href="help.html">Help</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="wrapper">
+            <!-- Sidebar -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Sidebar</h3>
+                </div>
+        
+                <ul class="list-unstyled components">
+                    <p>Table of Contents</p>
+                    <li>
+                        <a href="#Introduction">Introduction</a>
+                    </li>
+                    <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Sections</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li>
+                                <a href="#HomePage">Home Page</a>
+                            </li>
+                            <li>
+                                <a href="#HistoryPage">History Page</a>
+                            </li>
+                            <li>
+                                <a href="#AFS">Active Flow Sheet</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
 
+    <div id="textcontent">
+        <main>
+            <section id="Introduction">
+                <h1>Introduction</h1>
+                <p>Welcome to our electronic flow sheet. This electronic system will emulate normal paper flow sheets while being easier to use, more efficient, and allow for a greater degree of uniformity and standardization, which improves clarity, readability, etc. This system will also 
+                be easy to use and responsive, such that there will not be a loss of efficiency and speed during emergency situations felt compared to the speed and efficiency when using normal flow sheets, as we understand this a sticking point among members of the medical community with
+                previously used electronic systems. This help page will guide you, the user of this system, through all of the system's basic functionalities.
+                </p>
+            </section>
+
+            <section id="HomePage">
+                <h1>Home Page</h1>
+                <p>The home page is the first page that was displayed when the system was initialized. The only functionalities the home page has are taking an input of the patient's medical record number, their name, and the recording nurse's name, and then submitting that information
+                to the subsequent "active flow sheet" page (which will be outlined later in this guide). The history page and help page can also be navigated to from the home page by clicking the words "History" or "Help" at the top-left of the screen in the heading.
+                </p>
+            </section>
+
+            <section id="HistoryPage">
+                <h1>History Page</h1>
+                <p>The history page is the second page in the system, which can be navigated to from the home page or from this page. The history page will have a full record of all patients'
+                    medical history, such as current medical conditions, current medications the patient is taking, etc. The page will have a search bar that will allow users of the system to look 
+                    up patients by name (last, first, or both).
+                </p>
+            </section>
+
+            <section id="AFS">
+                <h1>Active Flow Sheet</h1>
+                <p>Once the recording nurse presses the submit button seen on the Home Page, the system will automatically open a new page called the "Active Flow Sheet". This flow sheet page will have all the features that a nurse would expect of a paper flow sheet, but will also 
+                    have additional ones such as automatically recording the passing time when the page is loaded. The recording nurse will also be able to enter any medication administered to the patient and at what dose, if the patient enters any specific states
+                    during their code, etc. The AFS will also have a data field automatically filled with that patient's relevant data when the page is opened.
+                </p>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
