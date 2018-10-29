@@ -52,11 +52,11 @@
     <div class="col-sm-4">
    <div class="panel panel-default" id = "panel2">
     <div class="panel-heading">General</div>
-    <div class="panel-body">Date: 9/26/2018 Time: 5:26pm-7:56pm</div>
+    <div class="panel-body">Date: 9/26/2018</div>
     <div class="panel-body">Time: 5;26pm-7;56pm</div>
     <div class="panel-body">Location: Hospital</div>
-    <div class="panel-body">Time event called: 5:15</div>
-    <div class="panel-body">Time team arrived: 5:21</div>
+    <div class="panel-body">Time event called: 5;15</div>
+    <div class="panel-body">Time team arrived: 5;21</div>
     <div class="panel-body">Witnesses: None</div>
     <div class="panel-body">CPR Initiated:No</div>
     <div class="panel-body">Time of compression: N/A</div>
@@ -188,7 +188,7 @@
       </div>
 
       <!-- Modal body -->
-      <div class="modal-body">
+      <div class="modal-body modal-body-save">
         By Submitting this report you are stating that to the best of your knowledge all of the information is truthful and correct. Are you sure you want to submit?
       </div>
 
@@ -226,22 +226,24 @@
 </div>
 
 <script type = "text/javascript">
+    var panelNumber;
 
 $('#editModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
   var panelNum = button.data('panel') 
-    
+  panelNumber = panelNum;
   var panel = document.getElementById("panel" + panelNum);
   var panElem = panel.children;
   var modal = $(this);
-    var modalTitle = modal.find('.modal-title')
+  
+  var modalTitle = modal.find('.modal-title')
   var modalFoot = modal.find('.modal-footer');
- var modalContent = modal.find(".modal-content")
+  var modalContent = modal.find(".modal-content")
   var modalBody = document.createElement('div');
-    modalBody.className = "modal-body";
+    modalBody.className = "modal-body modal-body-edit";
     modalContent.append(modalBody);
     
-    modalFoot.insertAfter('.modal-body');
+    modalFoot.insertAfter('.modal-body-edit');
     
     
 
@@ -271,11 +273,28 @@ for(i = 1; i < (panElem.length-1); i++){
     newdiv.append(span1)
   modal.find('.modal-body').append(newdiv);
 };
+    
 });
     
 $('#editModal').on('hide.bs.modal', function (event){
     var modal = $(this);
+    var divs = modal.find(".modal-body").children();
     
+    var panel = document.getElementById("panel" + panelNumber);
+    var panelElems = panel.children;
+    console.log(panelElems);
+    
+
+    
+    var j;
+    for(j = 0; j<divs.length;j++){
+        var span = divs[j].children;
+        var insideSpan = span[0].children;
+        var labeltext = insideSpan[0].innerHTML;
+        var inputtext = insideSpan[1].value;
+        console.log(labeltext + ":" + inputtext);
+        panelElems[j+1].innerHTML = labeltext + ":" + inputtext;
+    }
     
     modal.find(".modal-body").remove();
 
