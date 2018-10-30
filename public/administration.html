@@ -49,7 +49,7 @@
               <div class="panel-body">
                 <div class="row">
                   <div class="col-sm-3">
-                    <p class="labels"> Event End Time:</p>
+                    <p class="labels"> End Time:</p>
                   </div>
                   <div class="col-sm-3">
                     <p class="placeholder">________</p>
@@ -57,20 +57,16 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-3">
-                    <p class="labels"> Patient Status: </p>
+                    <p class="labels"> Patient Outcome: </p>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-check-inline">
-                      <label class="form-check-label" for="inlineRadio1">Alive</label>
+                      <label class="form-check-label" for="inlineRadio1">Survived</label>
                       <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                     </div>
                     <div class="form-check-inline">
-                      <label class="form-check-label" for="inlineRadio2">Expired</label>
+                      <label class="form-check-label" for="inlineRadio2">Deceased</label>
                       <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                    </div>
-                    <div class="form-check-inline">
-                      <label class="form-check-label" for="inlineRadio3">Stayed on Unit</label>
-                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
                     </div>
                   </div>
                 </div>
@@ -78,7 +74,7 @@
                   <div class="col-sm-3">
                     <p class="labels"> Transferred to: </p>
                   </div>
-                  <div class="col-sm-7">
+                  <div class="col-sm-9">
                     <div class="form-check-inline">
                       <label class="form-check-label" for="inlineRadio1">ICU</label>
                       <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
@@ -91,42 +87,20 @@
                       <label class="form-check-label" for="inlineRadio3">Other Healthcare Facility</label>
                       <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
                     </div>
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="inlineRadio3">Stayed on Unit</label>
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                    </div>
+                  </div>
+                </div>
+                <div class="row" id="resuscitation">
+                  <div class="col-sm-4">
+                    <p class="resuscitationLabel"> Reason Resuscitation Ended:</p>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-3">
-                    <p class="labels"> Transferred Time:</p>
-                  </div>
-                  <div class="col-sm-3">
-                    <p class="placeholder">________</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-4">
-                    <p class="labels"> Reason resuscitation ended:</p>
-                  </div>
-                  <div class="col-sm-8">
-                    <input id="input1" type="text" class="form-control-plaintext" id="userInput">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-4">
-                    <p class="labels"> Time resuscitation ended:</p>
-                  </div>
-                  <div class="col-sm-5">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-4">
-                    <p class="labels"> Family restrictions:</p>
-                  </div>
-                  <div class="col-sm-8">
-                    <input id="input1" type="text" class="form-control-plaintext" id="userInput">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-3">
-                    <p class="labels"> Return of circulation:</p>
+                    <p class="labels"> Return of Circulation:</p>
                   </div>
                   <div class="col-sm-3">
                     <div class="form-check-inline">
@@ -154,7 +128,20 @@
               </div>
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="labels"> Efforts Terminated:</p>
+                  <p class="labels"> Restrictions by Family:</p>
+                </div>
+                <div class="col-sm-3">
+                  <div class="form-check-inline">
+                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                  </div>
+                  <div class="form-check-inline">
+                    <label class="form-check-label" for="inlineRadio2">No</label>
+                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <p class="labels"> Advanced Directives:</p>
                 </div>
                 <div class="col-sm-3">
                   <div class="form-check-inline">
@@ -168,11 +155,18 @@
                 </div>
               </div>
               <div class="row">
-              <div class="col-sm-4">
-                <p class="labels">Advanced Directives:</p>
+              <div class="col-sm-3">
+                <p class="labels">Family Notified:</p>
               </div>
-              <div class="col-sm-8">
-                <input id="input1" type="text" class="form-control-plaintext" id="userInput">
+              <div class="col-sm-3">
+                <div class="form-check-inline">
+                  <label class="form-check-label" for="inlineRadio1">Yes</label>
+                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label" for="inlineRadio2">No</label>
+                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                </div>
               </div>
             </div>
           </div>
@@ -191,7 +185,7 @@
                     </div>
 
                     <div class="col-sm-4">
-                      <input id="inputNurse" type="text" class="form-control-plaintext" id="userInput" placeholder="Name">
+                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Name">
                     </div>
 
                     <div class="col-sm-1">
