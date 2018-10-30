@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/finalReport.css">
+    <script src="js/inputDigest.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
     </script>
@@ -16,7 +17,7 @@
         <div class="container-fluid">
             <img src="css/snakes.jpg" style="width: 5%; height: 5%" class="img-circle" alt="logo">
             <a class="title">Final Report</a>
-            
+
         </div>
         <div class="container">
             <div class="navbar-header">
@@ -38,7 +39,7 @@
             </div>
         </div>
     </nav>
-    
+
 <div class="row row-one">
   <div class="col-sm-4">
    <div class="panel panel-default">
@@ -46,7 +47,7 @@
     <div class="panel-body">Doctors Comments about the UV</div>
     <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button">Edit</button>
   </div>
-    
+
   </div>
     <div class="col-sm-4">
    <div class="panel panel-default">
@@ -60,7 +61,7 @@
     <div class="panel-body">Time of compression: N/A</div>
     <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button">Edit</button>
   </div>
-    
+
   </div>
    <div class="col-sm-4">
    <div class="panel panel-default">
@@ -75,20 +76,24 @@
 
     <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button">Edit</button>
   </div>
-    
+
   </div>
 </div>
-    
+
 <div class="row row-two">
     <div class = "col-sm-12">
         <div class="panel panel-default">
             <div class="panel-heading">Code Team</div>
-            <div class="panel-body">Nurse</div>
+            <div class="panel-body">
+              <p id="printData">
+              <script>saveData()</script> </p>
+
+            </div>
             <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" style="margin-left: 95.5%; margin-bottom: .5%">Edit</button>
         </div>
     </div>
 </div>
-    
+
 <div class = "row row-three">
     <div class = "col-sm-6">
         <div class="panel panel-default">
@@ -99,8 +104,8 @@
             <div class="panel-body" style = "margin-left: 8%;">Doctors comments</div>
             <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" style = "margin-left: 91%; margin-bottom: 1%">Edit</button>
         </div>
-    
-    
+
+
     </div>
     <div class = "col-sm-6">
         <div class="panel panel-default">
@@ -111,12 +116,12 @@
             <div class="panel-body">IV Administrator: Doctor Wales</div>
             <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" style = "margin-left: 91%; margin-bottom: 1%">Edit</button>
         </div>
-    
-    
+
+
     </div>
-    
+
 </div>
-    
+
 <div class = "row row-three">
     <div class = "col-sm-12">
         <div class = "panel panel-default">
@@ -148,12 +153,12 @@
             </div>
             <button type="button" class="btn btn-primary edit-button" data-toggle = "modal" data-target= "#editModal" style="margin-left: 97%; margin-bottom: .2%">Edit</button>
         </div>
-            
-            
+
+
         </div>
     </div>
 </div>
-    
+
 <div class = "row row-four">
     <div class = "col-sm-12">
         <div class = "panel panel-default">
@@ -163,18 +168,18 @@
         </div>
     </div>
 </div>
-    
+
 <div class = "row row-five">
     <button onclick="printPage()" type = "button" class = "btn btn-warning print-button">Print</button>
     <button type = "button" class = "btn btn-warning save-button" data-toggle="modal" data-target = "#saveModal">Submit</button>
 </div>
-    
+
 <script>
     function printPage(){
         window.print();
     }
 </script>
-    
+
 <!-- The Modal -->
 <div class="modal" id="saveModal">
   <div class="modal-dialog">
@@ -201,7 +206,7 @@
     </div>
   </div>
 </div>
-    
+
 <div class="modal" id="editModal">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -227,10 +232,10 @@
     </div>
   </div>
 </div>
-    
 
-    
-    
+
+
+
 
 </body>
 </html>
