@@ -1,0 +1,42 @@
+.title{
+    color: whitesmoke;
+    font-size: 40px;
+    margin-left: 38%;
+}
+
+
+
+.row-one{
+    margin-top: 10%;
+    margin-left:1%;
+    margin-right: 1%;
+}
+
+.row-five{
+    margin-bottom: 2%;
+}
+
+.row{
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.edit-button{
+    margin-left: 85%;
+    margin-bottom: 2%;
+}
+
+.print-button{
+    margin-left: 45%;
+}
+
+.save-button{
+    margin-left: 5%;
+}
+
+.top-buffer {
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+
+
