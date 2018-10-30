@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Administration</title>
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/finalReport.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="js/inputDigest.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
     </script>
 </head>
 <body>
@@ -16,7 +16,7 @@
         <div class="container-fluid">
             <img src="css/snakes.jpg" style="width: 5%; height: 5%" class="img-circle" alt="logo">
             <a class="title">Administration</a>
-            
+
         </div>
         <div class="container">
             <div class="navbar-header">
@@ -39,5 +39,326 @@
         </div>
     </nav>
 
-</body>
+    <div class="content-fluid" id="content">
+      <div class="row" id="row1">
+
+        <div class="col-lg-6">
+          <h class="header"> Outcome </h>
+          <div class="panel-group">
+            <div class="panel panel-primary">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="labels"> Event End Time:</p>
+                  </div>
+                  <div class="col-sm-3">
+                    <p class="placeholder">________</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="labels"> Patient Status: </p>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="inlineRadio1">Alive</label>
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    </div>
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="inlineRadio2">Expired</label>
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    </div>
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="inlineRadio3">Stayed on Unit</label>
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="labels"> Transferred to: </p>
+                  </div>
+                  <div class="col-sm-7">
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="inlineRadio1">ICU</label>
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    </div>
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="inlineRadio2">Morgue</label>
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    </div>
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="inlineRadio3">Other Healthcare Facility</label>
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="labels"> Transferred Time:</p>
+                  </div>
+                  <div class="col-sm-3">
+                    <p class="placeholder">________</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <p class="labels"> Reason resuscitation ended:</p>
+                  </div>
+                  <div class="col-sm-8">
+                    <input id="input1" type="text" class="form-control-plaintext" id="userInput">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <p class="labels"> Time resuscitation ended:</p>
+                  </div>
+                  <div class="col-sm-5">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <p class="labels"> Family restrictions:</p>
+                  </div>
+                  <div class="col-sm-8">
+                    <input id="input1" type="text" class="form-control-plaintext" id="userInput">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="labels"> Return of circulation:</p>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="inlineRadio1">Yes</label>
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    </div>
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="inlineRadio2">No</label>
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <p class="labels"> Medical Futility:</p>
+                  </div>
+                  <div class="col-sm-3">
+                  <div class="form-check-inline">
+                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                  </div>
+                  <div class="form-check-inline">
+                    <label class="form-check-label" for="inlineRadio2">No</label>
+                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="labels"> Efforts Terminated:</p>
+                </div>
+                <div class="col-sm-3">
+                  <div class="form-check-inline">
+                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                  </div>
+                  <div class="form-check-inline">
+                    <label class="form-check-label" for="inlineRadio2">No</label>
+                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+              <div class="col-sm-4">
+                <p class="labels">Advanced Directives:</p>
+              </div>
+              <div class="col-sm-8">
+                <input id="input1" type="text" class="form-control-plaintext" id="userInput">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+          <div class="col-lg-6">
+            <h class="header"> Names/Signatures </h>
+            <div class="panel-group">
+              <div class="panel panel-primary">
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="labels">Team Leader:</p>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <input id="inputNurse" type="text" class="form-control-plaintext" id="userInput" placeholder="Name">
+                    </div>
+
+                    <div class="col-sm-1">
+                      <p> / </p>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Signature">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="labels">Nurse Preparing Meds:</p>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Name">
+                    </div>
+
+                    <div class="col-sm-1">
+                      <p> / </p>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Signature">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="labelSmall">Nurse Administering Meds:</p>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Name">
+                    </div>
+
+                    <div class="col-sm-1">
+                      <p> / </p>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Signature">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="labels">Recorder Nurse:</p>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Name">
+                    </div>
+
+                    <div class="col-sm-1">
+                      <p> / </p>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Signature">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="labels">Anesthesiologist:</p>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Name">
+                    </div>
+
+                    <div class="col-sm-1">
+                      <p> / </p>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Signature">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="labels">Others:</p>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Name">
+                    </div>
+
+                    <div class="col-sm-1">
+                      <p> / </p>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Signature">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="labels"></p>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Name">
+                    </div>
+
+                    <div class="col-sm-1">
+                      <p> / </p>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Signature">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="labels"></p>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Name">
+                    </div>
+
+                    <div class="col-sm-1">
+                      <p> / </p>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Signature">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="labels"></p>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Name">
+                    </div>
+
+                    <div class="col-sm-1">
+                      <p> / </p>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Signature">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+            <div class="row">
+
+
+              <a id="finalize" href="finalReport.html"><button type="button" class="btn-light" onclick="saveData();">Finalize</button></a>
+
+            </div>
+
+      </div>
+    </body>
 </html>
