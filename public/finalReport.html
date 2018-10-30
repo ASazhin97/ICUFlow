@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/finalReport.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
-    </script>
+    <script src=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type = "text/javascript" src = "js/finalReportScript.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-inverse navbar-fixed-top topbar">
@@ -41,39 +41,41 @@
     
 <div class="row row-one">
   <div class="col-sm-4">
-   <div class="panel panel-default">
+   <div class="panel panel-default" id = "panel1">
     <div class="panel-heading">IV Madication Defibliration</div>
-    <div class="panel-body">Doctors Comments about the UV</div>
-    <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button">Edit</button>
+    <div class="panel-body">Comments: Doctors Comments about the UV</div>
+    <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "1">Edit</button>
+       
   </div>
     
   </div>
     <div class="col-sm-4">
-   <div class="panel panel-default">
+   <div class="panel panel-default" id = "panel2">
     <div class="panel-heading">General</div>
-    <div class="panel-body">Date: 9/26/2018 Time: 5:26pm-7:56pm</div>
+    <div class="panel-body">Date: 9/26/2018</div>
+    <div class="panel-body">Time: 5;26pm-7;56pm</div>
     <div class="panel-body">Location: Hospital</div>
-    <div class="panel-body">Time event called: 5:15</div>
-    <div class="panel-body">Time team arrived: 5:21</div>
+    <div class="panel-body">Time event called: 5;15</div>
+    <div class="panel-body">Time team arrived: 5;21</div>
     <div class="panel-body">Witnesses: None</div>
     <div class="panel-body">CPR Initiated:No</div>
     <div class="panel-body">Time of compression: N/A</div>
-    <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button">Edit</button>
+    <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "2">Edit</button>
   </div>
     
   </div>
    <div class="col-sm-4">
-   <div class="panel panel-default">
+   <div class="panel panel-default" id = "panel3">
     <div class="panel-heading">Patient Information</div>
     <div class="panel-body">Name: John Snow</div>
     <div class="panel-body">Date of Birth: 8/27/1984</div>
     <div class="panel-body">MR#: 201654213</div>
     <div class="panel-body">Weight: 168Lb</div>
     <div class="panel-body">Family Notified: No</div>
-    <div class="panel-body">Comments</div>
-    <div class="panel-body" style="margin-left: 10%">Knows nothing.</div>
+    <div class="panel-body">Comments: Knows Nothing</div>
+    
 
-    <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button">Edit</button>
+    <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "3">Edit</button>
   </div>
     
   </div>
@@ -81,35 +83,34 @@
     
 <div class="row row-two">
     <div class = "col-sm-12">
-        <div class="panel panel-default">
+        <div class="panel panel-default" id = "panel4">
             <div class="panel-heading">Code Team</div>
-            <div class="panel-body">Nurse</div>
-            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" style="margin-left: 95.5%; margin-bottom: .5%">Edit</button>
+            <div class="panel-body">Nurse: Jenny</div>
+            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" style="margin-left: 95.5%; margin-bottom: .5%" data-panel = "4">Edit</button>
         </div>
     </div>
 </div>
     
 <div class = "row row-three">
     <div class = "col-sm-6">
-        <div class="panel panel-default">
+        <div class="panel panel-default" id = "panel5">
             <div class="panel-heading">Airway Control</div>
             <div class="panel-body">Incubation Time: 5min 4 sec</div>
             <div class="panel-body">ETT Size: 5mm</div>
-            <div class="panel-body">Comments:</div>
-            <div class="panel-body" style = "margin-left: 8%;">Doctors comments</div>
-            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" style = "margin-left: 91%; margin-bottom: 1%">Edit</button>
+            <div class="panel-body">Comments: Doctors comments</div>
+            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" style = "margin-left: 91%; margin-bottom: 1%"  data-panel = "5">Edit</button>
         </div>
     
     
     </div>
     <div class = "col-sm-6">
-        <div class="panel panel-default">
+        <div class="panel panel-default" id = "panel6">
             <div class="panel-heading">IV Fluids</div>
             <div class="panel-body">Time Initiated: 5:46pm</div>
             <div class="panel-body">IV Site: Arms</div>
             <div class="panel-body">IV Solution: H2O</div>
             <div class="panel-body">IV Administrator: Doctor Wales</div>
-            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" style = "margin-left: 91%; margin-bottom: 1%">Edit</button>
+            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" style = "margin-left: 91%; margin-bottom: 1%" data-panel = "6">Edit</button>
         </div>
     
     
@@ -119,7 +120,7 @@
     
 <div class = "row row-three">
     <div class = "col-sm-12">
-        <div class = "panel panel-default">
+        <div class = "panel panel-default" id = "panel7">
         <div class = "panel-heading">Report Table</div>
         <div class = "panel-body">
             <div class = "table-wrapper-scroll-y">
@@ -146,7 +147,7 @@
                     </tbody>
                 </table>
             </div>
-            <button type="button" class="btn btn-primary edit-button" data-toggle = "modal" data-target= "#editModal" style="margin-left: 97%; margin-bottom: .2%">Edit</button>
+            <button type="button" class="btn btn-primary edit-button" data-toggle = "modal" data-target= "#editModal" style="margin-left: 97%; margin-bottom: .2%" data-panel = "7">Edit</button>
         </div>
             
             
@@ -156,10 +157,10 @@
     
 <div class = "row row-four">
     <div class = "col-sm-12">
-        <div class = "panel panel-default">
+        <div class = "panel panel-default" id = "panel8">
             <div class = "panel-heading">Comments:</div>
             <div class = "panel-body">Doctors Comments</div>
-            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" style="margin-left: 96.5%; margin-bottom: .5%">Edit</button>
+            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" style="margin-left: 96.5%; margin-bottom: .5%" data-panel = "8">Edit</button>
         </div>
     </div>
 </div>
@@ -187,7 +188,7 @@
       </div>
 
       <!-- Modal body -->
-      <div class="modal-body">
+      <div class="modal-body modal-body-save">
         By Submitting this report you are stating that to the best of your knowledge all of the information is truthful and correct. Are you sure you want to submit?
       </div>
 
@@ -212,22 +213,94 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 
-      <!-- Modal body -->
-      <div class="modal-body">
-        body start
-      </div>
+      
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="button" class="btn" data-dismiss="modal">Save</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
 
       </div>
 
     </div>
   </div>
 </div>
+
+<script type = "text/javascript">
+    var panelNumber;
+
+$('#editModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var panelNum = button.data('panel') 
+  panelNumber = panelNum;
+  var panel = document.getElementById("panel" + panelNum);
+  var panElem = panel.children;
+  var modal = $(this);
+  
+  var modalTitle = modal.find('.modal-title')
+  var modalFoot = modal.find('.modal-footer');
+  var modalContent = modal.find(".modal-content")
+  var modalBody = document.createElement('div');
+    modalBody.className = "modal-body modal-body-edit";
+    modalContent.append(modalBody);
     
+    modalFoot.insertAfter('.modal-body-edit');
+    
+    
+
+ //set heading
+  modal.find('.modal-title').text(panElem[0].innerHTML);
+    
+//set body
+var i;
+for(i = 1; i < (panElem.length-1); i++){
+    //create a div
+    var newdiv = document.createElement("div");
+    
+    var text = panElem[i].innerHTML;
+    var textsplit = text.split(":");
+    //console.log(textsplit);
+    var label = document.createElement("label");
+    label.addClass = "label"
+    label.innerHTML = textsplit[0];
+    var textbox = document.createElement("input");
+    textbox.addClass = "input"
+    textbox.value = textsplit[1];
+    console.log(textsplit[1]);
+    
+    var span1 = document.createElement('span')
+    span1.appendChild(label);
+    span1.appendChild(textbox);
+    newdiv.append(span1)
+  modal.find('.modal-body').append(newdiv);
+};
+    
+});
+    
+$('#editModal').on('hide.bs.modal', function (event){
+    var modal = $(this);
+    var divs = modal.find(".modal-body").children();
+    
+    var panel = document.getElementById("panel" + panelNumber);
+    var panelElems = panel.children;
+    console.log(panelElems);
+    
+
+    
+    var j;
+    for(j = 0; j<divs.length;j++){
+        var span = divs[j].children;
+        var insideSpan = span[0].children;
+        var labeltext = insideSpan[0].innerHTML;
+        var inputtext = insideSpan[1].value;
+        console.log(labeltext + ":" + inputtext);
+        panelElems[j+1].innerHTML = labeltext + ":" + inputtext;
+    }
+    
+    modal.find(".modal-body").remove();
+
+});
+    
+</script>
 
     
     
