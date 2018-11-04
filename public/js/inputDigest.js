@@ -1,6 +1,10 @@
 function saveData(){
-  var inputData = document.getElementById('inputNurse').value;
-  var result = document.getElementByID('printData');
 
-  return result.textContext = 'Name: ' + inputData;
+  sessionStorage.setItem('teamLeaderInput', document.getElementById("teamLeaderInput").value);
+  console.log(localStorage.getItem('teamLeaderInput'));
+
+
+  document.getElementById("teamLeader").innerHTML = localStorage.getItem('teamLeaderInput');
+  console.log(localStorage.getItem('teamLeaderInput'));
+
 }
