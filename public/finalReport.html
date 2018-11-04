@@ -40,17 +40,21 @@
         </div>
     </nav>
 
+<div class = "container-fluid">
+    
 <div class="row row-one">
-  <div class="col-sm-4">
+  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" >
    <div class="panel panel-default" id = "panel1">
     <div class="panel-heading">IV Madication Defibliration</div>
     <div class="panel-body">Comments: Doctors Comments about the UV</div>
+    
+    <div class="panel-footer">
     <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "1">Edit</button>
-
+    </div>
   </div>
 
   </div>
-    <div class="col-sm-4">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" >
    <div class="panel panel-default" id = "panel2">
     <div class="panel-heading">General</div>
     <div class="panel-body">Date: 9/26/2018</div>
@@ -61,11 +65,13 @@
     <div class="panel-body">Witnesses: None</div>
     <div class="panel-body">CPR Initiated:No</div>
     <div class="panel-body">Time of compression: N/A</div>
+       <div class="panel-footer">
     <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "2">Edit</button>
+       </div>
   </div>
 
   </div>
-   <div class="col-sm-4">
+   <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" >
    <div class="panel panel-default" id = "panel3">
     <div class="panel-heading">Patient Information</div>
     <div class="panel-body">Name: John Snow</div>
@@ -75,15 +81,16 @@
     <div class="panel-body">Family Notified: No</div>
     <div class="panel-body">Comments: Knows Nothing</div>
 
-
+       <div class="panel-footer">
     <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "3">Edit</button>
+       </div>
   </div>
 
   </div>
 </div>
 
 <div class="row row-two">
-    <div class = "col-sm-12">
+    <div class = "col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="panel panel-default" id = "panel4">
             <div class="panel-heading">Code Team</div>
             <div class="panel-body">
@@ -190,25 +197,29 @@
 </div>
 
 <div class = "row row-three">
-    <div class = "col-sm-6">
+    <div class = "col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <div class="panel panel-default" id = "panel5">
             <div class="panel-heading">Airway Control</div>
             <div class="panel-body">Incubation Time: 5min 4 sec</div>
             <div class="panel-body">ETT Size: 5mm</div>
             <div class="panel-body">Comments: Doctors comments</div>
-            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" style = "margin-left: 91%; margin-bottom: 1%"  data-panel = "5">Edit</button>
+            <div class="panel-footer">
+            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "5">Edit</button>
+            </div>
         </div>
 
 
     </div>
-    <div class = "col-sm-6">
+    <div class = "col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <div class="panel panel-default" id = "panel6">
             <div class="panel-heading">IV Fluids</div>
             <div class="panel-body">Time Initiated: 5:46pm</div>
             <div class="panel-body">IV Site: Arms</div>
             <div class="panel-body">IV Solution: H2O</div>
             <div class="panel-body">IV Administrator: Doctor Wales</div>
-            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" style = "margin-left: 91%; margin-bottom: 1%" data-panel = "6">Edit</button>
+            <div class="panel-footer">
+            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "6">Edit</button>
+            </div>
         </div>
 
 
@@ -245,9 +256,11 @@
                     </tbody>
                 </table>
             </div>
-            <button type="button" class="btn btn-primary edit-button" data-toggle = "modal" data-target= "#editModal" style="margin-left: 97%; margin-bottom: .2%" data-panel = "7">Edit</button>
+            
         </div>
-
+            <div class="panel-footer">
+            <button type="button" class="btn btn-primary edit-button" data-toggle = "modal" data-target= "#editModal" data-panel = "7">Edit</button>
+            </div>
 
         </div>
     </div>
@@ -258,7 +271,9 @@
         <div class = "panel panel-default" id = "panel8">
             <div class = "panel-heading">Comments:</div>
             <div class = "panel-body">Doctors Comments</div>
-            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" style="margin-left: 96.5%; margin-bottom: .5%" data-panel = "8">Edit</button>
+            <div class="panel-footer">
+            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "8">Edit</button>
+            </div>
         </div>
     </div>
 </div>
@@ -268,6 +283,7 @@
     <button type = "button" class = "btn btn-warning save-button" data-toggle="modal" data-target = "#saveModal">Submit</button>
 </div>
 
+</div>    
 <script>
     function printPage(){
         window.print();
