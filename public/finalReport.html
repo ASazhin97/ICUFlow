@@ -12,7 +12,7 @@
     <script src=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type = "text/javascript" src = "js/finalReportScript.js"></script>
 </head>
-<body>
+<body onload="retrieveData()">
     <nav class="navbar navbar-expand-lg navbar-inverse navbar-fixed-top topbar">
         <div class="container-fluid">
             <img src="css/snakes.jpg" style="width: 5%; height: 5%" class="img-circle" alt="logo">
@@ -40,17 +40,21 @@
         </div>
     </nav>
 
+<div class = "container-fluid">
+    
 <div class="row row-one">
-  <div class="col-sm-4">
+  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" >
    <div class="panel panel-default" id = "panel1">
     <div class="panel-heading">IV Madication Defibliration</div>
     <div class="panel-body">Comments: Doctors Comments about the UV</div>
+    
+    <div class="panel-footer">
     <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "1">Edit</button>
-
+    </div>
   </div>
 
   </div>
-    <div class="col-sm-4">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" >
    <div class="panel panel-default" id = "panel2">
     <div class="panel-heading">General</div>
     <div class="panel-body">Date: 9/26/2018</div>
@@ -61,11 +65,13 @@
     <div class="panel-body">Witnesses: None</div>
     <div class="panel-body">CPR Initiated:No</div>
     <div class="panel-body">Time of compression: N/A</div>
+       <div class="panel-footer">
     <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "2">Edit</button>
+       </div>
   </div>
 
   </div>
-   <div class="col-sm-4">
+   <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" >
    <div class="panel panel-default" id = "panel3">
     <div class="panel-heading">Patient Information</div>
     <div class="panel-body">Name: John Snow</div>
@@ -75,43 +81,145 @@
     <div class="panel-body">Family Notified: No</div>
     <div class="panel-body">Comments: Knows Nothing</div>
 
-
+       <div class="panel-footer">
     <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "3">Edit</button>
+       </div>
   </div>
 
   </div>
 </div>
 
 <div class="row row-two">
-    <div class = "col-sm-12">
+    <div class = "col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="panel panel-default" id = "panel4">
             <div class="panel-heading">Code Team</div>
-            <div class="panel-body">Nurse: Jenny</div>
+            <div class="panel-body">
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <p class="labels">Team Leader:</p>
+                </div>
+                <div class="col-sm-6">
+                  <p id="teamLeader"> </p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <p class="labels">Nurse Preparing Meds:</p>
+                </div>
+                <div class="col-sm-6">
+                  <p id="nursePrep"> </p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <p class="labels">Nurse Administering Meds:</p>
+                </div>
+                <div class="col-sm-6">
+                  <p id="nurseAdmin">
+
+                  </p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <p class="labels">Recorder Nurse:</p>
+                </div>
+                <div class="col-sm-6">
+                  <p id="nurseRecord">
+
+                  </p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <p class="labels">Anesthesiologist:</p>
+                </div>
+                <div class="col-sm-6">
+                  <p id="anesthesiologist">
+
+                  </p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <p class="labels">Others:</p>
+                </div>
+                <div class="col-sm-6">
+                  <p id="others1">
+
+                  </p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <p class="labels"></p>
+                </div>
+                <div class="col-sm-6">
+                  <p id="others2">
+
+                  </p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <p class="labels"></p>
+                </div>
+                <div class="col-sm-6">
+                  <p id="others3">
+
+                  </p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <p class="labels"></p>
+                </div>
+                <div class="col-sm-6">
+                  <p id="others4">
+
+                  </p>
+                </div>
+              </div>
+
+            </div>
             <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" style="margin-left: 95.5%; margin-bottom: .5%" data-panel = "4">Edit</button>
         </div>
     </div>
 </div>
 
 <div class = "row row-three">
-    <div class = "col-sm-6">
+    <div class = "col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <div class="panel panel-default" id = "panel5">
             <div class="panel-heading">Airway Control</div>
             <div class="panel-body">Incubation Time: 5min 4 sec</div>
             <div class="panel-body">ETT Size: 5mm</div>
             <div class="panel-body">Comments: Doctors comments</div>
-            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" style = "margin-left: 91%; margin-bottom: 1%"  data-panel = "5">Edit</button>
+            <div class="panel-footer">
+            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "5">Edit</button>
+            </div>
         </div>
 
 
     </div>
-    <div class = "col-sm-6">
+    <div class = "col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <div class="panel panel-default" id = "panel6">
             <div class="panel-heading">IV Fluids</div>
             <div class="panel-body">Time Initiated: 5:46pm</div>
             <div class="panel-body">IV Site: Arms</div>
             <div class="panel-body">IV Solution: H2O</div>
             <div class="panel-body">IV Administrator: Doctor Wales</div>
-            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" style = "margin-left: 91%; margin-bottom: 1%" data-panel = "6">Edit</button>
+            <div class="panel-footer">
+            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "6">Edit</button>
+            </div>
         </div>
 
 
@@ -136,9 +244,9 @@
                         <th scope = "col">Comments</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody contenteditable="true" id="info-table-body">
                         <tr>
-                            <td>5:23</td>
+                            <td>5;23</td>
                             <td>Epinephrine</td>
                             <td>5mm</td>
                             <td>120bpm</td>
@@ -148,20 +256,34 @@
                     </tbody>
                 </table>
             </div>
-            <button type="button" class="btn btn-primary edit-button" data-toggle = "modal" data-target= "#editModal" style="margin-left: 97%; margin-bottom: .2%" data-panel = "7">Edit</button>
+            
         </div>
-
+            <div class="panel-footer">
+            <button type="button" class="btn btn-warning add-row-btn" data-panel = "7" onclick = "addRow()">Add Row +</button>
+            </div>
 
         </div>
     </div>
 </div>
 
 <div class = "row row-four">
-    <div class = "col-sm-12">
+    <div class = "col-sm-6">
         <div class = "panel panel-default" id = "panel8">
             <div class = "panel-heading">Comments:</div>
-            <div class = "panel-body">Doctors Comments</div>
-            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" style="margin-left: 96.5%; margin-bottom: .5%" data-panel = "8">Edit</button>
+            <div class = "panel-body">Comments about</div>
+            <div class="panel-footer">
+            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "8">Edit</button>
+            </div>
+        </div>
+    </div>
+    
+        <div class = "col-sm-6">
+        <div class = "panel panel-default" id = "panel9">
+            <div class = "panel-heading">Outcome:</div>
+            <div class = "panel-body"></div>
+            <div class="panel-footer">
+            <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "9">Edit</button>
+            </div>
         </div>
     </div>
 </div>
@@ -171,6 +293,7 @@
     <button type = "button" class = "btn btn-warning save-button" data-toggle="modal" data-target = "#saveModal">Submit</button>
 </div>
 
+</div>    
 <script>
     function printPage(){
         window.print();
@@ -252,29 +375,37 @@ $('#editModal').on('show.bs.modal', function (event) {
   modal.find('.modal-title').text(panElem[0].innerHTML);
 
 //set body
-var i;
-for(i = 1; i < (panElem.length-1); i++){
-    //create a div
-    var newdiv = document.createElement("div");
+if(panelNumber != 8){
+    var i;
+    for(i = 1; i < (panElem.length-1); i++){
+        //create a div
+        var newdiv = document.createElement("div");
 
-    var text = panElem[i].innerHTML;
-    var textsplit = text.split(":");
-    //console.log(textsplit);
-    var label = document.createElement("label");
-    label.addClass = "label"
-    label.innerHTML = textsplit[0];
-    var textbox = document.createElement("input");
-    textbox.addClass = "input"
-    textbox.value = textsplit[1];
-    console.log(textsplit[1]);
+        var text = panElem[i].innerHTML;
+        var textsplit = text.split(":");
+        //console.log(textsplit);
+        var label = document.createElement("label");
+        label.addClass = "label"
+        label.innerHTML = textsplit[0];
+        var textbox = document.createElement("input");
+        textbox.addClass = "input"
+        textbox.value = textsplit[1];
+        console.log(textsplit[1]);
 
-    var span1 = document.createElement('span')
-    span1.appendChild(label);
-    span1.appendChild(textbox);
-    newdiv.append(span1)
-  modal.find('.modal-body').append(newdiv);
-};
-
+        var span1 = document.createElement('span')
+        span1.appendChild(label);
+        span1.appendChild(textbox);
+        newdiv.append(span1)
+      modal.find('.modal-body').append(newdiv);
+    };
+} else {
+    var textArea = document.createElement("textarea");
+    var text = panElem[1].innerHTML;
+    textArea.innerHTML = text;
+    textArea.addClass = "input";
+    
+    modal.find('.modal-body').append(textArea);
+}
 });
 
 $('#editModal').on('hide.bs.modal', function (event){
@@ -286,21 +417,38 @@ $('#editModal').on('hide.bs.modal', function (event){
     console.log(panelElems);
 
 
-
-    var j;
-    for(j = 0; j<divs.length;j++){
-        var span = divs[j].children;
-        var insideSpan = span[0].children;
-        var labeltext = insideSpan[0].innerHTML;
-        var inputtext = insideSpan[1].value;
-        console.log(labeltext + ":" + inputtext);
-        panelElems[j+1].innerHTML = labeltext + ":" + inputtext;
+    if(panelNumber != 8){
+        var j;
+        for(j = 0; j<divs.length;j++){
+            var span = divs[j].children;
+            var insideSpan = span[0].children;
+            var labeltext = insideSpan[0].innerHTML;
+            var inputtext = insideSpan[1].value;
+            console.log(labeltext + ":" + inputtext);
+            panelElems[j+1].innerHTML = labeltext + ":" + inputtext;
+        }
+    } else {
+        var textArea = divs[0].value;
+        console.log(textArea);
+        console.log(panelElems[1].innerHTML);
+        panelElems[1].innerHTML = textArea;
     }
 
     modal.find(".modal-body").remove();
 
 });
 
+function addRow(){
+    var tableBody = document.getElementById("info-table-body");
+    console.log(tableBody)
+    var newRow = document.createElement("tr");
+    var i;
+    for(i = 0; i < 6; i++){
+        var newCell = document.createElement("td");
+        newRow.appendChild(newCell);
+    }
+    tableBody.appendChild(newRow);
+}
 </script>
 
 
