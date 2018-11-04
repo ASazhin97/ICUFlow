@@ -42,29 +42,29 @@
         </div>
     </nav>
     
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="navHeaderCollapse">
-                <ul class="nav navbar-nav">
-                    <li class="nav-item"><a href="home.html">Home</a></li>
-                    <li class="nav-item"><a href="history.html">History</a></li>
-                    <li class="nav-item"><a href="help.html">Help</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 <div id="formcontainer">
-    <form>
-        <label for="record#">Medical Record Number</label>
-        <input type="text" id="Record#" name="recordnumber" placeholder="Please enter the patient's medical record number...">
-        <label for="pname">Patient's Name</label>
-        <input type="text" id="pname" name="patientname" placeholder="Please enter the patient's name...">
-        <label for="Nname">Recording Nurse's Name</label>
-        <input type="text" id ="Nname" name="nursename" placeholder="Please enter the recording nurse's name...">
-        <div class="container text-center">
-            <a href="codeSheet.html" class="btn btn-success" role="button">Submit</a>
+    <form action="codeSheet.html">
+
+        <div class = "form-group">
+            <label>Medical Record Number</label>
+            <input type="text" id="Record" placeholder="Please enter the patient's medical record number..." class = "form-control" required>
         </div>
+        
+        <div class = "form-group">
+            <label>Patient's Name</label>
+            <input type="text" id="patientname" placeholder="Please enter the patient's name..." class = "form-control" required>
+        </div>
+        
+        <div class = "form-group">
+            <label>Recording Nurse's Name</label>
+            <input type="text" id ="nursename" placeholder="Please enter the recording nurse's name..." class = "form-control" required>
+        </div>
+        
+        <div>
+            <input type="submit" class = "btn btn-primary sub-btn" id="submit" value = "Submit">
+        </div> 
     </form>
 </div>
+       
 </body>
 </html>

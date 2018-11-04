@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/admin.css">
+    <script src="js/admin.js"></script>
     <script src="js/inputDigest.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
@@ -49,7 +50,7 @@
               <div class="panel-body">
                 <div class="row">
                   <div class="col-sm-3">
-                    <p class="labels"> Event End Time:</p>
+                    <p class="labels"> End Time:</p>
                   </div>
                   <div class="col-sm-3">
                     <p class="placeholder">________</p>
@@ -57,28 +58,24 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-3">
-                    <p class="labels"> Patient Status: </p>
+                    <p class="labels"> Patient Outcome: </p>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-check-inline">
-                      <label class="form-check-label" for="inlineRadio1">Alive</label>
+                      <label class="form-check-label" for="inlineRadio1">Survived</label>
                       <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                     </div>
                     <div class="form-check-inline">
-                      <label class="form-check-label" for="inlineRadio2">Expired</label>
+                      <label class="form-check-label" for="inlineRadio2">Deceased</label>
                       <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                    </div>
-                    <div class="form-check-inline">
-                      <label class="form-check-label" for="inlineRadio3">Stayed on Unit</label>
-                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
                     </div>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-sm-3">
-                    <p class="labels"> Transferred to: </p>
+                  <div class="col-lg-3">
+                    <p class="labels" id="transferred"> Transferred to: </p>
                   </div>
-                  <div class="col-sm-7">
+                  <div class="col-lg-9" id="transferred">
                     <div class="form-check-inline">
                       <label class="form-check-label" for="inlineRadio1">ICU</label>
                       <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
@@ -91,42 +88,20 @@
                       <label class="form-check-label" for="inlineRadio3">Other Healthcare Facility</label>
                       <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
                     </div>
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="inlineRadio3">Stayed on Unit</label>
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                    </div>
+                  </div>
+                </div>
+                <div class="row" id="resuscitation">
+                  <div class="col-lg-12">
+                    <p class="resuscitationLabel"> Reason Resuscitation Ended:</p>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-3">
-                    <p class="labels"> Transferred Time:</p>
-                  </div>
-                  <div class="col-sm-3">
-                    <p class="placeholder">________</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-4">
-                    <p class="labels"> Reason resuscitation ended:</p>
-                  </div>
-                  <div class="col-sm-8">
-                    <input id="input1" type="text" class="form-control-plaintext" id="userInput">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-4">
-                    <p class="labels"> Time resuscitation ended:</p>
-                  </div>
-                  <div class="col-sm-5">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-4">
-                    <p class="labels"> Family restrictions:</p>
-                  </div>
-                  <div class="col-sm-8">
-                    <input id="input1" type="text" class="form-control-plaintext" id="userInput">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-3">
-                    <p class="labels"> Return of circulation:</p>
+                    <p class="labels"> Return of Circulation:</p>
                   </div>
                   <div class="col-sm-3">
                     <div class="form-check-inline">
@@ -154,7 +129,20 @@
               </div>
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="labels"> Efforts Terminated:</p>
+                  <p class="labels"> Restrictions by Family:</p>
+                </div>
+                <div class="col-sm-3">
+                  <div class="form-check-inline">
+                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                  </div>
+                  <div class="form-check-inline">
+                    <label class="form-check-label" for="inlineRadio2">No</label>
+                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <p class="labels"> Advanced Directives:</p>
                 </div>
                 <div class="col-sm-3">
                   <div class="form-check-inline">
@@ -168,11 +156,18 @@
                 </div>
               </div>
               <div class="row">
-              <div class="col-sm-4">
-                <p class="labels">Advanced Directives:</p>
+              <div class="col-sm-3">
+                <p class="labels">Family Notified:</p>
               </div>
-              <div class="col-sm-8">
-                <input id="input1" type="text" class="form-control-plaintext" id="userInput">
+              <div class="col-sm-3">
+                <div class="form-check-inline">
+                  <label class="form-check-label" for="inlineRadio1">Yes</label>
+                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label" for="inlineRadio2">No</label>
+                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                </div>
               </div>
             </div>
           </div>
@@ -191,7 +186,7 @@
                     </div>
 
                     <div class="col-sm-4">
-                      <input id="inputNurse" type="text" class="form-control-plaintext" id="userInput" placeholder="Name">
+                      <input type="text" class="form-control-plaintext" id="teamLeaderInput" placeholder="Name">
                     </div>
 
                     <div class="col-sm-1">
@@ -199,7 +194,7 @@
                     </div>
 
                     <div class="col-sm-4">
-                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Signature">
+                      <p class="placeholder">_____________________</p>
                     </div>
                   </div>
 
@@ -209,7 +204,7 @@
                     </div>
 
                     <div class="col-sm-4">
-                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Name">
+                      <input type="text" class="form-control-plaintext" id="nursePrepInput" placeholder="Name">
                     </div>
 
                     <div class="col-sm-1">
@@ -217,7 +212,7 @@
                     </div>
 
                     <div class="col-sm-4">
-                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Signature">
+                      <p class="placeholder">_____________________</p>
                     </div>
                   </div>
 
@@ -227,7 +222,7 @@
                     </div>
 
                     <div class="col-sm-4">
-                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Name">
+                      <input type="text" class="form-control-plaintext" id="nurseAdminInput" placeholder="Name">
                     </div>
 
                     <div class="col-sm-1">
@@ -235,7 +230,7 @@
                     </div>
 
                     <div class="col-sm-4">
-                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Signature">
+                      <p class="placeholder">_____________________</p>
                     </div>
                   </div>
 
@@ -245,7 +240,7 @@
                     </div>
 
                     <div class="col-sm-4">
-                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Name">
+                      <input type="text" class="form-control-plaintext" id="nurseRecorderInput" placeholder="Name">
                     </div>
 
                     <div class="col-sm-1">
@@ -253,7 +248,7 @@
                     </div>
 
                     <div class="col-sm-4">
-                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Signature">
+                      <p class="placeholder">_____________________</p>
                     </div>
                   </div>
 
@@ -263,7 +258,7 @@
                     </div>
 
                     <div class="col-sm-4">
-                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Name">
+                      <input type="text" class="form-control-plaintext" id="anesthesiologistInput" placeholder="Name">
                     </div>
 
                     <div class="col-sm-1">
@@ -271,7 +266,7 @@
                     </div>
 
                     <div class="col-sm-4">
-                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Signature">
+                      <p class="placeholder">_____________________</p>
                     </div>
                   </div>
 
@@ -281,7 +276,7 @@
                     </div>
 
                     <div class="col-sm-4">
-                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Name">
+                      <input type="text" class="form-control-plaintext" id="othersInput1" placeholder="Name">
                     </div>
 
                     <div class="col-sm-1">
@@ -289,7 +284,7 @@
                     </div>
 
                     <div class="col-sm-4">
-                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Signature">
+                      <p class="placeholder">_____________________</p>
                     </div>
                   </div>
 
@@ -299,7 +294,7 @@
                     </div>
 
                     <div class="col-sm-4">
-                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Name">
+                      <input type="text" class="form-control-plaintext" id="othersInput2" placeholder="Name">
                     </div>
 
                     <div class="col-sm-1">
@@ -307,7 +302,7 @@
                     </div>
 
                     <div class="col-sm-4">
-                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Signature">
+                      <p class="placeholder">_____________________</p>
                     </div>
                   </div>
 
@@ -317,7 +312,7 @@
                     </div>
 
                     <div class="col-sm-4">
-                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Name">
+                      <input type="text" class="form-control-plaintext" id="othersInput3" placeholder="Name">
                     </div>
 
                     <div class="col-sm-1">
@@ -325,7 +320,7 @@
                     </div>
 
                     <div class="col-sm-4">
-                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Signature">
+                      <p class="placeholder">_____________________</p>
                     </div>
                   </div>
 
@@ -335,7 +330,7 @@
                     </div>
 
                     <div class="col-sm-4">
-                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Name">
+                      <input type="text" class="form-control-plaintext" id="othersInput4" placeholder="Name">
                     </div>
 
                     <div class="col-sm-1">
@@ -343,7 +338,7 @@
                     </div>
 
                     <div class="col-sm-4">
-                      <input id="input1" type="text" class="form-control-plaintext" id="userInput" placeholder="Signature">
+                      <p class="placeholder">_____________________</p>
                     </div>
                   </div>
                 </div>
@@ -352,12 +347,9 @@
           </div>
         </div>
 
-            <div class="row">
-
-
-              <a id="finalize" href="finalReport.html"><button type="button" class="btn-light" onclick="saveData();">Finalize</button></a>
-
-            </div>
+            <form >
+              <a class="finalize"><button type="button" class="btn-light" onclick="validate(); saveData();">Finalize</button></a>
+            </form>
 
       </div>
     </body>
