@@ -270,7 +270,7 @@
     <div class = "col-sm-6">
         <div class = "panel panel-default" id = "panel8">
             <div class = "panel-heading">Comments:</div>
-            <div class = "panel-body">Comments about stuff</div>
+            <div class = "panel-body">Comments about</div>
             <div class="panel-footer">
             <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "8">Edit</button>
             </div>
@@ -402,6 +402,7 @@ if(panelNumber != 8){
     var textArea = document.createElement("textarea");
     var text = panElem[1].innerHTML;
     textArea.innerHTML = text;
+    textArea.addClass = "input";
     
     modal.find('.modal-body').append(textArea);
 }
@@ -427,7 +428,10 @@ $('#editModal').on('hide.bs.modal', function (event){
             panelElems[j+1].innerHTML = labeltext + ":" + inputtext;
         }
     } else {
-        
+        var textArea = divs[0].value;
+        console.log(textArea);
+        console.log(panelElems[1].innerHTML);
+        panelElems[1].innerHTML = textArea;
     }
 
     modal.find(".modal-body").remove();
