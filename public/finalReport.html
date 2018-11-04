@@ -298,8 +298,10 @@ if(panelNumber != 8){
         label.innerHTML = textsplit[0];
         var textbox = document.createElement("input");
         textbox.addClass = "input"
-        textbox.value = textsplit[1];
-        console.log(textsplit[1]);
+        var textForBox = panElem[i].children;
+        console.log(textForBox[0].innerHTML);
+        textbox.value = textForBox[0].innerHTML;
+        //console.log(textsplit[1]);
 
         var span1 = document.createElement('span')
         span1.appendChild(label);
@@ -333,8 +335,12 @@ $('#editModal').on('hide.bs.modal', function (event){
             var insideSpan = span[0].children;
             var labeltext = insideSpan[0].innerHTML;
             var inputtext = insideSpan[1].value;
+            
+            var newparaph = document.createElement("p");
+            newparaph.innerHTML = inputtext;
             console.log(labeltext + ":" + inputtext);
-            panelElems[j+1].innerHTML = labeltext + ":" + inputtext;
+            panelElems[j+1].innerHTML = labeltext + ":";
+            panelElems[j+1].appendChild(newparaph);
         }
     } else {
         var textArea = divs[0].value;
