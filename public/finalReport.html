@@ -149,9 +149,9 @@
                         <th scope = "col">Comments</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody contenteditable="true" id="info-table-body">
                         <tr>
-                            <td>5:23</td>
+                            <td>5;23</td>
                             <td>Epinephrine</td>
                             <td>5mm</td>
                             <td>120bpm</td>
@@ -164,7 +164,7 @@
             
         </div>
             <div class="panel-footer">
-            <button type="button" class="btn btn-primary edit-button" data-toggle = "modal" data-target= "#editModal" data-panel = "7">Edit</button>
+            <button type="button" class="btn btn-warning add-row-btn" data-panel = "7" onclick = "addRow()">Add Row +</button>
             </div>
 
         </div>
@@ -319,6 +319,17 @@ $('#editModal').on('hide.bs.modal', function (event){
 
 });
 
+function addRow(){
+    var tableBody = document.getElementById("info-table-body");
+    console.log(tableBody)
+    var newRow = document.createElement("tr");
+    var i;
+    for(i = 0; i < 6; i++){
+        var newCell = document.createElement("td");
+        newRow.appendChild(newCell);
+    }
+    tableBody.appendChild(newRow);
+}
 </script>
 
 
