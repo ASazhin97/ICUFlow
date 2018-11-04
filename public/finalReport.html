@@ -46,7 +46,7 @@
   <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" >
    <div class="panel panel-default" id = "panel1">
     <div class="panel-heading">IV Madication Defibliration</div>
-    <div class="panel-body">Comments: Doctors Comments about the UV</div>
+    <div class="panel-body">Comments: <p>Doctors Comments about the UV</p></div>
 
     <div class="panel-footer">
     <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "1">Edit</button>
@@ -57,14 +57,14 @@
     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" >
    <div class="panel panel-default" id = "panel2">
     <div class="panel-heading">General</div>
-    <div class="panel-body">Date: 9/26/2018</div>
-    <div class="panel-body">Time: 5;26pm-7;56pm</div>
-    <div class="panel-body">Location: Hospital</div>
-    <div class="panel-body">Time event called: 5;15</div>
-    <div class="panel-body">Time team arrived: 5;21</div>
-    <div class="panel-body">Witnesses: None</div>
-    <div class="panel-body">CPR Initiated:No</div>
-    <div class="panel-body">Time of compression: N/A</div>
+    <div class="panel-body">Date: <p></p></div>
+    <div class="panel-body">Time: <p></p></div>
+    <div class="panel-body">Location: <p></p></div>
+    <div class="panel-body">Time event called: <p></p></div>
+    <div class="panel-body">Time team arrived: <p></p></div>
+    <div class="panel-body">Witnesses: <p></p></div>
+    <div class="panel-body">CPR Initiated: <p></p>></div>
+    <div class="panel-body">Time of compression: <p></p></div>
        <div class="panel-footer">
     <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "2">Edit</button>
        </div>
@@ -74,12 +74,12 @@
    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" >
    <div class="panel panel-default" id = "panel3">
     <div class="panel-heading">Patient Information</div>
-    <div class="panel-body">Name: John Snow</div>
-    <div class="panel-body">Date of Birth: 8/27/1984</div>
-    <div class="panel-body">MR#: 201654213</div>
-    <div class="panel-body">Weight: 168Lb</div>
-    <div class="panel-body">Family Notified: No</div>
-    <div class="panel-body">Comments: Knows Nothing</div>
+    <div class="panel-body">Name: <p></p></div>
+    <div class="panel-body">Date of Birth: <p></p></div>
+    <div class="panel-body">MR#: <p></p></div>
+    <div class="panel-body">Weight: <p></p></div>
+    <div class="panel-body">Family Notified: <p></p></div>
+    <div class="panel-body">Comments: <p></p></div>
 
        <div class="panel-footer">
     <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "3">Edit</button>
@@ -109,9 +109,9 @@
     <div class = "col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <div class="panel panel-default" id = "panel5">
             <div class="panel-heading">Airway Control</div>
-            <div class="panel-body">Incubation Time: 5min 4 sec</div>
-            <div class="panel-body">ETT Size: 5mm</div>
-            <div class="panel-body">Comments: Doctors comments</div>
+            <div class="panel-body">Incubation Time: <p></p></div>
+            <div class="panel-body">ETT Size: <p></p></div>
+            <div class="panel-body">Comments: <p></p></div>
             <div class="panel-footer">
             <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "5">Edit</button>
             </div>
@@ -122,10 +122,10 @@
     <div class = "col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <div class="panel panel-default" id = "panel6">
             <div class="panel-heading">IV Fluids</div>
-            <div class="panel-body">Time Initiated: 5:46pm</div>
-            <div class="panel-body">IV Site: Arms</div>
-            <div class="panel-body">IV Solution: H2O</div>
-            <div class="panel-body">IV Administrator: Doctor Wales</div>
+            <div class="panel-body">Time Initiated: <p></p></div>
+            <div class="panel-body">IV Site: <p></p></div>
+            <div class="panel-body">IV Solution: <p></p></div>
+            <div class="panel-body">IV Administrator: <p></p></div>
             <div class="panel-footer">
             <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "6">Edit</button>
             </div>
@@ -179,7 +179,7 @@
     <div class = "col-sm-6">
         <div class = "panel panel-default" id = "panel8">
             <div class = "panel-heading">Comments:</div>
-            <div class = "panel-body">Comments about</div>
+            <div class = "panel-body"><p>Comments about all the stuff</p></div>
             <div class="panel-footer">
             <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "8">Edit</button>
             </div>
@@ -189,7 +189,7 @@
         <div class = "col-sm-6">
         <div class = "panel panel-default" id = "panel9">
             <div class = "panel-heading">Outcome:</div>
-            <div class = "panel-body"></div>
+            <div class = "panel-body">The patient is: <p></p></div>
             <div class="panel-footer">
             <button type="button" data-toggle = "modal" data-target= "#editModal" class="btn btn-primary edit-button" data-panel = "9">Edit</button>
             </div>
@@ -311,7 +311,8 @@ if(panelNumber != 8){
     };
 } else {
     var textArea = document.createElement("textarea");
-    var text = panElem[1].innerHTML;
+    var textElement = panElem[1].children;
+    var text = textElement[0].innerHTML;
     textArea.innerHTML = text;
     textArea.addClass = "input";
     
