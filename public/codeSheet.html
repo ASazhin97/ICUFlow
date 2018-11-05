@@ -175,304 +175,363 @@
 
     </div>
 
-<div class="row">
-    <div class="panel panel-default col-lg-4 col-md-4 col-sm-10 col-xs-12 top-buffer">
-        <div class="panel-heading" style="background-color: white"><strong>Airway Management:</strong></div>
+    <div class="row">
+        <div class="panel panel-default col-lg-4 col-md-4 col-sm-10 col-xs-12 top-buffer">
+            <div class="panel-heading" style="background-color: white"><strong>Airway Management:</strong></div>
 
-        <div class="dropdown">
-            <div class="btn-group">
-
+            <div class="dropdown">
                 <div class="btn-group">
-                    <button class="btn btn-success dropdown-eType" id="eTitle"
+
+                    <div class="btn-group">
+                        <button class="btn btn-success dropdown-eType" id="eTitle"
+                                data-toggle="dropdown">
+                            Airway:<span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="eSelected" role="menu">
+                            <li><a>Endotracheal</a></li>
+                            <li><a>Nasotracheal</a></li>
+                            <li><a>Laryngeal</a></li>
+                            <li><a>Non-rebreather</a></li>
+                            <li class="divider"></li>
+                            <li><a>Other</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-group">
+                        <button class="btn btn-success dropdown-ETT" id="ETTTitle"
+                                data-toggle="dropdown">
+                            ETT Size (in mm):<span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="ETTselected" role="menu"
                             data-toggle="dropdown">
-                        Airway:<span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" id="eSelected" role="menu">
-                        <li><a>Endotracheal</a></li>
-                        <li><a>Nasotracheal</a></li>
-                        <li><a>Laryngeal</a></li>
-                        <li><a>Non-rebreather</a></li>
-                        <li class="divider"></li>
-                        <li><a>Other</a></li>
-                    </ul>
+                            <li><a>7</a></li>
+                            <li><a>7.5</a></li>
+                            <li><a>8</a></li>
+                            <li><a>8.5</a></li>
+                            <li><a>9</a></li>
+                            <li><a>9.5</a></li>
+                            <li><a>10</a></li>
+                            <li class="divider"></li>
+                            <li><a>Other</a></li>
+                        </ul>
+                    </div>
+
                 </div>
 
-                <div class="btn-group">
-                    <button class="btn btn-success dropdown-ETT" id="ETTTitle"
-                            data-toggle="dropdown">
-                        ETT Size (in mm):<span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" id="ETTselected" role="menu"
-                        data-toggle="dropdown">
-                        <li><a>7</a></li>
-                        <li><a>7.5</a></li>
-                        <li><a>8</a></li>
-                        <li><a>8.5</a></li>
-                        <li><a>9</a></li>
-                        <li><a>9.5</a></li>
-                        <li><a>10</a></li>
-                        <li class="divider"></li>
-                        <li><a>Other</a></li>
-                    </ul>
-                </div>
+                <button class="btn btn-warning datebtn" id="enterETT">Enter Airway Management
+                </button>
 
                 <script>
-
-                    $('.dropdown-ETT').dropdown();
-                    $('#ETTselected li').on('click', function () {
-                        $('#ETTTitle').html($(this).find('a').html());
-                    });
 
                 </script>
 
             </div>
 
-            <button class="btn btn-warning datebtn" id="enterETT">Enter Airway Management
-            </button>
-
-            <script>
-
-            </script>
+            <div class="col-12">
+                <div class="editor-content" id="airwayControlComments">
+                    <label for="airwayComments">Comments:</label>
+                    <textarea class="form-control" id="airwayComments" placeholder="Additional Airway Comments"></textarea>
+                </div>
+            </div>
 
         </div>
 
-        <div class="col-12">
-            <div class="editor-content" id="airwayControlComments">
-                <label for="airwayComments">Comments:</label>
-                <textarea class="form-control" id="airwayComments"></textarea>
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6"></div>
+
+
+        <div class="panel panel-default col-lg-4 col-md-4 col-sm-10 col-xs-12 top-buffer">
+            <div class="panel-heading" style="background-color: white"><strong>IV:</strong></div>
+            <div class="dropdown">
+                <div class="btn-group">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success dropdown-ivAccess" id="ivAcessTitle"
+                                data-toggle="dropdown">
+                            IV Access:<span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" id="ivAccessSelection">
+                            <li><a>Peripheral IV</a></li>
+                            <li><a>Central Line</a></li>
+                            <li><a>IO</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success dropdown-ivSize" id="ivSizeTitle"
+                                data-toggle="dropdown">
+                            IV:<span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="ivSizeSelection" role="menu">
+                            <li class="dropdown-header">Size</li>
+                            <li><a>14</a></li>
+                            <li><a>16</a></li>
+                            <li><a>18</a></li>
+                            <li><a>20</a></li>
+                            <li><a>22</a></li>
+                            <li><a>24</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Type</li>
+                            <li><a>PICC</a></li>
+                            <li><a>Triple Lumen</a></li>
+                            <li><a>Chest Port</a></li>
+                            <li class="divider"></li>
+                            <li><a>Other</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success dropdown-ivLR" id="ivLRTitle"
+                                data-toggle="dropdown">
+                            IV Placement:<span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="ivLRSelection" role="menu">
+                            <li><a>Left</a></li>
+                            <li><a>Right</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success dropdown-ivLocation" id="ivLocationTitle"
+                                data-toggle="dropdown">
+                            IV Location:<span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="ivLocationSelection" role="menu">
+                            <li class="dropdown-header">Locations for Peripheral IV</li>
+                            <li><a>Hand</a></li>
+                            <li><a>Wrist</a></li>
+                            <li><a>Forearm</a></li>
+                            <li><a>A/C</a></li>
+                            <li><a>Other</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Locations for Centeral Line</li>
+                            <li><a>IJ</a></li>
+                            <li><a>EJ</a></li>
+                            <li><a>SCV</a></li>
+                            <li><a>Chest</a></li>
+                            <li><a>Other</a></li>
+                            <li class="divider"></li>
+                            <li><a>Other</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="btn btn-warning datebtn" role="button" id="recordIV">Record IV
+                </button>
+
             </div>
+
+            <div class="panel-heading" style="background-color: white"><strong>Shock Administered:</strong></div>
+            <button class="btn btn-warning datebtn" id="shockAdmin">Record Shock
+            </button>
+            <div class="col-sm-4">
+                <textarea class="form-control" id="joulesValue" placeholder="Joules Value"></textarea>
+            </div>
+
         </div>
 
     </div>
 
-    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6"></div>
+    <script type="text/javascript">
 
-
-    <div class="panel panel-default col-lg-4 col-md-4 col-sm-10 col-xs-12 top-buffer">
-        <div class="panel-heading" style="background-color: white"><strong>IV:</strong></div>
-        <div class="dropdown">
-            <div class="btn-group">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-success dropdown-ivAccess" data-toggle="dropdown">
-                        IV Access:<span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a>Peripheral IV</a></li>
-                        <li><a>Central Line</a></li>
-                        <li><a>IO</a></li>
-                    </ul>
-                </div>
-
-                <script>
-                    $('.dropdown-ivAccess').dropdown();
-                    $('#medicationSelection li').on('click', function () {
-                        $('#medicationsTitle').html($(this).find('a').html());
-                    });
-                </script>
-
-                <div class="btn-group">
-                    <button type="button" class="btn btn-success dropdown-ivSize" data-toggle="dropdown">
-                        IV:<span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li class="dropdown-header">Size</li>
-                        <li><a>14</a></li>
-                        <li><a>16</a></li>
-                        <li><a>18</a></li>
-                        <li><a>20</a></li>
-                        <li><a>22</a></li>
-                        <li><a>24</a></li>
-                        <li class="divider"></li>
-                        <li class="dropdown-header">Type</li>
-                        <li><a>PICC</a></li>
-                        <li><a>Triple Lumen</a></li>
-                        <li><a>Chest Port</a></li>
-                        <li class="divider"></li>
-                        <li><a>Other</a></li>
-                    </ul>
-                </div>
-
-                <div class="btn-group">
-                    <button type="button" class="btn btn-success dropdown-ivLR" data-toggle="dropdown">
-                        IV Placement:<span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a>Left</a></li>
-                        <li><a>Right</a></li>
-                    </ul>
-                </div>
-
-                <div class="btn-group">
-                    <button type="button" class="btn btn-success dropdown-ivLocation" data-toggle="dropdown">
-                        IV Location:<span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li class="dropdown-header">Locations for Peripheral IV</li>
-                        <li><a>Hand</a></li>
-                        <li><a>Wrist</a></li>
-                        <li><a>Forearm</a></li>
-                        <li><a>A/C</a></li>
-                        <li><a>Other</a></li>
-                        <li class="divider"></li>
-                        <li class="dropdown-header">Locations for Centeral Line</li>
-                        <li><a>IJ</a></li>
-                        <li><a>EJ</a></li>
-                        <li><a>SCV</a></li>
-                        <li><a>Chest</a></li>
-                        <li><a>Other</a></li>
-                        <li class="divider"></li>
-                        <li><a>Other</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <button class="btn btn-warning" role="button" onclick="enterIVfluids()">Record IV Fluids
-            </button>
-
-        </div>
-
-        <div class="panel-heading" style="background-color: white"><strong>Shock Administered:</strong></div>
-        <button class="btn btn-warning datebtn" id="shockAdmin">Record Shock
-        </button>
-        <div class="col-sm-4">
-            <textarea class="form-control" id="joulesValue" placeholder="Joules Value"></textarea>
-        </div>
-    </div>
-
-</div>
-
-<script type="text/javascript">
-
-    $(function () {
-        $(".datebtn").click(function () {
-            $('.date').val(Date());
-        })
-    });
-
-</script>
-
-<button class="btn btn-primary cloneRow">Add Event</button>
-
-<script>
-    $(function () {
-        $('.cloneRow').on('click', function () {
-            var data = $("#ICUTable tr:eq(1)").clone(true).appendTo("#ICUTable");
-            data.find("input").val('');
+        $(function () {
+            $(".datebtn").click(function () {
+                $('.date').val(Date());
+            })
         });
-    });
+
+    </script>
+
+    <button class="btn btn-primary cloneRow">Add Event</button>
+
+    <script>
+        $(document).ready(
+            function () {
+                $('#beginCode').click(
+                    function () {
+                        $(".medication").val("CODE BEGAN");
+                        $(".dosage").val("CODE BEGAN");
+                        $(".defib").val("CODE BEGAN");
+                        $(".chestcompress").val("CODE BEGAN")
+                        $(".tablecomments").val('')
+                    }
+                )
+            }
+        );
+
+        $(function () {
+            $('.cloneRow').on('click', function () {
+                var data = $("#ICUTable tr:eq(1)").clone(true).appendTo("#ICUTable");
+                data.find("input").val('');
+            });
+        });
 
 
-    $(document).ready(
-        function () {
-            $('#recordCompression').click(
-                function () {
-                    $(".medication").val("N/A");
-                    $(".dosage").val("N/A");
-                    $(".defib").val("N/A");
-                    $(".chestcompress").val("Chest Compressions Started")
-                }
-            )
-        }
-    );
+        $(document).ready(
+            function () {
+                $('#recordCompression').click(
+                    function () {
+                        $(".medication").val("N/A");
+                        $(".dosage").val("N/A");
+                        $(".defib").val("N/A");
+                        $(".chestcompress").val("Chest Compressions Started")
+                        $(".tablecomments").val('')
+                    }
+                )
+            }
+        );
 
-    $(document).ready(
-        function () {
-            $('#endCompression').click(
-                function () {
-                    $(".medication").val("N/A");
-                    $(".dosage").val("N/A");
-                    $(".defib").val("N/A");
-                    $(".chestcompress").val("Chest Compressions Ended")
-                }
-            )
-        }
-    );
+        $(document).ready(
+            function () {
+                $('#endCompression').click(
+                    function () {
+                        $(".medication").val("N/A");
+                        $(".dosage").val("N/A");
+                        $(".defib").val("N/A");
+                        $(".chestcompress").val("Chest Compressions Ended")
+                        $(".tablecomments").val('')
+                    }
+                )
+            }
+        );
 
-    $('.dropdown-dosage').dropdown();
-    $('#medicationSelection li').on('click', function () {
-        $('#medicationsTitle').html($(this).find('a').html());
-    });
+        $(document).ready(
+            function () {
+                $('#enterMedication').click(
+                    function () {
+                        $('.medication').val($('.dropdown-medicationType').text());
+                        var dosageVal = $.trim($('#DosageValue').val());
+                        $(".dosage").val(dosageVal);
+                        $(".defib").val("N/A");
+                        $(".chestcompress").val("N/A");
+                        $(".dropdown-medicationType").text("Medication:");
+                        $("#DosageValue").val('')
+                        $(".tablecomments").val('')
+                    }
 
-    $('.dropdown-medicationType').dropdown();
-    $('#medicationTypeSelection li').on('click', function () {
-        $('#medicationType').html($(this).find('a').html());
-    });
+                );
+            }
+        );
 
-    $(document).ready(
-        function () {
-            $('#enterMedication').click(
-                function () {
-                    $('.medication').val($('.dropdown-medicationType').text());
-                    var dosageVal = $.trim($('#DosageValue').val());
-                    $(".dosage").val(dosageVal);
-                    $(".defib").val("N/A");
-                    $(".chestcompress").val("N/A")
-                }
-            )
-        }
-    )
-
-    $('.dropdown-ETT').dropdown();
-    $('#ETTselected li').on('click', function () {
-        $('#ETTTitle').html($(this).find('a').html());
-    });
-
-    $(document).ready(
-        function () {
-            $('#enterETT').click(
-                function () {
-                    $('.medication').val("N/A");
-                    $('.dosage').val("N/A");
-                    $(".defib").val("N/A");
-                    $(".chestcompress").val($('.dropdown-eType').text() + " at " + $('.dropdown-ETT').text() + "mm");
-                    var comment = $.trim($('#airwayComments').val());
-                    $(".tablecomments").val(comment);
-                }
-            )
-        }
-    )
-
-    $(document).ready(
-        function () {
-            $('#b$').click(
-                function () {
-                    $(".medication").val("N/A");
-                    $(".dosage").val("N/A");
-                    $(".defib").val("N/A");
-                    $(".chestcompress").val("Chest Compressions Ended")
-                }
-            )
-        }
-    );
-
-</script>
+        $(document).ready(
+            function () {
+                $('#enterETT').click(
+                    function () {
+                        $('.medication').val("N/A");
+                        $('.dosage').val("N/A");
+                        $(".defib").val("N/A");
+                        $(".chestcompress").val($('.dropdown-eType').text() + " at " + $('.dropdown-ETT').text() + "mm");
+                        var comment = $.trim($('#airwayComments').val());
+                        $(".tablecomments").val(comment);
+                        $(".dropdown-eType").text("Airway:");
+                        $(".dropdown-ETT").text("ETT Size (in mm):");
+                        $("#airwayComments").val('')
+                        $(".tablecomments").val('')
+                    }
+                )
+            }
+        )
 
 
-<div class="row">
-    <table class="table table-hover" id="ICUTable">
-        <thead>
-        <tr>
-            <th id="mName">Medication</th>
-            <th id="tDosage">Dosage</th>
-            <th id="tDefib">Defibralation</th>
-            <th id="tChest">Chest Compressions</th>
-            <th id="date">Date</th>
-            <th id="tcomments">Comments</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td><input type="text" class="form-control medication"></td>
-            <td><input type="text" class="form-control dosage"></td>
-            <td><input type="text" class="form-control defib"></td>
-            <td><input type="text" class="form-control chestcompress"></td>
-            <td><input type="text" class="form-control date"></td>
-            <td><input type="text" class="form-control tablecomments"></td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+        $('.dropdown-dosage').dropdown();
+        $('#medicationSelection li').on('click', function () {
+            $('#medicationsTitle').html($(this).find('a').html());
+        });
+
+        $('.dropdown-medicationType').dropdown();
+        $('#medicationTypeSelection li').on('click', function () {
+            $('#medicationType').html($(this).find('a').html());
+        });
+
+        $('.dropdown-ETT').dropdown();
+        $('#ETTselected li').on('click', function () {
+            $('#ETTTitle').html($(this).find('a').html());
+        });
+
+        $('.dropdown-eType').dropdown();
+        $('#eSelected li').on('click', function () {
+            $('#eTitle').html($(this).find('a').html());
+        });
+
+        $('.dropdown-ivAccess').dropdown();
+        $('#ivAccessSelection li').on('click', function () {
+            $('#ivAcessTitle').html($(this).find('a').html());
+        });
+
+        $('.dropdown-ivSize').dropdown();
+        $('#ivSizeSelection li').on('click', function () {
+            $('#ivSizeTitle').html($(this).find('a').html());
+        });
+
+        $('.dropdown-ivLR').dropdown();
+        $('#ivLRSelection li').on('click', function () {
+            $('#ivLRTitle').html($(this).find('a').html());
+        });
+
+        $('.dropdown-ivLocation').dropdown();
+        $('#ivLocationSelection li').on('click', function () {
+            $('#ivLocationTitle').html($(this).find('a').html());
+        });
+
+        $(document).ready(
+            function () {
+                $('#recordIV').click(
+                    function () {
+                        $('.medication').val($('.dropdown-ivAccess').text());
+                        $(".dosage").val($('.dropdown-ivSize').text());
+                        $(".defib").val("N/A");
+                        $(".chestcompress").val($('.dropdown-ivLR').text() + " " + $('.dropdown-ivLocation').text())
+                        $(".dropdown-ivAccess").text("IV Access:");
+                        $(".dropdown-ivSize").text("IV:");
+                        $(".dropdown-ivLR").text("IV Placement:");
+                        $(".dropdown-ivLocation").text("IV Location:");
+                        $(".tablecomments").val('')
+                    }
+                )
+            }
+        )
+
+        $(document).ready(
+            function () {
+                $('#shockAdmin').click(
+                    function () {
+                        $('.medication').val("N/A");
+                        $(".dosage").val("N/A");
+                        var shockValue = $.trim($('#joulesValue').val() + " Joules");
+                        $(".defib").val(shockValue);
+                        $(".chestcompress").val("N/A");
+                        $("#joulesValue").val('')
+                        $(".tablecomments").val('')
+                    }
+                )
+            }
+        );
+
+    </script>
+
+
+    <div class="row">
+        <table class="table table-hover" id="ICUTable">
+            <thead>
+            <tr>
+                <th id="mName">Medication (IV Access)</th>
+                <th id="tDosage">Dosage (IV Size/Type)</th>
+                <th id="tDefib">Shock Administration (Joules)</th>
+                <th id="tChest">Chest Compressions (IV Location)</th>
+                <th id="date">Date</th>
+                <th id="tcomments">Comments</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><input type="text" class="form-control medication"></td>
+                <td><input type="text" class="form-control dosage"></td>
+                <td><input type="text" class="form-control defib"></td>
+                <td><input type="text" class="form-control chestcompress"></td>
+                <td><input type="text" class="form-control date"></td>
+                <td><input type="text" class="form-control tablecomments"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 
 </div>
 
