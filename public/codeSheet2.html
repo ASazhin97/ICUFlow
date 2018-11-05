@@ -156,7 +156,7 @@
             <div class="panel-heading">Report Table</div>
             <div class="panel-body">
                 <div class="table-wrapper-scroll-y">
-                    <table class="table table-bordered table-striped">
+                    <table class="table table-bordered table-striped" id = "info-table">
                         <thead>
                         <tr>
                             <th scope="col">Time</th>
@@ -167,7 +167,8 @@
                             <th scope="col">Other/Comments</th>
                         </tr>
                         </thead>
-                        <tbody contenteditable="true" id="info-table-body">
+                        <tbody contenteditable="true" id="info-table-body" id = "info-table-body">
+                            
                         </tbody>
                     </table>
                 </div>
@@ -197,7 +198,7 @@
 
 <div class="row row-five">
     <form action = "administration.html">
-        <input type="submit" class="btn btn-warning print-button" value = "End Code" onclick="saveSheetData()">
+        <input type="submit" class="btn btn-warning print-button" value = "End Code" onclick="endCode(); saveSheetData()">
     </form>
 </div>
 
