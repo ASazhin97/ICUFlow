@@ -12,7 +12,7 @@
     <script src=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/finalReportScript.js"></script>
 </head>
-<body onload="retrieveData()">
+<body onload="retrieveDataReport()">
 <nav class="navbar navbar-expand-lg navbar-inverse navbar-fixed-top topbar">
     <div class="container-fluid">
         <img src="css/snakes.jpg" style="width: 5%; height: 5%" class="img-circle" alt="logo">
@@ -59,14 +59,14 @@
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="panel panel-default" id="panel2">
                 <div class="panel-heading">General</div>
-                <div class="panel-body">Date: <p></p></div>
-                <div class="panel-body">Time: <p></p></div>
-                <div class="panel-body">Location: <p></p></div>
-                <div class="panel-body">Time event called: <p></p></div>
-                <div class="panel-body">Time team arrived: <p></p></div>
-                <div class="panel-body">Witnesses: <p></p></div>
-                <div class="panel-body">CPR Initiated: <p></p>></div>
-                <div class="panel-body">Time of compression: <p></p></div>
+                <div class="panel-body">Date: <p id="reportDate"></p></div>
+                <div class="panel-body">Time: <p id="reportTime"></p></div>
+                <div class="panel-body">Location: <p id="reportLoc"></p></div>
+                <div class="panel-body">Time event called: <p id="reportTimeEvent"></p></div>
+                <div class="panel-body">Time team arrived: <p id="reportTeamArrived"></p></div>
+                <div class="panel-body">Witnesses: <p id="reportWitnesses"></p></div>
+                <div class="panel-body">CPR Initiated: <p id="reportCPR"></p></div>
+                <div class="panel-body">Time of compression: <p id="reportComp"></p></div>
                 <div class="panel-footer">
                     <button type="button" data-toggle="modal" data-target="#editModal"
                             class="btn btn-primary edit-button" data-panel="2">Edit
@@ -78,12 +78,11 @@
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="panel panel-default" id="panel3">
                 <div class="panel-heading">Patient Information</div>
-                <div class="panel-body">Name: <p></p></div>
-                <div class="panel-body">Date of Birth: <p></p></div>
-                <div class="panel-body">MR#: <p></p></div>
-                <div class="panel-body">Weight: <p></p></div>
-                <div class="panel-body">Family Notified: <p></p></div>
-                <div class="panel-body">Comments: <p></p></div>
+                <div class="panel-body">Name: <p id="patientNameReport"></p></div>
+                <div class="panel-body">Date of Birth: <p id="patientDOBReport"></p></div>
+                <div class="panel-body">MR#: <p id="patientMRReport"></p></div>
+                <div class="panel-body">Weight: <p id="patientWeightReport"></p></div>
+                <div class="panel-body">Comments: <p id="patientComments"></p></div>
 
                 <div class="panel-footer">
                     <button type="button" data-toggle="modal" data-target="#editModal"
@@ -111,7 +110,7 @@
                 <div class = "panel-footer">
                     <button type="button" data-toggle="modal" data-target="#editModal" class="btn btn-primary edit-button"data-panel="4">Edit</button></div>
             </div>
-            
+
         </div>
     </div>
 </div>
@@ -120,9 +119,10 @@
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <div class="panel panel-default" id="panel5">
             <div class="panel-heading">Airway Control</div>
-            <div class="panel-body">Incubation Time: <p></p></div>
-            <div class="panel-body">ETT Size: <p></p></div>
-            <div class="panel-body">Comments: <p></p></div>
+            <div class="panel-body">Incubation Time: <p id="reportIncTime"></p></div>
+            <div class="panel-body">Airway: <p id="reportAirway"></p></div>
+            <div class="panel-body">ETT Size: <p id="reportETTSize"></p></div>
+            <div class="panel-body">Comments: <p id="reportAirwayComments"></p></div>
             <div class="panel-footer">
                 <button type="button" data-toggle="modal" data-target="#editModal" class="btn btn-primary edit-button"
                         data-panel="5">Edit
@@ -135,10 +135,12 @@
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <div class="panel panel-default" id="panel6">
             <div class="panel-heading">IV Fluids</div>
-            <div class="panel-body">Time Initiated: <p></p></div>
-            <div class="panel-body">IV Site: <p></p></div>
-            <div class="panel-body">IV Solution: <p></p></div>
-            <div class="panel-body">IV Administrator: <p></p></div>
+            <div class="panel-body">IV Access: <p id="reportIVAccess"></p></div>
+            <div class="panel-body">IV Solution: <p id="reportIVSol"></p></div>
+            <div class="panel-body">IV Type: <p id="reportIVType"></p></div>
+            <div class="panel-body">IV Size: <p id="reportIVSize"></p></div>
+            <div class="panel-body">IV Location: <p id="reportIVLoc"></p></div>
+            <div class="panel-body">IV Comments: <p id="reportIVComments"></p></div>
             <div class="panel-footer">
                 <button type="button" data-toggle="modal" data-target="#editModal" class="btn btn-primary edit-button"
                         data-panel="6">Edit
@@ -195,7 +197,7 @@
     <div class="col-sm-6">
         <div class="panel panel-default" id="panel8">
             <div class="panel-heading">Comments:</div>
-            <div class="panel-body"><p>Comments about all the stuff</p></div>
+            <div class="panel-body"><p id="reportFullComments"></p></div>
             <div class="panel-footer">
                 <button type="button" data-toggle="modal" data-target="#editModal" class="btn btn-primary edit-button"
                         data-panel="8">Edit
@@ -205,13 +207,20 @@
     </div>
 
     <div class="col-sm-6">
-        <div class="panel panel-default" id="panel9">
-            <div class="panel-heading">Outcome:</div>
-            <div class="panel-body">The patient is: <p></p></div>
-            <div class="panel-footer">
-                <button type="button" data-toggle="modal" data-target="#editModal" class="btn btn-primary edit-button"
-                        data-panel="9">Edit
-                </button>
+      <div class="panel panel-default" id="panel9">
+          <div class="panel-heading">Outcome:</div>
+          <div class="panel-body" id="label">Patient Outcome: <p id="patientOutcome"> </p></div>
+          <div class="panel-body" id="label">Transferred to: <p id="transferredTo"> </p></div>
+          <div class="panel-body" id="resuscitationLabel">Reason Resuscitation Ended: </div>
+          <div class="panel-body" id="label">Return of Circulation: <p id="circulation"> </p></div>
+          <div class="panel-body" id="label">Restrictions by Family: <p id="restrictions"> </p></div>
+          <div class="panel-body" id="label">Medical Futility: <p id="futility"> </p></div>
+          <div class="panel-body" id="label">Advanced Directives: <p id="advanced"> </p></div>
+          <div class="panel-body" id="label">Family Notified: <p id="family"> </p></div>
+          <div class="panel-footer">
+              <button type="button" data-toggle="modal" data-target="#editModal" class="btn btn-primary edit-button"
+                      data-panel="9">Edit
+              </button>
             </div>
         </div>
     </div>
