@@ -132,9 +132,8 @@
         <div class="panel panel-default col-lg-4 col-md-4 col-sm-10 col-xs-12 top-buffer">
             <div class="panel-heading" style="background-color: white"><strong>Medications:</strong></div>
 
-            <div class="dropdown col-lg-3">
+            <div class="dropdown">
                 <div class="btn-group">
-
                     <div class="btn-group">
                         <button class="btn btn-success dropdown-medicationType" id="medicationType"
                                 data-toggle="dropdown">
@@ -160,17 +159,34 @@
                             <li><a>Other</a></li>
                         </ul>
                     </div>
+
+                    <div class="btn-group">
+                        <button class="btn btn-success dropdown-routeOfAdmin" id="routeofAdminType"
+                                data-toggle="dropdown">
+                            Route of Admin:<span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="routeofAdminSelection" role="menu">
+                            <li><a>IV</a></li>
+                            <li><a>Sub Q</a></li>
+                            <li><a>IO</a></li>
+                            <li><a>IM</a></li>
+                            <li class="divider"></li>
+                            <li><a>Other</a></li>
+                        </ul>
+                    </div>
+
                 </div>
-
-            </div>
-
-            <div class=" col-sm-4">
-                <textarea class="form-control" id="DosageValue" placeholder="Enter Dosage Amounts"></textarea>
-            </div>
 
             <button class="btn btn-warning datebtn" id="enterMedication">Enter Medication
             </button>
 
+            <div class="col-12">
+                <div class="editor-content" id="DosageComment">
+                    <label for="DosageComment">Dosage Administered:</label>
+                    <textarea class="form-control" id="DosageValue"
+                              placeholder="Dosage Per Unit(s) Administered"></textarea>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -220,10 +236,6 @@
 
                 <button class="btn btn-warning datebtn" id="enterETT">Enter Airway Management
                 </button>
-
-                <script>
-
-                </script>
 
             </div>
 
@@ -350,6 +362,10 @@
                     function () {
                         $(".medication").val("CODE BEGAN");
                         $(".dosage").val("CODE BEGAN");
+                        $(".routeOfAdmin").val("CODE BEGAN");
+                        $(".IvAccess").val("CODE BEGAN");
+                        $(".IvType").val("CODE BEGAN");
+                        $(".IvLocation").val("CODE BEGAN");
                         $(".defib").val("CODE BEGAN");
                         $(".chestcompress").val("CODE BEGAN");
                         $(".tablecomments").val('')
@@ -372,8 +388,12 @@
                     function () {
                         $(".medication").val("N/A");
                         $(".dosage").val("N/A");
+                        $(".routeOfAdmin").val("N/A");
+                        $(".IvAccess").val("N/A");
+                        $(".IvType").val("N/A");
+                        $(".IvLocation").val("N/A");
                         $(".defib").val("N/A");
-                        $(".chestcompress").val("Chest Compressions Started");
+                        $(".chestcompress").val("Compressions Started");
                         $(".tablecomments").val('')
                     }
                 )
@@ -386,8 +406,12 @@
                     function () {
                         $(".medication").val("N/A");
                         $(".dosage").val("N/A");
+                        $(".routeOfAdmin").val("N/A");
+                        $(".IvAccess").val("N/A");
+                        $(".IvType").val("N/A");
+                        $(".IvLocation").val("N/A");
                         $(".defib").val("N/A");
-                        $(".chestcompress").val("Chest Compressions Ended");
+                        $(".chestcompress").val("Compressions Ended");
                         $(".tablecomments").val('')
                     }
                 )
@@ -401,11 +425,15 @@
                         $('.medication').val($('.dropdown-medicationType').text());
                         var dosageVal = $.trim($('#DosageValue').val());
                         $(".dosage").val(dosageVal);
+                        $('.routeOfAdmin').val($('.dropdown-routeOfAdmin').text())
+                        $(".IvAccess").val("N/A");
+                        $(".IvType").val("N/A");
+                        $(".IvLocation").val("N/A");
                         $(".defib").val("N/A");
                         $(".chestcompress").val("N/A");
                         $(".dropdown-medicationType").text("Medication:");
+                        $(".dropdown-routeOfAdmin").text("Route of Admin:")
                         $("#DosageValue").val('');
-                        $(".tablecomments").val('')
                     }
                 );
             }
@@ -417,6 +445,10 @@
                     function () {
                         $('.medication').val("N/A");
                         $('.dosage').val("N/A");
+                        $(".routeOfAdmin").val("N/A");
+                        $(".IvAccess").val("N/A");
+                        $(".IvType").val("N/A");
+                        $(".IvLocation").val("N/A");
                         $(".defib").val("N/A");
                         $(".chestcompress").val($('.dropdown-eType').text() + " size: " + $('.dropdown-ETT').text() + "mm");
                         var comment = $.trim($('#airwayComments').val());
@@ -424,7 +456,6 @@
                         $(".dropdown-eType").text("Airway:");
                         $(".dropdown-ETT").text("ETT Size (in mm):");
                         $("#airwayComments").val('');
-                        $(".tablecomments").val('')
                     }
                 )
             }
@@ -436,14 +467,19 @@
             $('#medicationsTitle').html($(this).find('a').html());
         });
 
+        $('.dropdown-ETT').dropdown();
+        $('#ETTselected li').on('click', function () {
+            $('#ETTTitle').html($(this).find('a').html());
+        });
+
         $('.dropdown-medicationType').dropdown();
         $('#medicationTypeSelection li').on('click', function () {
             $('#medicationType').html($(this).find('a').html());
         });
 
-        $('.dropdown-ETT').dropdown();
-        $('#ETTselected li').on('click', function () {
-            $('#ETTTitle').html($(this).find('a').html());
+        $('.dropdown-routeOfAdmin').dropdown();
+        $('#routeofAdminSelection li').on('click', function () {
+            $('#routeofAdminType').html($(this).find('a').html());
         });
 
         $('.dropdown-eType').dropdown();
@@ -475,10 +511,13 @@
             function () {
                 $('#recordIV').click(
                     function () {
-                        $('.medication').val($('.dropdown-ivAccess').text());
-                        $(".dosage").val($('.dropdown-ivSize').text());
+                        $('.medication').val("N/A");
+                        $(".dosage").val("N/A");
+                        $(".routeOfAdmin").val("N/A");
                         $(".defib").val("N/A");
-                        $(".chestcompress").val($('.dropdown-ivLR').text() + " " + $('.dropdown-ivLocation').text());
+                        $(".IvAccess").val($('.dropdown-ivAccess').text() + " " + $('.dropdown-ivSize').text() + " " +
+                            $('.dropdown-ivLR').text() + " " + $('.dropdown-ivLocation').text());
+                        $(".chestcompress").val("N/A");
                         $(".dropdown-ivAccess").text("IV Access:");
                         $(".dropdown-ivSize").text("IV:");
                         $(".dropdown-ivLR").text("IV Placement:");
@@ -495,6 +534,10 @@
                     function () {
                         $('.medication').val("N/A");
                         $(".dosage").val("N/A");
+                        $(".routeOfAdmin").val("N/A");
+                        $(".IvAccess").val("N/A");
+                        $(".IvType").val("N/A");
+                        $(".IvLocation").val("N/A");
                         var shockValue = $.trim($('#joulesValue').val() + " Joules");
                         $(".defib").val(shockValue);
                         $(".chestcompress").val("N/A");
@@ -512,18 +555,22 @@
         <table class="table table-hover" id="ICUTable">
             <thead>
             <tr>
-                <th id="mName">Medication (IV Access)</th>
-                <th id="tDosage">Dosage (IV Size/Type)</th>
-                <th id="tDefib">Shock Administration (Joules)</th>
-                <th id="tChest">Chest Compressions (IV Location)</th>
-                <th id="date">Date</th>
-                <th id="tcomments">Comments</th>
+                <th>Medication</th>
+                <th>Dosage</th>
+                <th>Route of Administration</th>
+                <th>IV Access</th>
+                <th>Shock Administration (Joules)</th>
+                <th>Airway Control</th>
+                <th>Date</th>
+                <th>Comments</th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td><input type="text" class="form-control medication"></td>
                 <td><input type="text" class="form-control dosage"></td>
+                <td><input type="text" class="form-control routeOfAdmin"></td>
+                <td><input type="text" class="form-control IvAccess"></td>
                 <td><input type="text" class="form-control defib"></td>
                 <td><input type="text" class="form-control chestcompress"></td>
                 <td><input type="text" class="form-control date"></td>
