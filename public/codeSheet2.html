@@ -10,10 +10,10 @@
     <script src="js/inputDigest.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/finalReportScript.js"></script> 
+    <script type="text/javascript" src="js/finalReportScript.js"></script>
 </head>
 
-<body>
+<body onload="retrieveHomeData()">
 <nav class="navbar navbar-expand-lg navbar-inverse navbar-fixed-top topbar">
     <div class="container-fluid">
         <img src="css/snakes.jpg" style="width: 5%; height: 5%" class="img-circle" alt="logo">
@@ -40,7 +40,7 @@
         </div>
     </div>
 </nav>
-    
+
     <div class = "row row-one">
         <button class = "btn btn-warning start-btn" onclick="startCode()">Start Code</button>
     </div>
@@ -48,15 +48,15 @@
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="panel panel-default" id="panel1">
                 <div class="panel-heading">IV </div>
-                <div class="panel-body">IV Access <input type = "text"></div>
-                <div class="panel-body">Solution: <input type = "text"></div>
-                <div class="panel-body">Type: <input type = "text"></div>
-                <div class="panel-body">Size: <input type = "text"></div>
-                <div class="panel-body">Location: <input type = "text"></div>
-                <div class="panel-body">Comments: <textarea style = "width: 100%"></textarea></div>
+                <div class="panel-body">IV Access <input type = "text" id="ivAccessSelection"></div>
+                <div class="panel-body">Solution: <input type = "text" id="ivSolution"></div>
+                <div class="panel-body">Type: <input type = "text" id="ivType"></div>
+                <div class="panel-body">Size: <input type = "text" id="ivSize"></div>
+                <div class="panel-body">Location: <input type = "text" id="ivLocationSelection"></div>
+                <div class="panel-body">Comments: <textarea style = "width: 100%" id="ivComments"></textarea></div>
 
                 <div class="panel-footer">
-                <button type="button" class="btn btn-warning edit-button" data-panel="1" onclick = "panel1Pop()">Add
+                <button type="button" onclick="sheetData()" class="btn btn-warning edit-button" data-panel="1" onclick = "panel1Pop()">Add
                 </button>
             </div>
             </div>
@@ -65,16 +65,16 @@
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="panel panel-default" id="panel2">
                 <div class="panel-heading">General</div>
-                <div class="panel-body">Date: <input type = "text"></div>
-                <div class="panel-body">Time: <input type = "text"></div>
-                <div class="panel-body">Location: <input type = "text"></div>
-                <div class="panel-body">Time event called: <input type = "text"></div>
-                <div class="panel-body">Time team arrived: <input type = "text"></div>
-                <div class="panel-body">Witnesses: <input type = "text"></div>
-                <div class="panel-body">CPR Initiated: <input type = "text"></div>
-                <div class="panel-body">Time of compression: <input type = "text"></div>
+                <div class="panel-body">Date: <input type = "text" id="sheetDate"></div>
+                <div class="panel-body">Time: <input type = "text" id="sheetTime"></div>
+                <div class="panel-body">Location: <input type = "text" id="sheetLocation"></div>
+                <div class="panel-body">Time event called: <input type = "text" id="sheetTimeCalled"></div>
+                <div class="panel-body">Time team arrived: <input type = "text" id="sheetTimeArrived"></div>
+                <div class="panel-body">Witnesses: <input type = "text" id="sheetWitnesses"></div>
+                <div class="panel-body">CPR Initiated: <input type = "text" id="sheetCPR"></div>
+                <div class="panel-body">Time of compression: <input type = "text" id="sheetCompressionTime"></div>
                 <div class="panel-footer">
-                <button type="button" class="btn btn-primary edit-button" data-panel="2">Save
+                <button type="button" onclick="sheetData()" class="btn btn-primary edit-button" data-panel="2">Save
                 </button>
             </div>
             </div>
@@ -83,15 +83,14 @@
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="panel panel-default" id="panel3">
                 <div class="panel-heading">Patient Information</div>
-                <div class="panel-body">Name: <input type = "text"></div>
-                <div class="panel-body">Date of Birth: <input type = "text"></div>
-                <div class="panel-body">MR#: <input type = "text"></div>
-                <div class="panel-body">Weight: <input type = "text"></div>
-                <div class="panel-body">Family Notified: <input type = "text"></div>
-                <div class="panel-body">Comments: <textarea style = "width: 100%"></textarea></div>
+                <div class="panel-body">Name: <input type = "text" id="patientNameReport"></div>
+                <div class="panel-body">Date of Birth: <input type = "text" id="patientDOB"></div>
+                <div class="panel-body">MR#: <input type = "text" id="patientMRReport"></div>
+                <div class="panel-body">Weight: <input type = "text" id="patientWeightSheet"></div>
+                <div class="panel-body">Comments: <textarea style = "width: 100%" id="patientCommentsSheet"></textarea></div>
 
                 <div class="panel-footer">
-                <button type="button" class="btn btn-primary edit-button" data-panel="3">Save
+                <button type="button" onclick="sheetData()" class="btn btn-primary edit-button" data-panel="3">Save
                 </button>
                 </div>
             </div>
@@ -104,12 +103,12 @@
     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
         <div class="panel panel-default" id="panel4">
             <div class="panel-heading">Airway Control</div>
-            <div class="panel-body">Incubation Time: <input type = "text"></div>
-            <div class="panel-body">Airway: <input type = "text"></div>
-            <div class="panel-body">ETT Size: <input type = "text"></div>
-            <div class="panel-body">Comments: <textarea style = "width: 100%"></textarea></div>
+            <div class="panel-body">Incubation Time: <input type = "text" id="sheetIncTime"></div>
+            <div class="panel-body">Airway: <input type = "text" id="sheetAirway"></div>
+            <div class="panel-body">ETT Size: <input type = "text" id="sheetETTSize"></div>
+            <div class="panel-body">Comments: <textarea style = "width: 100%" id="AirwayComments"></textarea></div>
             <div class="panel-footer">
-                <button type="button" class="btn btn-warning edit-button" data-panel="4" onclick = "panel4Pop()">Add
+                <button type="button" onclick="sheetData()" class="btn btn-warning edit-button" data-panel="4" onclick = "panel4Pop()">Add
                 </button>
             </div>
         </div>
@@ -119,29 +118,29 @@
     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
         <div class="panel panel-default" id="panel5">
             <div class="panel-heading">Medication</div>
-            <div class="panel-body">Medication: <input type = "text"></div>
-            <div class="panel-body">Route of admin: <input type = "text"></div>
-                <div class="panel-body">Dosage: <input type = "text"></div>
-                <div class="panel-body">Comments: <textarea style = "width: 100%"></textarea></div>
+            <div class="panel-body">Medication: <input type = "text" id="sheetMedication"></div>
+            <div class="panel-body">Route of admin: <input type = "text" id="sheetRoute"></div>
+                <div class="panel-body">Dosage: <input type = "text" id="sheetDosage"></div>
+                <div class="panel-body">Comments: <textarea style = "width: 100%" id="medicationComments"></textarea></div>
             <div class="panel-footer">
-                <button type="button" class="btn btn-warning edit-button" data-panel="5" onclick="panel5Pop()">Add
+                <button type="button" onclick="sheetData()" class="btn btn-warning edit-button" data-panel="5" onclick="panel5Pop()">Add
                 </button>
             </div>
         </div>
 
 
     </div>
-    
+
     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
         <div class="panel panel-default" id="panel6">
             <div class="panel-heading">Compressions/Defib:</div>
-            <div class="panel-body">Time start: <input type = "text"></div>
-                <div class="panel-body">Time end: <input type = "text"></div>
-                <div class="panel-body">Rhythm: <input type = "text"></div>
-                <div class="panel-body">Shock: <input type = "text"></div>
-                <div class="panel-body">Comments: <textarea style = "width: 100%"></textarea></div>
+            <div class="panel-body">Time start: <input type = "text" id="defibStart"></div>
+                <div class="panel-body">Time end: <input type = "text" id="defibEnd"></div>
+                <div class="panel-body">Rhythm: <input type = "text" id="defibRhythm"></div>
+                <div class="panel-body">Shock: <input type = "text" id="defibShock"></div>
+                <div class="panel-body">Comments: <textarea style = "width: 100%" id="defibComments"></textarea></div>
             <div class="panel-footer">
-                <button type="button" class="btn btn-warning edit-button" data-panel="6" onclick="panel6Pop()">Add
+                <button type="button" onclick="sheetData()" class="btn btn-warning edit-button" data-panel="6" onclick="panel6Pop()">Add
                 </button>
             </div>
         </div>
@@ -187,27 +186,27 @@
     <div class="col-sm-12">
         <div class="panel panel-default" id="panel8">
             <div class="panel-heading">Comments:</div>
-            <div class="panel-body"><textarea style = "width: 100%"></textarea></div>
+            <div class="panel-body"><textarea style = "width: 100%" id="fullComments"></textarea></div>
             <div class="panel-footer">
-                <button type="button" class="btn btn-primary edit-button" data-panel="8">Save
+                <button type="button" onclick="saveSheetData()" class="btn btn-primary edit-button" data-panel="8">Save
                 </button>
             </div>
         </div>
     </div>
 
 </div>
-    
+
 <div class="row row-five">
     <form action = "administration.html">
-        <input type="submit" class="btn btn-warning print-button" value = "End Code">
+        <input type="submit" class="btn btn-warning print-button" value = "End Code" onclick="saveSheetData()">
     </form>
 </div>
-    
+
 <script type = "text/javascript">
 var currentRow;
 var panelNumber;
 var currRow;
-    
+
 function addRow() {
         var tableBody = document.getElementById("info-table-body");
         var newRow = document.createElement("tr");
@@ -219,44 +218,44 @@ function addRow() {
         }
         tableBody.appendChild(newRow);
 }
-    
+
 function panel1Pop() {
     addRow();
-    
+
     var panelNum = 1
     panelNumber = panelNum;
     var panel = document.getElementById("panel" + panelNum);
     panElem = panel.children;
-    
+
     //set cells
     var date = Date();
     var cells = currRow.children;
-        
+
     cells[0].innerHTML = date;
-    
+
     var insideElem = panElem[2].children;
     var input = insideElem[0].value;
-    
+
     cells[1].innerHTML = "IV:" + input;
-    
+
     insideElem = panElem[3].children;
     var type = insideElem[0].value;
     insideElem = panElem[4].children;
     var size = insideElem[0].value;
     cells[2].innerHTML = "Type: " + type + "\nSize: " +size;
-    
+
     cells[3].innerHTML = "NP";
     cells[4].innerHTML = "NP";
-    
+
     insideElem = panElem[1].children;
     var access = insideElem[0].value;
-    
+
     insideElem = panElem[5].children;
     var loc = insideElem[0].value;
     insideElem = panElem[6].children;
     var comm = insideElem[0].value;
     cells[5].innerHTML = "Access:" + access + "\nLocation: " + loc + "\nComments:" + comm;
-    
+
     //delete all values in panel
     var val;
     for(val = 1; val<panElem.length; val++){
@@ -265,39 +264,39 @@ function panel1Pop() {
         inSpace.value = "";
     }
 }
-    
+
 function panel4Pop(){
     addRow();
-    
+
     var panelNum = 4
     panelNumber = panelNum;
     var panel = document.getElementById("panel" + panelNum);
     panElem = panel.children;
-    
+
     //set cells
     var date = Date();
     var cells = currRow.children;
-        
+
     cells[0].innerHTML = date;
-    
+
     var insideElem = panElem[2].children;
     var air = insideElem[0].value;
     console.log(air);
     cells[1].innerHTML = "Airway:" + air;
-    
+
     insideElem = panElem[1].children;
     var time = insideElem[0].value;
     insideElem = panElem[3].children;
     var ett = insideElem[0].value;
     cells[2].innerHTML= "Incub Time: " + time+ "ETT Size: " + ett;
-    
+
     cells[3].innerHTML = "NP";
     cells[4].innerHTML = "NP";
-    
+
     insideElem = panElem[4].children;
     var comm = insideElem[0].value;
     cells[5].innerHTML = "Comments: " + comm;
-    
+
         //delete all values in panel
     var val;
     for(val = 1; val<panElem.length; val++){
@@ -306,39 +305,39 @@ function panel4Pop(){
         inSpace.value = "";
     }
 }
-    
+
 function panel5Pop(){
     addRow();
-    
+
     var panelNum = 5
     panelNumber = panelNum;
     var panel = document.getElementById("panel" + panelNum);
     console.log(panel);
     panElem = panel.children;
-    
+
     //set cells
     var date = Date();
     var cells = currRow.children;
-    
+
     cells[0].innerHTML = date;
-    
+
     var insideElem = panElem[1].children;
     var med = insideElem[0].value;
     cells[1].innerHTML = "Medication: " + med;
-    
+
     insideElem = panElem[3].children;
     var dose = insideElem[0].value;
     cells[2].innerHTML = dose;
-    
+
     cells[3].innerHTML = "NP";
     cells[4].innerHTML = "NP";
-    
+
     insideElem = panElem[2].children;
     var admin = insideElem[0].value;
     insideElem = panElem[4].children;
     var comm = insideElem[0].value;
     cells[5].innerHTML = "Route of admin: " +admin+ " Comments: " + comm;
-    
+
         //delete all values in panel
     var val;
     for(val = 1; val<panElem.length; val++){
@@ -347,42 +346,42 @@ function panel5Pop(){
         inSpace.value = "";
     }
 }
-    
+
 function panel6Pop(){
     addRow();
-    
+
     var panelNum = 6
     panelNumber = panelNum;
     var panel = document.getElementById("panel" + panelNum);
     console.log(panel);
     panElem = panel.children;
-    
+
     //set cells
     var date = Date();
     var cells = currRow.children;
-    
+
     var insideElem = panElem[1].children;
     var start = insideElem[0].value;
     insideElem = panElem[2].children;
     var end = insideElem[0].value;
     cells[0].innerHTML = "Start:" +start+ " End: " + end;
-    
+
     cells[1].innerHTML = "Compressions";
-    
+
     cells[2].innerHTML = "NP";
-    
+
     insideElem = panElem[3].children;
     var rhythm = insideElem[0].value;
     cells[3].innerHTML = rhythm+"bmp";
-    
+
     insideElem = panElem[3].children;
     var shock = insideElem[0].value;
     cells[4].innerHTML = shock+"Jouls";
-    
+
     insideElem = panElem[4].children;
     var comm = insideElem[0].value;
     cells[5].innerHTML = "Comments: " + comm;
-    
+
     //delete all values in panel
     var val;
     for(val = 1; val<panElem.length; val++){
@@ -391,38 +390,38 @@ function panel6Pop(){
         inSpace.value = "";
     }
 }
-    
-    
+
+
 function startCode(){
     addRow();
     var date = Date();
     console.log(date)
-    
+
     var cells = currRow.children;
-    
+
     cells[0].innerHTML = date;
     var i;
     for(i = 1; i < 5; i++){
         cells[i].innerHTML = "CODE STARTED";
     }
 }
-    
+
 function endCode(){
     addRow();
     var date = Date();
     console.log(date)
-    
+
     var cells = currRow.children;
-    
+
     cells[0].innerHTML = date;
     var i;
     for(i = 1; i < 5; i++){
         cells[i].innerHTML = "CODE ENDED";
     }
 }
-    
-    
-    
+
+
+
 </script>
 
 </body>

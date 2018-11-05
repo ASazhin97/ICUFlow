@@ -12,7 +12,7 @@
     <script type="text/javascript" src=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
     </script>
 </head>
-<body>
+<body onload="retrieveSheetData()">
     <nav class="navbar navbar-expand-lg navbar-inverse navbar-fixed-top topbar">
         <div class="container-fluid">
             <img src="css/snakes.jpg" style="width: 5%; height: 5%" class="img-circle" alt="logo">
@@ -48,6 +48,7 @@
           <div class="panel-group">
             <div class="panel panel-primary">
               <div class="panel-body">
+              <!--
                 <div class="row">
                   <div class="col-sm-3">
                     <p class="labels"> End Time:</p>
@@ -56,6 +57,7 @@
                     <p class="placeholder">________</p>
                   </div>
                 </div>
+              -->
                 <div class="row">
                   <div class="col-sm-3">
                     <p class="labels"> Patient Outcome: </p>
@@ -63,11 +65,11 @@
                   <div class="col-sm-6">
                     <div class="form-check-inline">
                       <label class="form-check-label" for="inlineRadio1">Survived</label>
-                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions1" id="survived" value="option1">
                     </div>
                     <div class="form-check-inline">
                       <label class="form-check-label" for="inlineRadio2">Deceased</label>
-                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions1" id="deceased" value="option2">
                     </div>
                   </div>
                 </div>
@@ -78,19 +80,19 @@
                   <div class="col-lg-9" id="transferred">
                     <div class="form-check-inline">
                       <label class="form-check-label" for="inlineRadio1">ICU</label>
-                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions2" id="toICU" value="option1" >
                     </div>
                     <div class="form-check-inline">
                       <label class="form-check-label" for="inlineRadio2">Morgue</label>
-                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions2" id="toMorgue" value="option2">
                     </div>
                     <div class="form-check-inline">
                       <label class="form-check-label" for="inlineRadio3">Other Healthcare Facility</label>
-                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions2" id="toHealthcare" value="option3">
                     </div>
                     <div class="form-check-inline">
-                      <label class="form-check-label" for="inlineRadio3">Stayed on Unit</label>
-                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                      <label class="form-check-label" for="inlineRadio4">Stayed on Unit</label>
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions2" id="stayedUnit" value="option3">
                     </div>
                   </div>
                 </div>
@@ -106,11 +108,11 @@
                   <div class="col-sm-3">
                     <div class="form-check-inline">
                       <label class="form-check-label" for="inlineRadio1">Yes</label>
-                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions3" id="circulationYes" value="option1">
                     </div>
                     <div class="form-check-inline">
                       <label class="form-check-label" for="inlineRadio2">No</label>
-                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions3" id="circulationNo" value="option2">
                     </div>
                   </div>
                   <div class="col-sm-3">
@@ -119,11 +121,11 @@
                   <div class="col-sm-3">
                   <div class="form-check-inline">
                     <label class="form-check-label" for="inlineRadio1">Yes</label>
-                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions4" id="futYes" value="option1">
                   </div>
                   <div class="form-check-inline">
                     <label class="form-check-label" for="inlineRadio2">No</label>
-                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions4" id="futNo" value="option2">
                   </div>
                 </div>
               </div>
@@ -134,11 +136,11 @@
                 <div class="col-sm-3">
                   <div class="form-check-inline">
                     <label class="form-check-label" for="inlineRadio1">Yes</label>
-                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions5" id="famRes" value="option1">
                   </div>
                   <div class="form-check-inline">
                     <label class="form-check-label" for="inlineRadio2">No</label>
-                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions5" id="famResNo" value="option2">
                   </div>
                 </div>
                 <div class="col-sm-3">
@@ -147,11 +149,11 @@
                 <div class="col-sm-3">
                   <div class="form-check-inline">
                     <label class="form-check-label" for="inlineRadio1">Yes</label>
-                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions6" id="advYes" value="option1">
                   </div>
                   <div class="form-check-inline">
                     <label class="form-check-label" for="inlineRadio2">No</label>
-                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions6" id="advNo" value="option2">
                   </div>
                 </div>
               </div>
@@ -162,11 +164,11 @@
               <div class="col-sm-3">
                 <div class="form-check-inline">
                   <label class="form-check-label" for="inlineRadio1">Yes</label>
-                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions7" id="notifiedYes" value="option1">
                 </div>
                 <div class="form-check-inline">
                   <label class="form-check-label" for="inlineRadio2">No</label>
-                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions7" id="notifiedNo" value="option2">
                 </div>
               </div>
             </div>
@@ -348,7 +350,7 @@
         </div>
 
             <form >
-              <a class="finalize"><button type="button" class="btn-light" onclick="validate(); saveData();">Finalize</button></a>
+              <a class="finalize"><button type="button" class="btn-light" onclick="validate(); saveAdminData();">Finalize</button></a>
             </form>
 
       </div>
