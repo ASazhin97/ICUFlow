@@ -44,15 +44,19 @@
 
     <div class="row row-one">
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-            <div class="panel panel-default" id="panel1">
-                <div class="panel-heading">IV</div>
-                <div class="panel-body">Comments: <p>Doctors Comments about the UV</p></div>
-
-                <div class="panel-footer">
-                    <button type="button" data-toggle="modal" data-target="#editModal"
-                            class="btn btn-primary edit-button" data-panel="1">Edit
-                    </button>
-                </div>
+            <div class="panel panel-default" id="panel4">
+                <div class="panel-heading">Code Team</div>
+                <div class="panel-body" id="label">Team Leader: <p id="teamLeader"></p></div>
+                <div class="panel-body" id="label">Nurse Preparing Meds: <p id="nursePrep"></p></div>
+                <div class="panel-body" id="label">Nurse Administering Meds: <p id="nurseAdmin"></p></div>
+                <div class="panel-body" id="label">Recorder Nurse: <p id="nurseRecord"></p></div>
+                <div class="panel-body" id="label">Anesthesiologist: <p id="anesthesiologist"></p></div>
+                <div class="panel-body" id="label">Others: <p id="others1"></p>
+                    <p id="others2"></p>
+                    <p id="others3"></p>
+                    <p id="others4"></p></div>
+                <div class = "panel-footer">
+                    <button type="button" data-toggle="modal" data-target="#editModal" class="btn btn-primary edit-button"data-panel="4">Edit</button></div>
             </div>
 
         </div>
@@ -95,62 +99,8 @@
     </div>
 
     <div class="row row-two">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="panel panel-default" id="panel4">
-                <div class="panel-heading">Code Team</div>
-                <div class="panel-body" id="label">Team Leader: <p id="teamLeader"></p></div>
-                <div class="panel-body" id="label">Nurse Preparing Meds: <p id="nursePrep"></p></div>
-                <div class="panel-body" id="label">Nurse Administering Meds: <p id="nurseAdmin"></p></div>
-                <div class="panel-body" id="label">Recorder Nurse: <p id="nurseRecord"></p></div>
-                <div class="panel-body" id="label">Anesthesiologist: <p id="anesthesiologist"></p></div>
-                <div class="panel-body" id="label">Others: <p id="others1"></p>
-                    <p id="others2"></p>
-                    <p id="others3"></p>
-                    <p id="others4"></p></div>
-                <div class = "panel-footer">
-                    <button type="button" data-toggle="modal" data-target="#editModal" class="btn btn-primary edit-button"data-panel="4">Edit</button></div>
-            </div>
-
-        </div>
+        
     </div>
-</div>
-
-<div class="row row-three">
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-        <div class="panel panel-default" id="panel5">
-            <div class="panel-heading">Airway Control</div>
-            <div class="panel-body">Incubation Time: <p id="reportIncTime"></p></div>
-            <div class="panel-body">Airway: <p id="reportAirway"></p></div>
-            <div class="panel-body">ETT Size: <p id="reportETTSize"></p></div>
-            <div class="panel-body">Comments: <p id="reportAirwayComments"></p></div>
-            <div class="panel-footer">
-                <button type="button" data-toggle="modal" data-target="#editModal" class="btn btn-primary edit-button"
-                        data-panel="5">Edit
-                </button>
-            </div>
-        </div>
-
-
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-        <div class="panel panel-default" id="panel6">
-            <div class="panel-heading">IV Fluids</div>
-            <div class="panel-body">IV Access: <p id="reportIVAccess"></p></div>
-            <div class="panel-body">IV Solution: <p id="reportIVSol"></p></div>
-            <div class="panel-body">IV Type: <p id="reportIVType"></p></div>
-            <div class="panel-body">IV Size: <p id="reportIVSize"></p></div>
-            <div class="panel-body">IV Location: <p id="reportIVLoc"></p></div>
-            <div class="panel-body">IV Comments: <p id="reportIVComments"></p></div>
-            <div class="panel-footer">
-                <button type="button" data-toggle="modal" data-target="#editModal" class="btn btn-primary edit-button"
-                        data-panel="6">Edit
-                </button>
-            </div>
-        </div>
-
-
-    </div>
-
 </div>
 
 <div class="row row-three">
@@ -163,7 +113,7 @@
                         <thead>
                         <tr>
                             <th scope="col">Time</th>
-                            <th scope="col">Prescription</th>
+                            <th scope="col">Intervention</th>
                             <th scope="col">Dose</th>
                             <th scope="col">Rhythm</th>
                             <th scope="col">Jules</th>

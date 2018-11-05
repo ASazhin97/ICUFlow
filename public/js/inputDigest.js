@@ -59,6 +59,10 @@ function saveAdminData(){
 
 // function that retrieves values to populate pages
 function retrieveDataReport(){
+   var tableInside = sessionStorage.getItem('table-info')
+   var tableBody = document.getElementById('info-table-body');
+    tableBody.innerHTML = tableInside;
+    
   $('#teamLeader').text(sessionStorage.getItem('teamLeaderSaved'));
   $('#nursePrep').text(sessionStorage.getItem('nursePrepSaved'));
   $('#nurseAdmin').text(sessionStorage.getItem('nurseAdminSaved'));
@@ -121,6 +125,14 @@ function sheetData(){
 }
 
   function saveSheetData(){
+//get values from table      
+      
+  var table = document.getElementById("info-table-body");
+  
+ var tableInnards = table.innerHTML;
+ sessionStorage.setItem('table-info', tableInnards);
+      
+      
   sessionStorage.setItem('DOBSaved', document.getElementById("patientDOB").value);
   sessionStorage.setItem('WeightSaved', $("#patientWeightSheet").val());
   sessionStorage.setItem('patientComments', $("#patientCommentsSheet").val());
