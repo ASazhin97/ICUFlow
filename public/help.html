@@ -69,6 +69,12 @@
                             <li>
                                 <a href="#AFS">Active Flow Sheet</a>
                             </li>
+                            <li>
+                                <a href="#admin">Administration Page</a>
+                            </li>
+                            <li>
+                                <a href ="#finalReport">Final Report Page</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -79,7 +85,7 @@
         <main>
             <section id="Introduction">
                 <h1>Introduction</h1>
-                <p>Welcome to our electronic flow sheet. This electronic system will emulate normal paper flow sheets while being easier to use, more efficient, and allow for a greater degree of uniformity and standardization, which improves clarity, readability, etc. This system will also 
+                <p>Welcome to our electronic health record. This electronic system will emulate normal paper health records while being easier to use, more efficient, and allow for a greater degree of uniformity and standardization, which improves clarity, readability, etc. This system will also 
                 be easy to use and responsive, such that there will not be a loss of efficiency and speed during emergency situations felt compared to the speed and efficiency when using normal flow sheets, as we understand this is a sticking point among members of the medical community with
                 previously used electronic systems. This help page will guide you, the user of this system, through all of the system's basic functionalities.
                 </p>
@@ -103,8 +109,41 @@
             <section id="AFS">
                 <h1>Active Flow Sheet</h1>
                 <p>Once the recording nurse presses the submit button seen on the Home Page, the system will automatically open a new page called the "Active Flow Sheet". This flow sheet page will have all the features that a nurse would expect of a paper flow sheet, but will also 
-                    have additional ones such as automatically recording the passing time when the page is loaded. The recording nurse will also be able to enter any medication administered to the patient and at what dose, if the patient enters any specific states
-                    during their code, etc. The AFS will also have a data field automatically filled with that patient's relevant data when the page is opened.
+                    have additional ones such as automatically recording the passing time when the page is loaded. When using the Active Flow Sheet, the recording nurse will be able to:
+                    <li>Start a code by pressing a button, which will automatically record the exact time when the code is started</li>
+                    <li>Record whether the patient was given oxygen through tube, oxygen mask, etc.</li>
+                    <li>Record if the patient was administered chest compressions and/or defribilation</li>
+                    <li>Record if the patient was given medication such as epinephrine, and at what dosage</li>
+                    <p>As with starting a code, all recordings of medication administration, defribilation, etc. will have the time of administering automatically recorded when their respective button is pressed.
+                        <strong>When opening the active flow sheet, the recording nurse will be greeted by a number of panels, each with their own function</strong>. There will be a panel at the top of the page which will contain input fields for patient information (some of which will be autofilled when loading the AFS) 
+                        as well as an alert if the patient is allergic to any specific medications.
+                        Below that, there are four more panels, again each with their own specific purposes. <strong>The first panel will be for documenting IV access information, the second will be for airway control, the third will be for medication information, and the 
+                        fourth and last panel of the group will be for recording chest compressions and defribilation (there will be radio buttons to select which procedure is being performed).</strong> These panels all have an add button at the bottom
+                        of them that adds the relevant information (e.g. in medication administration the name of the medication and the dose of it) to a table near the bottom of the page as well as <strong>dropdowns which will have some preselected standard options 
+                        for drug dosage, IV point of access, etc. depending on the panel</strong>. If the nurse requires, the dropdown menus in the panels also function as normal text fields that can have any input typed into them and still function properly. <strong>The table at the bottom of the page is also editable by clicking the various cells and typing 
+                        (or deleting) in them.</strong> Therefore, if the nurse wishes, they can add a blank medication or airway control event, for example, and fill in the table manually instead of using the panel dropdowns to do so. Finally, there is a large box at the absolute bottom of the page for the recording nurse
+                        to type in any and all additional comments about the procedure they may have.
+                    </p>
+                </p>
+            </section>
+
+            <section id="admin">
+                <h1>Administration Page</h1>
+                <p>
+                    The administration page is the page the recording nurse will see after they have ended the code from the AFS. The administration page contains 
+                    information mostly important for recording purposes and legal protection, such as patient's status (alive or deceased) the full names of the medical 
+                    staff attending to the patient, and potential reasons for resuscitation attempts ending. 
+                    There is also the writing space for signatures on this page, however as they are physical signatures instead of electronic it is highly recommended the Administration Page is printed for this reason.
+                </p>
+            </section>
+
+            <section id="finalReport">
+                <h1>Final Report Page</h1>
+                <p>
+                    The final report page is the last page the recording nurse will see during a code event. The page will be automatically populated with any information
+                    input in the AFS, Home Page, Administration Page, etc. If for any reason there is a discrepancy, or one or more pieces
+                    of information was missed, the panels and table in the Final Report can all be edited after the code has ended. As with the AFS page, there is also a large comments
+                    box at the bottom of the Final Report Page for any additional information the recording nurse feels should be officially recorded. 
                 </p>
             </section>
         </main>
