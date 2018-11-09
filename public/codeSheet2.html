@@ -89,7 +89,7 @@
                 <div class="panel-body">Solution: <input type = "text" id="ivSolution"></div>
                 <div class="panel-body">Type: <input type = "text" id="ivType" list = "iv-type-list"></div>
                 <div class="panel-body">Size: <input type = "text" id="ivSize" list = "iv-size-list"></div>
-                <div class="panel-body">Location: <input type = "text" id="ivLocationSelection"></div>
+                <div class="panel-body">Location: <input type = "text" id="ivLocationSelection" list = "iv-loc-list"></div>
                 <div class="panel-body">Comments: <textarea style = "width: 100%" id="ivComments"></textarea></div>
 
                 <div class="panel-footer">
@@ -103,8 +103,8 @@
     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
         <div class="panel panel-default" id="panel4">
             <div class="panel-heading">Airway Control</div>
-            <div class="panel-body">Incubation Time: <input type = "text" id="sheetIncTime"></div>
-            <div class="panel-body">Airway: <input type = "text" id="sheetAirway" list = "airways"></div>
+            <div class="panel-body">Control Type: <input type = "text" id="sheetIncTime" list = "air-control-list"></div>
+            <div class="panel-body">Airway/Control type: <input type = "text" id="sheetAirway" list = "airways"></div>
             <div class="panel-body">ETT Size: <input type = "text" id="sheetETTSize" list = "ett-size"></div>
             <div class="panel-body">Comments: <textarea style = "width: 100%" id="AirwayComments"></textarea></div>
             <div class="panel-footer">
@@ -118,9 +118,9 @@
     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
         <div class="panel panel-default" id="panel5">
             <div class="panel-heading">Medication</div>
-            <div class="panel-body">Medication: <input type = "text" id="sheetMedication"></div>
-            <div class="panel-body">Route of admin: <input type = "text" id="sheetRoute"></div>
-                <div class="panel-body">Dosage: <input type = "text" id="sheetDosage"></div>
+            <div class="panel-body">Medication: <input type = "text" id="sheetMedication" list = "meds-list"></div>
+            <div class="panel-body">Route of admin: <input type = "text" id="sheetRoute" list = "route-admin-list"></div>
+                <div class="panel-body">Dosage: <input type = "text" id="sheetDosage" list = "meds-dose-list"></div>
                 <div class="panel-body">Comments: <textarea style = "width: 100%" id="medicationComments"></textarea></div>
             <div class="panel-footer">
                 <button type="button" class="btn btn-warning edit-button" data-panel="5" onclick="panel5Pop()">Add
@@ -134,8 +134,22 @@
     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
         <div class="panel panel-default" id="panel6">
             <div class="panel-heading">Compressions/Defib:</div>
-            <div class="panel-body">Time start: <input type = "text" id="defibStart"></div>
-                <div class="panel-body">Time end: <input type = "text" id="defibEnd"></div>
+            <div>
+            <span class="form-check-inline">
+                      <label class="form-check-label" for="inlineRadio1">Compressions Start</label>
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions1" id="compression-check1" value="Compressions Start">
+                </span>
+            <span class="form-check-inline">
+                      <label class="form-check-label" for="inlineRadio2">Compression End</label>
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions1" id="compression-check2" value="Compressions End">
+                </span>
+                
+            <span class="form-check-inline">
+                      <label class="form-check-label" for="inlineRadio2">Defib</label>
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions1" id="defib-check" value="Defib">
+                </span>
+            </div>
+            
                 <div class="panel-body">Rhythm: <input type = "text" id="defibRhythm"></div>
                 <div class="panel-body">Shock: <input type = "text" id="defibShock"></div>
                 <div class="panel-body">Comments: <textarea style = "width: 100%" id="defibComments"></textarea></div>
@@ -239,7 +253,65 @@
     <option value="20">
     <option value="22">
     <option value="24">
+</datalist>
+    
+<datalist id = "iv-loc-list">
+    <option value="Left Arm">
+    <option value="Left Wrist">
+    <option value="Left Forearm">
+    <option value="Right Arm">
+    <option value="Right Wrist">
+    <option value="Right Forearm">
+    <option value="AC">
+    <option value="IJ">
+    <option value="EJ">
+    <option value="SCV">
+    <option value="Chest">
+    
+</datalist>
+        
+<datalist id = "route-admin-list">
+    <option value = "Sub Q">
+    <option value = "IV">
+    <option value = "IO">
+    <option value = "IM">
                             
+</datalist>
+    
+<datalist id = "air-control-list">
+    <option value = "Itubated">
+    <option value = "Nasal cannula">
+    <option value = "Mask">
+</datalist>
+    
+<datalist id = "meds-list">
+    <option value = "Adenosin">
+    <option value = "Amiodarone">
+    <option value = "Atropine">
+    <option value = "Sodium bicarbonate">
+    <option value = "Calsium chloride">
+    <option value = "Dextrose">
+    <option value = "Dopamine">
+    <option value = "Lidocaine">
+    <option value = "Magnesium">
+    <option value = "Vasopressin">
+</datalist>
+    
+<datalist id = "meds-dose-list">
+    <option value = "6mg">
+    <option value = "300mg">
+    <option value = "150mg">
+    <option value = "1m g.">
+    <option value = "1gm">
+    <option value = "50%">
+    <option value = "400mg/250 ml IV bag">
+    <option value = "1mg/10ml (1:10,000) syringe">
+    <option value = "1mg/kg">
+    <option value = ".5mg/kg">
+    <option value = ".75mg/kg">
+    <option value = "2 gm/250 ml">
+    <option value = "1gm">
+    <option value = "20units">
 </datalist>
     
 <script type = "text/javascript">
@@ -257,6 +329,11 @@ function addRow() {
             newRow.appendChild(newCell);
         }
         tableBody.appendChild(newRow);
+    
+        var date = Date();
+        var cells = currRow.children;
+
+        cells[0].innerHTML = date;
 }
 
 function panel1Pop() {
@@ -369,8 +446,8 @@ function panel5Pop(){
     var dose = insideElem[0].value;
     cells[2].innerHTML = dose;
 
-    cells[3].innerHTML = "NP";
-    cells[4].innerHTML = "NP";
+    cells[3].innerHTML = "";
+    cells[4].innerHTML = "";
 
     insideElem = panElem[2].children;
     var admin = insideElem[0].value;
@@ -400,15 +477,18 @@ function panel6Pop(){
     var date = Date();
     var cells = currRow.children;
 
-    var insideElem = panElem[1].children;
-    var start = insideElem[0].value;
-    insideElem = panElem[2].children;
-    var end = insideElem[0].value;
-    cells[0].innerHTML = "Start:" +start+ " End: " + end;
+    
+    cells[0].innerHTML = date;
+    
+    if(document.getElementById('compression-check1').checked){
+        cells[1].innerHTML = "Compressions Start";
+    } else if(document.getElementById('compression-check2').checked){
+        cells[1].innerHTML = "Compressions End";
+    } else if(document.getElementById("defib-check").checked){
+        cells[1].innerHTML = "Defib";
+    }
 
-    cells[1].innerHTML = "Compressions";
-
-    cells[2].innerHTML = "NP";
+    cells[2].innerHTML = "";
 
     insideElem = panElem[3].children;
     var rhythm = insideElem[0].value;
