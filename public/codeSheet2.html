@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+    <title>Report</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/codeSheet.css">
+    <script src="js/inputDigest.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/finalReportScript.js"></script>
+</head>
+
+<body onload="retrieveHomeData()">
+<nav class="navbar navbar-expand-lg navbar-inverse navbar-fixed-top topbar">
+    <div class="container-fluid">
+        <img src="css/snakes.jpg" style="width: 5%; height: 5%" class="img-circle" alt="logo">
+        <a class="title">Flow Sheet</a>
+
+    </div>
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navHeaderCollapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navHeaderCollapse">
+            <ul class="nav navbar-nav">
+                <li class="nav-item"><a href="home.html">Home</a></li>
+                <li class="nav-item"><a href="history.html">History</a></li>
+                <li class="nav-item"><a href="help.html">Help</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <div class = "row row-one">
+        <button class = "btn btn-warning start-btn" onclick="startCode()">Start Code</button>
+    </div>
+    <div class="row row-two">
+    
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="panel panel-default" id="panel2">
+                <div class="panel-heading">General</div>
+                <div class="panel-body">Date: <input type = "text" id="sheetDate"></div>
+                <div class="panel-body">Time: <input type = "text" id="sheetTime"></div>
+                <div class="panel-body">Location: <input type = "text" id="sheetLocation"></div>
+                <div class="panel-body">Time event called: <input type = "text" id="sheetTimeCalled"></div>
+                <div class="panel-body">Time team arrived: <input type = "text" id="sheetTimeArrived"></div>
+                <div class="panel-body">Witnesses: <input type = "text" id="sheetWitnesses"></div>
+                <div class="panel-body">CPR Initiated: <input type = "text" id="sheetCPR"></div>
+                <div class="panel-body">Time of compression: <input type = "text" id="sheetCompressionTime"></div>
+                <div class="panel-footer">
+            
+            </div>
+            </div>
+
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="panel panel-default" id="panel3">
+                <div class="panel-heading">Patient Information</div>
+                <div class="panel-body">Name: <input type = "text" id="patientNameReport"></div>
+                <div class="panel-body">Date of Birth: <input type = "text" id="patientDOB"></div>
+                <div class="panel-body">MR#: <input type = "text" id="patientMRReport"></div>
+                <div class="panel-body">Weight: <input type = "text" id="patientWeightSheet"></div>
+                <div class="panel-body">Comments: <textarea style = "width: 100%" id="patientCommentsSheet"></textarea></div>
+
+                <div class="panel-footer">
+                
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+<div class="row row-three">
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+            <div class="panel panel-default" id="panel1">
+                <div class="panel-heading">IV </div>
+                <div class="panel-body">IV Access <input type = "text" id="ivAccessSelection" list = "iv-access-list"></div>
+                <div class="panel-body">Solution: <input type = "text" id="ivSolution"></div>
+                <div class="panel-body">Type: <input type = "text" id="ivType" list = "iv-type-list"></div>
+                <div class="panel-body">Size: <input type = "text" id="ivSize" list = "iv-size-list"></div>
+                <div class="panel-body">Location: <input type = "text" id="ivLocationSelection" list = "iv-loc-list"></div>
+                <div class="panel-body">Comments: <textarea style = "width: 100%" id="ivComments"></textarea></div>
+
+                <div class="panel-footer">
+                <button type="button" class="btn btn-warning edit-button" data-panel="1" onclick = "panel1Pop()">Add
+                </button>
+            </div>
+            </div>
+
+        </div>
+    
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <div class="panel panel-default" id="panel4">
+            <div class="panel-heading">Airway Control</div>
+            <div class="panel-body">Control Type: <input type = "text" id="sheetIncTime" list = "air-control-list"></div>
+            <div class="panel-body">Airway/Control type: <input type = "text" id="sheetAirway" list = "airways"></div>
+            <div class="panel-body">ETT Size: <input type = "text" id="sheetETTSize" list = "ett-size"></div>
+            <div class="panel-body">Comments: <textarea style = "width: 100%" id="AirwayComments"></textarea></div>
+            <div class="panel-footer">
+                <button type="button" class="btn btn-warning edit-button" data-panel="4" onclick = "panel4Pop()">Add
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <div class="panel panel-default" id="panel5">
+            <div class="panel-heading">Medication</div>
+            <div class="panel-body">Medication: <input type = "text" id="sheetMedication" list = "meds-list"></div>
+            <div class="panel-body">Route of admin: <input type = "text" id="sheetRoute" list = "route-admin-list"></div>
+                <div class="panel-body">Dosage: <input type = "text" id="sheetDosage" list = "meds-dose-list"></div>
+                <div class="panel-body">Comments: <textarea style = "width: 100%" id="medicationComments"></textarea></div>
+            <div class="panel-footer">
+                <button type="button" class="btn btn-warning edit-button" data-panel="5" onclick="panel5Pop()">Add
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <div class="panel panel-default" id="panel6">
+            <div class="panel-heading">Compressions/Defib:</div>
+            <div>
+            <span class="form-check-inline">
+                      <label class="form-check-label" for="inlineRadio1">Compressions Start</label>
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions1" id="compression-check1" value="Compressions Start">
+                </span>
+            <span class="form-check-inline">
+                      <label class="form-check-label" for="inlineRadio2">Compression End</label>
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions1" id="compression-check2" value="Compressions End">
+                </span>
+                
+            <span class="form-check-inline">
+                      <label class="form-check-label" for="inlineRadio2">Defib</label>
+                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions1" id="defib-check" value="Defib">
+                </span>
+            </div>
+            
+                <div class="panel-body">Rhythm: <input type = "text" id="defibRhythm"></div>
+                <div class="panel-body">Shock: <input type = "text" id="defibShock"></div>
+                <div class="panel-body">Comments: <textarea style = "width: 100%" id="defibComments"></textarea></div>
+            <div class="panel-footer">
+                <button type="button" class="btn btn-warning edit-button" data-panel="6" onclick="panel6Pop()">Add
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+<div class="row row-three">
+    <div class="col-sm-12">
+        <div class="panel panel-default" id="panel7">
+            <div class="panel-heading">Report Table</div>
+            <div class="panel-body">
+                <div class="table-wrapper-scroll-y">
+                    <table class="table table-bordered table-striped" id = "info-table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Intervention</th>
+                            <th scope="col">Dose</th>
+                            <th scope="col">Rhythm</th>
+                            <th scope="col">Jules</th>
+                            <th scope="col">Other/Comments</th>
+                        </tr>
+                        </thead>
+                        <tbody contenteditable="true" id="info-table-body" id = "info-table-body">
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="panel-footer">
+                <button type="button" class="btn btn-warning add-row-btn" data-panel="5" onclick="addRow()">Add Row +
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="row row-four">
+    <div class="col-sm-12">
+        <div class="panel panel-default" id="panel8">
+            <div class="panel-heading">Comments:</div>
+            <div class="panel-body"><textarea style = "width: 100%" id="fullComments"></textarea></div>
+            <div class="panel-footer">
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row row-five">
+    <form action = "administration.html">
+        <input type="submit" class="btn btn-warning print-button" value = "End Code" onclick="endCode(); saveSheetData()">
+    </form>
+</div>  
+
+<!- autocomplete lists ->
+<datalist id = "airways">
+  <option value="Endotracheal">
+  <option value="Nasotracheal">
+  <option value="Laryngeal">
+  <option value="Non-rebreather">
+</datalist>
+    
+<datalist id = "ett-size">
+    <option value="7.0mm">
+    <option value="7.5mm">
+    <option value="8.0mm">
+    <option value="8.5mm">
+    <option value="9.0mm">
+    <option value="9.5mm">
+    <option value="10.0mm">
+</datalist>
+    
+<datalist id = "iv-access-list">
+    <option value="Peripheral IV">
+    <option value="Central Line">
+    <option value="IO">
+</datalist>
+    
+<datalist id = "iv-type-list">
+    <option value="PICC">
+    <option value="Triple Lumen">
+    <option value="Chest Port">
+</datalist>
+    
+<datalist id = "iv-size-list">
+    <option value="14">
+    <option value="16">
+    <option value="18">
+    <option value="20">
+    <option value="22">
+    <option value="24">
+</datalist>
+    
+<datalist id = "iv-loc-list">
+    <option value="Left Arm">
+    <option value="Left Wrist">
+    <option value="Left Forearm">
+    <option value="Right Arm">
+    <option value="Right Wrist">
+    <option value="Right Forearm">
+    <option value="AC">
+    <option value="IJ">
+    <option value="EJ">
+    <option value="SCV">
+    <option value="Chest">
+    
+</datalist>
+        
+<datalist id = "route-admin-list">
+    <option value = "Sub Q">
+    <option value = "IV">
+    <option value = "IO">
+    <option value = "IM">
+                            
+</datalist>
+    
+<datalist id = "air-control-list">
+    <option value = "Intubated">
+    <option value = "Nasal cannula">
+    <option value = "Mask">
+</datalist>
+    
+<datalist id = "meds-list">
+    <option value = "Adenosin">
+    <option value = "Amiodarone">
+    <option value = "Atropine">
+    <option value = "Sodium bicarbonate">
+    <option value = "Calsium chloride">
+    <option value = "Dextrose">
+    <option value = "Dopamine">
+    <option value = "Lidocaine">
+    <option value = "Magnesium">
+    <option value = "Vasopressin">
+</datalist>
+    
+<datalist id = "meds-dose-list">
+    <option value = "6mg">
+    <option value = "300mg">
+    <option value = "150mg">
+    <option value = "1m g.">
+    <option value = "1gm">
+    <option value = "50%">
+    <option value = "400mg/250 ml IV bag">
+    <option value = "1mg/10ml (1:10,000) syringe">
+    <option value = "1mg/kg">
+    <option value = ".5mg/kg">
+    <option value = ".75mg/kg">
+    <option value = "2 gm/250 ml">
+    <option value = "1gm">
+    <option value = "20units">
+</datalist>
+    
+<script type = "text/javascript">
+var currentRow;
+var panelNumber;
+var currRow;
+
+function addRow() {
+        var tableBody = document.getElementById("info-table-body");
+        var newRow = document.createElement("tr");
+        currRow = newRow;
+        var i;
+        for (i = 0; i < 6; i++) {
+            var newCell = document.createElement("td");
+            newRow.appendChild(newCell);
+        }
+        tableBody.appendChild(newRow);
+    
+        var date = Date();
+        var cells = currRow.children;
+
+        cells[0].innerHTML = date;
+}
+
+function panel1Pop() {
+    addRow();
+
+    var panelNum = 1
+    panelNumber = panelNum;
+    var panel = document.getElementById("panel" + panelNum);
+    panElem = panel.children;
+
+    //set cells
+    var date = Date();
+    var cells = currRow.children;
+
+    cells[0].innerHTML = date;
+
+    var insideElem = panElem[2].children;
+    var input = insideElem[0].value;
+
+    cells[1].innerHTML = "IV:" + input;
+
+    insideElem = panElem[3].children;
+    var type = insideElem[0].value;
+    insideElem = panElem[4].children;
+    var size = insideElem[0].value;
+    cells[2].innerHTML = "Type: " + type + "\nSize: " +size;
+
+    cells[3].innerHTML = "NP";
+    cells[4].innerHTML = "NP";
+
+    insideElem = panElem[1].children;
+    var access = insideElem[0].value;
+
+    insideElem = panElem[5].children;
+    var loc = insideElem[0].value;
+    insideElem = panElem[6].children;
+    var comm = insideElem[0].value;
+    cells[5].innerHTML = "Access:" + access + "\nLocation: " + loc + "\nComments:" + comm;
+
+    //delete all values in panel
+    var val;
+    for(val = 1; val<panElem.length; val++){
+        var insideElem2 = panElem[val].children;
+        var inSpace = insideElem2[0];
+        inSpace.value = "";
+    }
+}
+
+function panel4Pop(){
+    addRow();
+
+    var panelNum = 4
+    panelNumber = panelNum;
+    var panel = document.getElementById("panel" + panelNum);
+    panElem = panel.children;
+
+    //set cells
+    var date = Date();
+    var cells = currRow.children;
+
+    cells[0].innerHTML = date;
+
+    var insideElem = panElem[2].children;
+    var air = insideElem[0].value;
+    console.log(air);
+    cells[1].innerHTML = "Airway:" + air;
+
+    insideElem = panElem[1].children;
+    var time = insideElem[0].value;
+    insideElem = panElem[3].children;
+    var ett = insideElem[0].value;
+    cells[2].innerHTML= "Incub Time: " + time+ "ETT Size: " + ett;
+
+    cells[3].innerHTML = "NP";
+    cells[4].innerHTML = "NP";
+
+    insideElem = panElem[4].children;
+    var comm = insideElem[0].value;
+    cells[5].innerHTML = "Comments: " + comm;
+
+        //delete all values in panel
+    var val;
+    for(val = 1; val<panElem.length; val++){
+        var insideElem2 = panElem[val].children;
+        var inSpace = insideElem2[0];
+        inSpace.value = "";
+    }
+}
+
+function panel5Pop(){
+    addRow();
+
+    var panelNum = 5
+    panelNumber = panelNum;
+    var panel = document.getElementById("panel" + panelNum);
+    console.log(panel);
+    panElem = panel.children;
+
+    //set cells
+    var date = Date();
+    var cells = currRow.children;
+
+    cells[0].innerHTML = date;
+
+    var insideElem = panElem[1].children;
+    var med = insideElem[0].value;
+    cells[1].innerHTML = "Medication: " + med;
+
+    insideElem = panElem[3].children;
+    var dose = insideElem[0].value;
+    cells[2].innerHTML = dose;
+
+    cells[3].innerHTML = "";
+    cells[4].innerHTML = "";
+
+    insideElem = panElem[2].children;
+    var admin = insideElem[0].value;
+    insideElem = panElem[4].children;
+    var comm = insideElem[0].value;
+    cells[5].innerHTML = "Route of admin: " +admin+ " Comments: " + comm;
+
+        //delete all values in panel
+    var val;
+    for(val = 1; val<panElem.length; val++){
+        var insideElem2 = panElem[val].children;
+        var inSpace = insideElem2[0];
+        inSpace.value = "";
+    }
+}
+
+function panel6Pop(){
+    addRow();
+
+    var panelNum = 6
+    panelNumber = panelNum;
+    var panel = document.getElementById("panel" + panelNum);
+    console.log(panel);
+    panElem = panel.children;
+
+    //set cells
+    var date = Date();
+    var cells = currRow.children;
+
+    
+    cells[0].innerHTML = date;
+    
+    if(document.getElementById('compression-check1').checked){
+        cells[1].innerHTML = "Compressions Start";
+    } else if(document.getElementById('compression-check2').checked){
+        cells[1].innerHTML = "Compressions End";
+    } else if(document.getElementById("defib-check").checked){
+        cells[1].innerHTML = "Defib";
+    }
+
+    cells[2].innerHTML = "";
+
+    insideElem = panElem[3].children;
+    var rhythm = insideElem[0].value;
+    cells[3].innerHTML = rhythm+"bmp";
+
+    insideElem = panElem[3].children;
+    var shock = insideElem[0].value;
+    cells[4].innerHTML = shock+"Jouls";
+
+    insideElem = panElem[4].children;
+    var comm = insideElem[0].value;
+    cells[5].innerHTML = "Comments: " + comm;
+
+    //delete all values in panel
+    var val;
+    for(val = 1; val<panElem.length; val++){
+        var insideElem2 = panElem[val].children;
+        var inSpace = insideElem2[0];
+        inSpace.value = "";
+    }
+}
+
+
+function startCode(){
+    addRow();
+    var date = Date();
+    console.log(date)
+
+    var cells = currRow.children;
+
+    cells[0].innerHTML = date;
+    var i;
+    for(i = 1; i < 5; i++){
+        cells[i].innerHTML = "CODE STARTED";
+    }
+}
+
+function endCode(){
+    addRow();
+    var date = Date();
+    console.log(date)
+
+    var cells = currRow.children;
+
+    cells[0].innerHTML = date;
+    var i;
+    for(i = 1; i < 5; i++){
+        cells[i].innerHTML = "CODE ENDED";
+    }
+}
+
+
+
+</script>
+
+</body>
+
+</html>

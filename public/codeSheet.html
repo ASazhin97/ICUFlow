@@ -5,13 +5,10 @@
     <title>ICU Sheet</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/finalReport.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">function recordTime() {
-
-    }
-
+    <script src=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
     </script>
 </head>
 <body>
@@ -42,94 +39,40 @@
     </div>
 </nav>
 
-<div class="container-fluid">
+<div class="container-fluid" style="padding: 2%">
 
     <div class="row-one">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-            <button class="btn btn-success" role="button" onclick="recordTime()">Begin Code</button>
+            <button class="btn btn-success datebtn" role="button" id="beginCode">Begin Code</button>
         </div>
     </div>
 
     <div class="row">
         <div class="panel panel-default col-lg-4 col-md-4 col-sm-8 col-xs-12 top-buffer">
             <div class="panel-heading" style="background-color: white"><strong>Medical team:</strong>
-                <button class="btn btn-warning" role="button" onclick="saveInfo()">Record Compression
-                </button></div>
+                <button class="btn btn-warning" role="button" onclick="saveInfo()">Save Information
+                </button>
+            </div>
 
             <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
                 <div class="textarea" id="nurseName">
                     <label for="nurseName">Nurse name:</label>
-                    <textarea class="form-control"></textarea>
+                    <textarea class="form-control">Jackie Brown</textarea>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
                 <div class="textarea" id="physicianName">
                     <label for="physicianName">Physician Name:</label>
-                    <textarea class="form-control"></textarea>
+                    <textarea class="form-control">Derick Smith</textarea>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
                 <div class="textarea" id="documentor">
                     <label for="documentor">Documentor:</label>
-                    <textarea class="form-control"></textarea>
+                    <textarea class="form-control">Alex Something</textarea>
                 </div>
-            </div>
-        </div>
-
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6"></div>
-
-        <div class="panel panel-default col-lg-4 col-md-4 col-sm-10 col-xs-12 top-buffer">
-            <div class="panel-heading" style="background-color: white"><strong>Medications:</strong></div>
-
-            <div class="dropdown">
-                <div class="btn-group">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
-                            Dosage:<span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">50</a></li>
-                            <li><a href="#">100</a></li>
-                            <li><a href="#">150</a></li>
-                            <li><a href="#">200</a></li>
-                            <li><a href="#">250</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Other</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
-                            Medication<span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Lidocane</a></li>
-                            <li><a href="#">Epinephrine</a></li>
-                            <li><a href="#">Etc</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Other</a></li>
-                        </ul>
-                    </div>
-
-                </div>
-
-                <button class="btn btn-warning" role="button" onclick="enterMedication()">Enter Medication
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="row">
-        <div class="panel panel-default col-lg-4 col-md-4 col-sm-8 col-xs-12 top-buffer">
-            <div class="panel-heading" style="background-color: white"><strong>Chest Compressions done?</strong></div>
-            <div class="col-lg-8 col-md-8 col-sm-4 col-xs-12">
-                <button class="btn btn-warning" role="button" onclick="compressionComplete()">Record Compression
-                </button>
             </div>
         </div>
 
@@ -138,19 +81,20 @@
         <div class="panel panel-default col-lg-4 col-md-4 col-sm-8 col-xs-12 top-buffer">
             <div class="panel-heading" style="background-color: white"><strong>Patient Information</strong>
                 <button class="btn btn-warning" role="button" onclick="saveInfo()">Save Information
-                </button></div>
+                </button>
+            </div>
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <div class="textarea" id="firstName">
                     <label for="firstName">First Name:</label>
-                    <textarea class="form-control"></textarea>
+                    <textarea class="form-control">Alex</textarea>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <div class="textarea" id="lastName">
                     <label for="lastName">Last Name:</label>
-                    <textarea class="form-control"></textarea>
+                    <textarea class="form-control">Smith</textarea>
                 </div>
             </div>
 
@@ -162,146 +106,475 @@
             </div>
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                <div class="textarea" id="familyNotified">
-                    <label for="familyNotified">Family notified:</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                        <label class="form-check-label" for="exampleRadios1">
-                            Yes
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                        <label class="form-check-label" for="exampleRadios2">
-                            No
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <div class="row">
-        <div class="panel panel-default col-lg-5 col-md-4 col-sm-8 col-xs-12 top-buffer">
-            <div class="panel-heading" style="background-color: white"><strong>Airway Control:</strong></div>
-
-            <div class="col-lg-3 col-md-3 col-sm-8 col-xs-12">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
-                        ETT Size (in mm):<span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">7</a></li>
-                        <li><a href="#">7.5</a></li>
-                        <li><a href="#">8</a></li>
-                        <li><a href="#">8.5</a></li>
-                        <li><a href="#">9</a></li>
-                        <li><a href="#">9.5</a></li>
-                        <li><a href="#">10</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Other</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-3 col-sm-8 col-xs-12">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
-                        Airway type:<span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Endotracheal</a></li>
-                        <li><a href="#">Nasoendotracheal</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Other</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-3 col-sm-8 col-xs-12">
-                <div class="textarea" id="airwayComments">
-                    <label for="airwayComments">Comments:</label>
+                <div class="textarea" id="dob">
+                    <label for="dob">DOB:</label>
                     <textarea class="form-control"></textarea>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-8 col-xs-12">
-                <button class="btn btn-warning" role="button" onclick="compressionComplete()">Record Compression
+    <div class="row">
+        <div class="panel panel-default col-lg-4 col-md-4 col-sm-8 col-xs-12 top-buffer">
+            <div class="panel-heading" style="background-color: white"><strong>Chest Compressions:</strong></div>
+            <div class="col-lg-8 col-md-8 col-sm-4 col-xs-12">
+                <button class="btn btn-warning datebtn" id="recordCompression">Start Compressions
+                </button>
+                <button class="btn btn-danger datebtn" id="endCompression">End Compressions
                 </button>
             </div>
 
         </div>
 
-        <div class="col-lg-1 col-md-2 col-sm-4 col-xs-6"></div>
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6"></div>
+
 
         <div class="panel panel-default col-lg-4 col-md-4 col-sm-10 col-xs-12 top-buffer">
-            <div class="panel-heading" style="background-color: white"><strong>IV Fluids:</strong></div>
+            <div class="panel-heading" style="background-color: white"><strong>Medications:</strong></div>
 
             <div class="dropdown">
                 <div class="btn-group">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
-                            IV site:<span class="caret"></span>
+                        <button class="btn btn-success dropdown-medicationType" id="medicationType"
+                                data-toggle="dropdown">
+                            Medication:<span class="caret"></span>
                         </button>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Arm</a></li>
-                            <li><a href="#">Leg</a></li>
-                            <li><a href="#">Epideral</a></li>
+                        <ul class="dropdown-menu" id="medicationTypeSelection" role="menu">
+                            <li><a>Glucagon</a></li>
+                            <li><a>Levophed</a></li>
+                            <li><a>Phenylephrine</a></li>
+                            <li><a>Vasopressin</a></li>
+                            <li><a>Epinephrine</a></li>
+                            <li><a>Dopamine</a></li>
+                            <li><a>Dobutamine</a></li>
+                            <li><a>Milrinone</a></li>
+                            <li><a>Propofol</a></li>
+                            <li><a>Fentanyl</a></li>
+                            <li><a>Sodium Bicarbonate</a></li>
+                            <li><a>Precedex</a></li>
+                            <li><a>Amiodarone</a></li>
+                            <li><a>Magnesium Sulfate</a></li>
+                            <li><a>Lidocane</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Other</a></li>
+                            <li><a>Other</a></li>
                         </ul>
                     </div>
 
                     <div class="btn-group">
-                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
-                            IV Solution:<span class="caret"></span>
+                        <button class="btn btn-success dropdown-routeOfAdmin" id="routeofAdminType"
+                                data-toggle="dropdown">
+                            Route of Admin:<span class="caret"></span>
                         </button>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">H20</a></li>
-                            <li><a href="#">ETC</a></li>
-                            <li><a href="#">Etc</a></li>
+                        <ul class="dropdown-menu" id="routeofAdminSelection" role="menu">
+                            <li><a>IV</a></li>
+                            <li><a>Sub Q</a></li>
+                            <li><a>IO</a></li>
+                            <li><a>IM</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Other</a></li>
+                            <li><a>Other</a></li>
                         </ul>
                     </div>
 
                 </div>
 
-                <button class="btn btn-warning" role="button" onclick="enterIVfluids()">Record IV Fluids
+            <button class="btn btn-warning datebtn" id="enterMedication">Enter Medication
+            </button>
+
+            <div class="col-12">
+                <div class="editor-content" id="DosageComment">
+                    <label for="DosageComment">Dosage Administered:</label>
+                    <textarea class="form-control" id="DosageValue"
+                              placeholder="Dosage Per Unit(s) Administered"></textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="panel panel-default col-lg-4 col-md-4 col-sm-10 col-xs-12 top-buffer">
+            <div class="panel-heading" style="background-color: white"><strong>Airway Management:</strong></div>
+
+            <div class="dropdown">
+                <div class="btn-group">
+
+                    <div class="btn-group">
+                        <button class="btn btn-success dropdown-eType" id="eTitle"
+                                data-toggle="dropdown">
+                            Airway:<span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="eSelected" role="menu">
+                            <li><a>Endotracheal</a></li>
+                            <li><a>Nasotracheal</a></li>
+                            <li><a>Laryngeal</a></li>
+                            <li><a>Non-rebreather</a></li>
+                            <li class="divider"></li>
+                            <li><a>Other</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-group">
+                        <button class="btn btn-success dropdown-ETT" id="ETTTitle"
+                                data-toggle="dropdown">
+                            ETT Size (in mm):<span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="ETTselected" role="menu"
+                            data-toggle="dropdown">
+                            <li><a>7</a></li>
+                            <li><a>7.5</a></li>
+                            <li><a>8</a></li>
+                            <li><a>8.5</a></li>
+                            <li><a>9</a></li>
+                            <li><a>9.5</a></li>
+                            <li><a>10</a></li>
+                            <li class="divider"></li>
+                            <li><a>Other</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <button class="btn btn-warning datebtn" id="enterETT">Enter Airway Management
                 </button>
 
+            </div>
+
+            <div class="col-12">
+                <div class="editor-content" id="airwayControlComments">
+                    <label for="airwayComments">Comments:</label>
+                    <textarea class="form-control" id="airwayComments"
+                              placeholder="Additional Airway Comments"></textarea>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6"></div>
+
+
+        <div class="panel panel-default col-lg-4 col-md-4 col-sm-10 col-xs-12 top-buffer">
+            <div class="panel-heading" style="background-color: white"><strong>IV:</strong></div>
+            <div class="dropdown">
+                <div class="btn-group">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success dropdown-ivAccess" id="ivAcessTitle"
+                                data-toggle="dropdown">
+                            IV Access:<span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" id="ivAccessSelection">
+                            <li><a>Peripheral IV</a></li>
+                            <li><a>Central Line</a></li>
+                            <li><a>IO</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success dropdown-ivSize" id="ivSizeTitle"
+                                data-toggle="dropdown">
+                            IV:<span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="ivSizeSelection" role="menu">
+                            <li class="dropdown-header">Size</li>
+                            <li><a>14</a></li>
+                            <li><a>16</a></li>
+                            <li><a>18</a></li>
+                            <li><a>20</a></li>
+                            <li><a>22</a></li>
+                            <li><a>24</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Type</li>
+                            <li><a>PICC</a></li>
+                            <li><a>Triple Lumen</a></li>
+                            <li><a>Chest Port</a></li>
+                            <li class="divider"></li>
+                            <li><a>Other</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success dropdown-ivLR" id="ivLRTitle"
+                                data-toggle="dropdown">
+                            IV Placement:<span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="ivLRSelection" role="menu">
+                            <li><a>Left</a></li>
+                            <li><a>Right</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success dropdown-ivLocation" id="ivLocationTitle"
+                                data-toggle="dropdown">
+                            IV Location:<span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="ivLocationSelection" role="menu">
+                            <li class="dropdown-header">Locations for Peripheral IV</li>
+                            <li><a>Hand</a></li>
+                            <li><a>Wrist</a></li>
+                            <li><a>Forearm</a></li>
+                            <li><a>A/C</a></li>
+                            <li><a>Other</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Locations for Centeral Line</li>
+                            <li><a>IJ</a></li>
+                            <li><a>EJ</a></li>
+                            <li><a>SCV</a></li>
+                            <li><a>Chest</a></li>
+                            <li><a>Other</a></li>
+                            <li class="divider"></li>
+                            <li><a>Other</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="btn btn-warning datebtn" role="button" id="recordIV">Record IV
+                </button>
+
+            </div>
+
+            <div class="panel-heading" style="background-color: white"><strong>Shock Administered:</strong></div>
+            <button class="btn btn-warning datebtn" id="shockAdmin">Record Shock
+            </button>
+            <div class="col-sm-4">
+                <textarea class="form-control" id="joulesValue" placeholder="Joules Value"></textarea>
             </div>
 
         </div>
 
     </div>
 
+    <script type="text/javascript">
+
+        $(function () {
+            $(".datebtn").click(function () {
+                $('.date').val(Date());
+            })
+        });
+
+    </script>
+
+    <button class="btn btn-primary cloneRow">Add Event</button>
+
+    <script>
+        $(document).ready(
+            function () {
+                $('#beginCode').click(
+                    function () {
+                        $(".medication").val("CODE BEGAN");
+                        $(".dosage").val("CODE BEGAN");
+                        $(".routeOfAdmin").val("CODE BEGAN");
+                        $(".IvAccess").val("CODE BEGAN");
+                        $(".IvType").val("CODE BEGAN");
+                        $(".IvLocation").val("CODE BEGAN");
+                        $(".defib").val("CODE BEGAN");
+                        $(".chestcompress").val("CODE BEGAN");
+                        $(".tablecomments").val('')
+                    }
+                )
+            }
+        );
+
+        $(function () {
+            $('.cloneRow').on('click', function () {
+                var data = $("#ICUTable tr:eq(1)").clone(true).appendTo("#ICUTable");
+                data.find("input").val('');
+            });
+        });
+
+
+        $(document).ready(
+            function () {
+                $('#recordCompression').click(
+                    function () {
+                        $(".medication").val("N/A");
+                        $(".dosage").val("N/A");
+                        $(".routeOfAdmin").val("N/A");
+                        $(".IvAccess").val("N/A");
+                        $(".IvType").val("N/A");
+                        $(".IvLocation").val("N/A");
+                        $(".defib").val("N/A");
+                        $(".chestcompress").val("Compressions Started");
+                        $(".tablecomments").val('')
+                    }
+                )
+            }
+        );
+
+        $(document).ready(
+            function () {
+                $('#endCompression').click(
+                    function () {
+                        $(".medication").val("N/A");
+                        $(".dosage").val("N/A");
+                        $(".routeOfAdmin").val("N/A");
+                        $(".IvAccess").val("N/A");
+                        $(".IvType").val("N/A");
+                        $(".IvLocation").val("N/A");
+                        $(".defib").val("N/A");
+                        $(".chestcompress").val("Compressions Ended");
+                        $(".tablecomments").val('')
+                    }
+                )
+            }
+        );
+
+        $(document).ready(
+            function () {
+                $('#enterMedication').click(
+                    function () {
+                        $('.medication').val($('.dropdown-medicationType').text());
+                        var dosageVal = $.trim($('#DosageValue').val());
+                        $(".dosage").val(dosageVal);
+                        $('.routeOfAdmin').val($('.dropdown-routeOfAdmin').text())
+                        $(".IvAccess").val("N/A");
+                        $(".IvType").val("N/A");
+                        $(".IvLocation").val("N/A");
+                        $(".defib").val("N/A");
+                        $(".chestcompress").val("N/A");
+                        $(".dropdown-medicationType").text("Medication:");
+                        $(".dropdown-routeOfAdmin").text("Route of Admin:")
+                        $("#DosageValue").val('');
+                    }
+                );
+            }
+        );
+
+        $(document).ready(
+            function () {
+                $('#enterETT').click(
+                    function () {
+                        $('.medication').val("N/A");
+                        $('.dosage').val("N/A");
+                        $(".routeOfAdmin").val("N/A");
+                        $(".IvAccess").val("N/A");
+                        $(".IvType").val("N/A");
+                        $(".IvLocation").val("N/A");
+                        $(".defib").val("N/A");
+                        $(".chestcompress").val($('.dropdown-eType').text() + " size: " + $('.dropdown-ETT').text() + "mm");
+                        var comment = $.trim($('#airwayComments').val());
+                        $(".tablecomments").val(comment);
+                        $(".dropdown-eType").text("Airway:");
+                        $(".dropdown-ETT").text("ETT Size (in mm):");
+                        $("#airwayComments").val('');
+                    }
+                )
+            }
+        )
+
+
+        $('.dropdown-dosage').dropdown();
+        $('#medicationSelection li').on('click', function () {
+            $('#medicationsTitle').html($(this).find('a').html());
+        });
+
+        $('.dropdown-ETT').dropdown();
+        $('#ETTselected li').on('click', function () {
+            $('#ETTTitle').html($(this).find('a').html());
+        });
+
+        $('.dropdown-medicationType').dropdown();
+        $('#medicationTypeSelection li').on('click', function () {
+            $('#medicationType').html($(this).find('a').html());
+        });
+
+        $('.dropdown-routeOfAdmin').dropdown();
+        $('#routeofAdminSelection li').on('click', function () {
+            $('#routeofAdminType').html($(this).find('a').html());
+        });
+
+        $('.dropdown-eType').dropdown();
+        $('#eSelected li').on('click', function () {
+            $('#eTitle').html($(this).find('a').html());
+        });
+
+        $('.dropdown-ivAccess').dropdown();
+        $('#ivAccessSelection li').on('click', function () {
+            $('#ivAcessTitle').html($(this).find('a').html());
+        });
+
+        $('.dropdown-ivSize').dropdown();
+        $('#ivSizeSelection li').on('click', function () {
+            $('#ivSizeTitle').html($(this).find('a').html());
+        });
+
+        $('.dropdown-ivLR').dropdown();
+        $('#ivLRSelection li').on('click', function () {
+            $('#ivLRTitle').html($(this).find('a').html());
+        });
+
+        $('.dropdown-ivLocation').dropdown();
+        $('#ivLocationSelection li').on('click', function () {
+            $('#ivLocationTitle').html($(this).find('a').html());
+        });
+
+        $(document).ready(
+            function () {
+                $('#recordIV').click(
+                    function () {
+                        $('.medication').val("N/A");
+                        $(".dosage").val("N/A");
+                        $(".routeOfAdmin").val("N/A");
+                        $(".defib").val("N/A");
+                        $(".IvAccess").val($('.dropdown-ivAccess').text() + " " + $('.dropdown-ivSize').text() + " " +
+                            $('.dropdown-ivLR').text() + " " + $('.dropdown-ivLocation').text());
+                        $(".chestcompress").val("N/A");
+                        $(".dropdown-ivAccess").text("IV Access:");
+                        $(".dropdown-ivSize").text("IV:");
+                        $(".dropdown-ivLR").text("IV Placement:");
+                        $(".dropdown-ivLocation").text("IV Location:");
+                        $(".tablecomments").val('')
+                    }
+                )
+            }
+        );
+
+        $(document).ready(
+            function () {
+                $('#shockAdmin').click(
+                    function () {
+                        $('.medication').val("N/A");
+                        $(".dosage").val("N/A");
+                        $(".routeOfAdmin").val("N/A");
+                        $(".IvAccess").val("N/A");
+                        $(".IvType").val("N/A");
+                        $(".IvLocation").val("N/A");
+                        var shockValue = $.trim($('#joulesValue').val() + " Joules");
+                        $(".defib").val(shockValue);
+                        $(".chestcompress").val("N/A");
+                        $("#joulesValue").val('');
+                        $(".tablecomments").val('')
+                    }
+                )
+            }
+        );
+
+    </script>
 
 
     <div class="row">
-        <table class="table table-hover">
+        <table class="table table-hover" id="ICUTable">
             <thead>
             <tr>
-                <th>Event Sequence</th>
-                <th>First Name</th>
-                <th>Last Name</th>
                 <th>Medication</th>
                 <th>Dosage</th>
-                <th>Defibralation</th>
-                <th>Chest Compressions</th>
+                <th>Route of Administration</th>
+                <th>IV Access</th>
+                <th>Shock Administration (Joules)</th>
+                <th>Airway Control</th>
+                <th>Date</th>
+                <th>Comments</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>Lidocane</td>
-                <td>200</td>
-                <th>N/A</th>
-                <th>N/A</th>
+                <td><input type="text" class="form-control medication"></td>
+                <td><input type="text" class="form-control dosage"></td>
+                <td><input type="text" class="form-control routeOfAdmin"></td>
+                <td><input type="text" class="form-control IvAccess"></td>
+                <td><input type="text" class="form-control defib"></td>
+                <td><input type="text" class="form-control chestcompress"></td>
+                <td><input type="text" class="form-control date"></td>
+                <td><input type="text" class="form-control tablecomments"></td>
             </tr>
             </tbody>
         </table>
