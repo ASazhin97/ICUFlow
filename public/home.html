@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/inputDigest.js"></script>
+    <script src="js/homeScreen.js"></script>
 
     <link rel="stylesheet" href="css/home.css">
 
@@ -47,13 +48,8 @@
     <form action="codeSheet2.html">
 
         <div class = "form-group">
-            <label>Medical Record Number</label>
-            <input type="text" id="Record" placeholder="Please enter the patient's medical record number..." class = "form-control" required>
-        </div>
-
-        <div class = "form-group">
             <label>Patient's Name</label>
-            <input type="text" id="patientName" placeholder="Please enter the patient's name..." class = "form-control" required>
+            <input type="text" id="patientName" placeholder="Please enter the patient's name..." class = "form-control" list="patients" oninput="onInput()" required>
         </div>
 
         <div class = "form-group">
@@ -62,10 +58,18 @@
         </div>
 
         <div>
-            <input type="submit" class = "btn btn-primary sub-btn" id="submit" value = "Submit" onclick="homeData()">
+            <input type="submit" class = "btn btn-primary sub-btn" id="submit" value = "Submit" onclick="homeData();">
         </div>
     </form>
 </div>
+
+<!- autocomplete lists ->
+<datalist id = "patients">
+  <option value="Jeff Smith" id="jeffSmith">
+  <option value="Phil Russo" id="philRusso">
+  <option value="Jennifer Lopez" id="jLo">
+  <option value="">
+</datalist>
 
 </body>
 </html>

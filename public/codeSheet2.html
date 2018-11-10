@@ -45,35 +45,18 @@
         <button class = "btn btn-warning start-btn" onclick="startCode()">Start Code</button>
     </div>
     <div class="row row-two">
-    
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <div class="panel panel-default" id="panel2">
-                <div class="panel-heading">General</div>
-                <div class="panel-body">Date: <input type = "text" id="sheetDate"></div>
-                <div class="panel-body">Time: <input type = "text" id="sheetTime"></div>
-                <div class="panel-body">Location: <input type = "text" id="sheetLocation"></div>
-                <div class="panel-body">Time event called: <input type = "text" id="sheetTimeCalled"></div>
-                <div class="panel-body">Time team arrived: <input type = "text" id="sheetTimeArrived"></div>
-                <div class="panel-body">Witnesses: <input type = "text" id="sheetWitnesses"></div>
-                <div class="panel-body">CPR Initiated: <input type = "text" id="sheetCPR"></div>
-                <div class="panel-body">Time of compression: <input type = "text" id="sheetCompressionTime"></div>
-                <div class="panel-footer">
-            
-            </div>
-            </div>
 
-        </div>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="panel panel-default" id="panel3">
                 <div class="panel-heading">Patient Information</div>
-                <div class="panel-body">Name: <input type = "text" id="patientNameReport"></div>
-                <div class="panel-body">Date of Birth: <input type = "text" id="patientDOB"></div>
-                <div class="panel-body">MR#: <input type = "text" id="patientMRReport"></div>
+                <div class="panel-body">Name: <input type = "text" id="patientNameSheet"></div>
+                <div class="panel-body">Date of Birth: <input type = "text" id="patientDOBSheet"></div>
+                <div class="panel-body">MR#: <input type = "text" id="patientMRSheet"></div>
                 <div class="panel-body">Weight: <input type = "text" id="patientWeightSheet"></div>
                 <div class="panel-body">Comments: <textarea style = "width: 100%" id="patientCommentsSheet"></textarea></div>
 
                 <div class="panel-footer">
-                
+
                 </div>
             </div>
 
@@ -99,7 +82,7 @@
             </div>
 
         </div>
-    
+
     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
         <div class="panel panel-default" id="panel4">
             <div class="panel-heading">Airway Control</div>
@@ -143,13 +126,13 @@
                       <label class="form-check-label" for="inlineRadio2">Compression End</label>
                       <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions1" id="compression-check2" value="Compressions End">
                 </span>
-                
+
             <span class="form-check-inline">
                       <label class="form-check-label" for="inlineRadio2">Defib</label>
                       <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions1" id="defib-check" value="Defib">
                 </span>
             </div>
-            
+
                 <div class="panel-body">Rhythm: <input type = "text" id="defibRhythm"></div>
                 <div class="panel-body">Shock: <input type = "text" id="defibShock"></div>
                 <div class="panel-body">Comments: <textarea style = "width: 100%" id="defibComments"></textarea></div>
@@ -182,7 +165,7 @@
                         </tr>
                         </thead>
                         <tbody contenteditable="true" id="info-table-body" id = "info-table-body">
-                            
+
                         </tbody>
                     </table>
                 </div>
@@ -203,7 +186,7 @@
             <div class="panel-heading">Comments:</div>
             <div class="panel-body"><textarea style = "width: 100%" id="fullComments"></textarea></div>
             <div class="panel-footer">
-                
+
             </div>
         </div>
     </div>
@@ -214,7 +197,7 @@
     <form action = "administration.html">
         <input type="submit" class="btn btn-warning print-button" value = "End Code" onclick="endCode(); saveSheetData()">
     </form>
-</div>  
+</div>
 
 <!- autocomplete lists ->
 <datalist id = "airways">
@@ -223,7 +206,7 @@
   <option value="Laryngeal">
   <option value="Non-rebreather">
 </datalist>
-    
+
 <datalist id = "ett-size">
     <option value="7.0mm">
     <option value="7.5mm">
@@ -233,19 +216,19 @@
     <option value="9.5mm">
     <option value="10.0mm">
 </datalist>
-    
+
 <datalist id = "iv-access-list">
     <option value="Peripheral IV">
     <option value="Central Line">
     <option value="IO">
 </datalist>
-    
+
 <datalist id = "iv-type-list">
     <option value="PICC">
     <option value="Triple Lumen">
     <option value="Chest Port">
 </datalist>
-    
+
 <datalist id = "iv-size-list">
     <option value="14">
     <option value="16">
@@ -254,7 +237,7 @@
     <option value="22">
     <option value="24">
 </datalist>
-    
+
 <datalist id = "iv-loc-list">
     <option value="Left Arm">
     <option value="Left Wrist">
@@ -267,23 +250,23 @@
     <option value="EJ">
     <option value="SCV">
     <option value="Chest">
-    
+
 </datalist>
-        
+
 <datalist id = "route-admin-list">
     <option value = "Sub Q">
     <option value = "IV">
     <option value = "IO">
     <option value = "IM">
-                            
+
 </datalist>
-    
+
 <datalist id = "air-control-list">
     <option value = "Intubated">
     <option value = "Nasal cannula">
     <option value = "Mask">
 </datalist>
-    
+
 <datalist id = "meds-list">
     <option value = "Adenosin">
     <option value = "Amiodarone">
@@ -296,7 +279,7 @@
     <option value = "Magnesium">
     <option value = "Vasopressin">
 </datalist>
-    
+
 <datalist id = "meds-dose-list">
     <option value = "6mg">
     <option value = "300mg">
@@ -313,7 +296,7 @@
     <option value = "1gm">
     <option value = "20units">
 </datalist>
-    
+
 <script type = "text/javascript">
 var currentRow;
 var panelNumber;
@@ -329,7 +312,7 @@ function addRow() {
             newRow.appendChild(newCell);
         }
         tableBody.appendChild(newRow);
-    
+
         var date = Date();
         var cells = currRow.children;
 
@@ -477,9 +460,9 @@ function panel6Pop(){
     var date = Date();
     var cells = currRow.children;
 
-    
+
     cells[0].innerHTML = date;
-    
+
     if(document.getElementById('compression-check1').checked){
         cells[1].innerHTML = "Compressions Start";
     } else if(document.getElementById('compression-check2').checked){
