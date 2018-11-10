@@ -9,42 +9,35 @@
     font-family: monospace;
 }
 
-#content{
-  padding-top: 170px;
+.row-one{
+    margin-top: 10%;
+    margin-left:1%;
+    margin-right: 1%;
 }
 
-.resuscitationLabel{
+.row{
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.row-three{
+    margin-bottom: 2%;
+    margin-left: 50%;
+}
+
+#othersAlign{
+  margin-left: 50px;
+}
+
+#resuscitationLabel{
   font-weight: bold;
   text-decoration: underline;
-
 }
 
-#row1{
-  margin: auto;
-}
-
-.form-check-inline{
-  display: inline;
-  padding-right: 20px;
-}
 
 .header{
   font-size: 30px;
   font-family: monospace;
-}
-
-.form-control-plaintext{
-}
-
-
-#input1{
-  width: 90%;
-  height: 20px;
-}
-
-#input2{
-  width: 100%;
-  height: 20px;
 }
 
 #finalize{
@@ -52,8 +45,6 @@
 }
 
 .btn-light{
-
-  margin-left: 30px;
   width: 120px;
   height: 40px;
 

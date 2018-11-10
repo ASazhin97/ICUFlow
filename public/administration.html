@@ -39,320 +39,112 @@
             </div>
         </div>
     </nav>
-
     <div class="content-fluid" id="content">
-      <div class="row" id="row1">
+      <div class = "row row-one">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="panel panel-default" id="panel2">
+              <div class="panel-heading">General</div>
+              <div class="panel-body">Date: <input type = "text" id="sheetDate"></div>
+              <div class="panel-body">Time: <input type = "text" id="sheetTime"></div>
+              <div class="panel-body">Location: <input type = "text" id="sheetLocation"></div>
+              <div class="panel-body">Time event called: <input type = "text" id="sheetTimeCalled"></div>
+              <div class="panel-body">Time team arrived: <input type = "text" id="sheetTimeArrived"></div>
+              <div class="panel-body">Witnesses: <input type = "text" id="sheetWitnesses"></div>
+              <div class="panel-body">CPR Initiated: <input type = "text" id="sheetCPR"></div>
+              <div class="panel-body">Time of compression: <input type = "text" id="sheetCompressionTime"></div>
+              <div class="panel-footer"></div>
+          </div>
 
-        <div class="col-lg-6">
-          <h class="header"> Outcome </h>
-          <div class="panel-group">
-            <div class="panel panel-primary">
-              <div class="panel-body">
-              <!--
-                <div class="row">
-                  <div class="col-sm-3">
-                    <p class="labels"> End Time:</p>
-                  </div>
-                  <div class="col-sm-3">
-                    <p class="placeholder">________</p>
-                  </div>
-                </div>
-              -->
-                <div class="row">
-                  <div class="col-sm-3">
-                    <p class="labels"> Patient Outcome: </p>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="form-check-inline">
-                      <label class="form-check-label" for="inlineRadio1">Survived</label>
-                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions1" id="survived" value="option1">
-                    </div>
-                    <div class="form-check-inline">
-                      <label class="form-check-label" for="inlineRadio2">Deceased</label>
-                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions1" id="deceased" value="option2">
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-3">
-                    <p class="labels" id="transferred"> Transferred to: </p>
-                  </div>
-                  <div class="col-lg-9" id="transferred">
-                    <div class="form-check-inline">
-                      <label class="form-check-label" for="inlineRadio1">ICU</label>
-                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions2" id="toICU" value="option1" >
-                    </div>
-                    <div class="form-check-inline">
-                      <label class="form-check-label" for="inlineRadio2">Morgue</label>
-                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions2" id="toMorgue" value="option2">
-                    </div>
-                    <div class="form-check-inline">
-                      <label class="form-check-label" for="inlineRadio3">Other Healthcare Facility</label>
-                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions2" id="toHealthcare" value="option3">
-                    </div>
-                    <div class="form-check-inline">
-                      <label class="form-check-label" for="inlineRadio4">Stayed on Unit</label>
-                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions2" id="stayedUnit" value="option3">
-                    </div>
-                  </div>
-                </div>
-                <div class="row" id="resuscitation">
-                  <div class="col-lg-12">
-                    <p class="resuscitationLabel"> Reason Resuscitation Ended:</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-3">
-                    <p class="labels"> Return of Circulation:</p>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="form-check-inline">
-                      <label class="form-check-label" for="inlineRadio1">Yes</label>
-                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions3" id="circulationYes" value="option1">
-                    </div>
-                    <div class="form-check-inline">
-                      <label class="form-check-label" for="inlineRadio2">No</label>
-                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions3" id="circulationNo" value="option2">
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <p class="labels"> Medical Futility:</p>
-                  </div>
-                  <div class="col-sm-3">
-                  <div class="form-check-inline">
-                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions4" id="futYes" value="option1">
-                  </div>
-                  <div class="form-check-inline">
-                    <label class="form-check-label" for="inlineRadio2">No</label>
-                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions4" id="futNo" value="option2">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="labels"> Restrictions by Family:</p>
-                </div>
-                <div class="col-sm-3">
-                  <div class="form-check-inline">
-                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions5" id="famRes" value="option1">
-                  </div>
-                  <div class="form-check-inline">
-                    <label class="form-check-label" for="inlineRadio2">No</label>
-                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions5" id="famResNo" value="option2">
-                  </div>
-                </div>
-                <div class="col-sm-3">
-                  <p class="labels"> Advanced Directives:</p>
-                </div>
-                <div class="col-sm-3">
-                  <div class="form-check-inline">
-                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions6" id="advYes" value="option1">
-                  </div>
-                  <div class="form-check-inline">
-                    <label class="form-check-label" for="inlineRadio2">No</label>
-                    <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions6" id="advNo" value="option2">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-              <div class="col-sm-3">
-                <p class="labels">Family Notified:</p>
-              </div>
-              <div class="col-sm-3">
-                <div class="form-check-inline">
+      </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="panel panel-default" >
+                <div class="panel-heading">Outcome</div>
+                <div class="panel-body">Patient Outcome:
+                  <label class="form-check-label" for="inlineRadio1">Survived</label>
+                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions1" id="survived" value="option1">
+                  <label class="form-check-label" for="inlineRadio2">Deceased</label>
+                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions2" id="deceased" value="option2"> </div>
+                <div class="panel-body">Transferred to:
+                  <label class="form-check-label" for="inlineRadio1">ICU</label>
+                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions2" id="toICU" value="option1" >
+                  <label class="form-check-label" for="inlineRadio2">Morgue</label>
+                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions2" id="toMorgue" value="option2">
+                  <label class="form-check-label" for="inlineRadio3">Other Healthcare Facility</label>
+                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions2" id="toHealthcare" value="option3">
+                  <label class="form-check-label" for="inlineRadio4">Stayed on Unit</label>
+                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions2" id="stayedUnit" value="option4"></div>
+                <div class="panel-body" id="resuscitationLabel">Reason Resuscitation Ended: </div>
+                <div class="panel-body">Return of Circulation:
+                  <label class="form-check-label" for="inlineRadio1">Yes</label>
+                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions3" id="circulationYes" value="option1">
+                  <label class="form-check-label" for="inlineRadio2">No</label>
+                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions3" id="circulationNo" value="option2"> </div>
+                <div class="panel-body">Restrictions by Family:
+                  <label class="form-check-label" for="inlineRadio1">Yes</label>
+                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions5" id="famRes" value="option1">
+                  <label class="form-check-label" for="inlineRadio2">No</label>
+                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions5" id="famResNo" value="option2"> </div>
+                <div class="panel-body">Medical Futility:
+                  <label class="form-check-label" for="inlineRadio1">Yes</label>
+                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions4" id="futYes" value="option1">
+                  <label class="form-check-label" for="inlineRadio2">No</label>
+                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions4" id="futNo" value="option2"></div>
+                <div class="panel-body">Advanced Directives:
+                  <label class="form-check-label" for="inlineRadio1">Yes</label>
+                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions6" id="advYes" value="option1">
+                  <label class="form-check-label" for="inlineRadio2">No</label>
+                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions6" id="advNo" value="option2"> </div>
+                <div class="panel-body">Family Notified:
                   <label class="form-check-label" for="inlineRadio1">Yes</label>
                   <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions7" id="notifiedYes" value="option1">
-                </div>
-                <div class="form-check-inline">
                   <label class="form-check-label" for="inlineRadio2">No</label>
-                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions7" id="notifiedNo" value="option2">
-                </div>
+                  <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions7" id="notifiedNo" value="option2"> </div>
+                <div class="panel-footer"></div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+        <div class = "row row-two">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+              <div class="panel panel-default" id="panel3">
+                  <div class="panel-heading">Names/Signatures</div>
+                  <div class="panel-body">Team Leader:
+                    <input type="text" class="form-control-plaintext" id="teamLeaderInput" placeholder="Name">
+                    <h class="placeholder"> / _____________________________</h></div>
+                  <div class="panel-body">Nurse Preparing Meds:
+                    <input type="text" class="form-control-plaintext" id="nursePrepInput" placeholder="Name">
+                    <h class="placeholder"> / _____________________________</h></div>
+                  <div class="panel-body">Nurse Administering Meds:
+                    <input type="text" class="form-control-plaintext" id="nurseAdminInput" placeholder="Name">
+                    <h class="placeholder"> / _____________________________</h></div>
+                  <div class="panel-body">Recorder Nurse:
+                    <input type="text" class="form-control-plaintext" id="nurseRecorderInput" placeholder="Name">
+                    <h class="placeholder"> / _____________________________</h></div>
+                  <div class="panel-body">Anesthesiologist:
+                    <input type="text" class="form-control-plaintext" id="anesthesiologistInput" placeholder="Name">
+                    <h class="placeholder"> / _____________________________</h></div>
+                  <div class="panel-body">Others:
+                    <input type="text" class="form-control-plaintext" id="othersInput1" placeholder="Name">
+                    <h class="placeholder"> / _____________________________</h></div>
+                  <div class="panel-body" id="othersAlign">
+                    <input type="text" class="form-control-plaintext" id="othersInput2" placeholder="Name">
+                    <h class="placeholder"> / _____________________________</h></div>
+                  <div class="panel-body" id="othersAlign">
+                    <input type="text" class="form-control-plaintext" id="othersInput3" placeholder="Name">
+                    <h class="placeholder"> / _____________________________</h></div>
+                  <div class="panel-body" id="othersAlign">
+                    <input type="text" class="form-control-plaintext" id="othersInput4" placeholder="Name">
+                    <h class="placeholder"> / _____________________________</h></div>
 
-          <div class="col-lg-6">
-            <h class="header"> Names/Signatures </h>
-            <div class="panel-group">
-              <div class="panel panel-primary">
-                <div class="panel-body">
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <p class="labels">Team Leader:</p>
-                    </div>
-
-                    <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext" id="teamLeaderInput" placeholder="Name">
-                    </div>
-
-                    <div class="col-sm-1">
-                      <p> / </p>
-                    </div>
-
-                    <div class="col-sm-4">
-                      <p class="placeholder">_____________________</p>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <p class="labels">Nurse Preparing Meds:</p>
-                    </div>
-
-                    <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext" id="nursePrepInput" placeholder="Name">
-                    </div>
-
-                    <div class="col-sm-1">
-                      <p> / </p>
-                    </div>
-
-                    <div class="col-sm-4">
-                      <p class="placeholder">_____________________</p>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <p class="labelSmall">Nurse Administering Meds:</p>
-                    </div>
-
-                    <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext" id="nurseAdminInput" placeholder="Name">
-                    </div>
-
-                    <div class="col-sm-1">
-                      <p> / </p>
-                    </div>
-
-                    <div class="col-sm-4">
-                      <p class="placeholder">_____________________</p>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <p class="labels">Recorder Nurse:</p>
-                    </div>
-
-                    <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext" id="nurseRecorderInput" placeholder="Name">
-                    </div>
-
-                    <div class="col-sm-1">
-                      <p> / </p>
-                    </div>
-
-                    <div class="col-sm-4">
-                      <p class="placeholder">_____________________</p>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <p class="labels">Anesthesiologist:</p>
-                    </div>
-
-                    <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext" id="anesthesiologistInput" placeholder="Name">
-                    </div>
-
-                    <div class="col-sm-1">
-                      <p> / </p>
-                    </div>
-
-                    <div class="col-sm-4">
-                      <p class="placeholder">_____________________</p>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <p class="labels">Others:</p>
-                    </div>
-
-                    <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext" id="othersInput1" placeholder="Name">
-                    </div>
-
-                    <div class="col-sm-1">
-                      <p> / </p>
-                    </div>
-
-                    <div class="col-sm-4">
-                      <p class="placeholder">_____________________</p>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <p class="labels"></p>
-                    </div>
-
-                    <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext" id="othersInput2" placeholder="Name">
-                    </div>
-
-                    <div class="col-sm-1">
-                      <p> / </p>
-                    </div>
-
-                    <div class="col-sm-4">
-                      <p class="placeholder">_____________________</p>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <p class="labels"></p>
-                    </div>
-
-                    <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext" id="othersInput3" placeholder="Name">
-                    </div>
-
-                    <div class="col-sm-1">
-                      <p> / </p>
-                    </div>
-
-                    <div class="col-sm-4">
-                      <p class="placeholder">_____________________</p>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <p class="labels"></p>
-                    </div>
-
-                    <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext" id="othersInput4" placeholder="Name">
-                    </div>
-
-                    <div class="col-sm-1">
-                      <p> / </p>
-                    </div>
-
-                    <div class="col-sm-4">
-                      <p class="placeholder">_____________________</p>
-                    </div>
-                  </div>
+                  <div class="panel-footer"></div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
 
-            <form >
-              <a class="finalize"><button type="button" class="btn-light" onclick="validate(); saveAdminData();">Finalize</button></a>
-            </form>
-
-      </div>
+              <div class="row row-three">
+                <form >
+                  <a class="finalize"><button type="button" class="btn-light" onclick="validate(); saveAdminData();">Finalize</button></a>
+                </form>
+              </div>
+            </div>
     </body>
 </html>

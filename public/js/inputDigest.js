@@ -55,6 +55,15 @@ function saveAdminData(){
   } else if(document.getElementById('notifiedNo').checked){
     sessionStorage.setItem('noti', "No");
   }
+  
+  sessionStorage.setItem('Date', $("#sheetDate").val());
+  sessionStorage.setItem('Time', $("#sheetTime").val());
+  sessionStorage.setItem('Location', $("#sheetLocation").val());
+  sessionStorage.setItem('TimeCalled', $("#sheetTimeCalled").val());
+  sessionStorage.setItem('TimeArrived', $("#sheetTimeArrived").val());
+  sessionStorage.setItem('Witnesses', $("#sheetWitnesses").val());
+  sessionStorage.setItem('CPR', $("#sheetCPR").val());
+  sessionStorage.setItem('CompressionTime', $("#sheetCompressionTime").val());
 }
 
 // function that retrieves values to populate pages
@@ -62,7 +71,7 @@ function retrieveDataReport(){
    var tableInside = sessionStorage.getItem('table-info')
    var tableBody = document.getElementById('info-table-body');
     tableBody.innerHTML = tableInside;
-    
+
   $('#teamLeader').text(sessionStorage.getItem('teamLeaderSaved'));
   $('#nursePrep').text(sessionStorage.getItem('nursePrepSaved'));
   $('#nurseAdmin').text(sessionStorage.getItem('nurseAdminSaved'));
@@ -108,12 +117,14 @@ function retrieveDataReport(){
 function homeData(){
   sessionStorage.setItem('patientNameSaved', document.getElementById("patientName").value);
   sessionStorage.setItem('MR', document.getElementById("Record").value);
-  sessionStorage.setItem('nurseRecordSaved', document.getElementById("nursename").value);
 }
 
 function retrieveHomeData(){
-  $('#patientNameReport').val(sessionStorage.getItem('patientNameSaved'));
-  $('#patientMRReport').val(sessionStorage.getItem('MR'));
+  $('#patientNameSheet').val(sessionStorage.getItem('patientNameSaved'));
+  $('#patientMRSheet').val(sessionStorage.getItem('MR'));
+  $('#patientDOBSheet').val(sessionStorage.getItem('DOBSaved'));
+  $('#patientWeightSheet').val(sessionStorage.getItem('WeightSaved'));
+
 }
 
 function sheetData(){
@@ -125,14 +136,14 @@ function sheetData(){
 }
 
   function saveSheetData(){
-//get values from table      
-      
+//get values from table
+
   var table = document.getElementById("info-table-body");
-  
+
  var tableInnards = table.innerHTML;
  sessionStorage.setItem('table-info', tableInnards);
-      
-      
+
+
   sessionStorage.setItem('DOBSaved', document.getElementById("patientDOB").value);
   sessionStorage.setItem('WeightSaved', $("#patientWeightSheet").val());
   sessionStorage.setItem('patientComments', $("#patientCommentsSheet").val());
@@ -142,14 +153,6 @@ function sheetData(){
   sessionStorage.setItem('IVSize', $("#ivSize").val());
   sessionStorage.setItem('IVLoc', $("#ivLocationSelection").val());
   sessionStorage.setItem('IVCom', $("#ivComments").val());
-  sessionStorage.setItem('Date', $("#sheetDate").val());
-  sessionStorage.setItem('Time', $("#sheetTime").val());
-  sessionStorage.setItem('Location', $("#sheetLocation").val());
-  sessionStorage.setItem('TimeCalled', $("#sheetTimeCalled").val());
-  sessionStorage.setItem('TimeArrived', $("#sheetTimeArrived").val());
-  sessionStorage.setItem('Witnesses', $("#sheetWitnesses").val());
-  sessionStorage.setItem('CPR', $("#sheetCPR").val());
-  sessionStorage.setItem('CompressionTime', $("#sheetCompressionTime").val());
   sessionStorage.setItem('IncTime', $("#sheetIncTime").val());
   sessionStorage.setItem('Airway', $("#sheetAirway").val());
   sessionStorage.setItem('EttSize', $("#sheetETTSize").val());
