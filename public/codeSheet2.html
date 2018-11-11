@@ -56,10 +56,21 @@
                 <div class="panel-body">Comments: <textarea style = "width: 100%" id="patientCommentsSheet"></textarea></div>
 
                 <div class="panel-footer">
-
                 </div>
             </div>
 
+        </div>
+        
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="alert alert-danger" role="alert">
+                Alert! This patient is ALLERGIC to: PENECILIN
+            </div>
+            <div class="alert alert-danger" role="alert">
+                Alert! This patient is ALLERGIC to: NUTS
+            </div>
+            <div class="alert alert-danger" role="alert">
+                Alert! This patient is HAS: THIN BLOOD
+            </div>
         </div>
     </div>
 
@@ -473,7 +484,7 @@ function panel6Pop(){
 
     cells[2].innerHTML = "";
 
-    insideElem = panElem[3].children;
+    insideElem = panElem[2].children;
     var rhythm = insideElem[0].value;
     cells[3].innerHTML = rhythm+"bmp";
 
