@@ -63,20 +63,20 @@
         
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="alert alert-danger" role="alert">
-                Alert! This patient is ALLERGIC to: PENECILIN
+                This patient is ALLERGIC to: PENECILIN
             </div>
             <div class="alert alert-danger" role="alert">
-                Alert! This patient is ALLERGIC to: NUTS
+                This patient is ALLERGIC to: NUTS
             </div>
             <div class="alert alert-danger" role="alert">
-                Alert! This patient is HAS: THIN BLOOD
+                This patient is HAS: THIN BLOOD
             </div>
         </div>
     </div>
 
 
 <div class="row row-three">
-    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
             <div class="panel panel-default" id="panel1">
                 <div class="panel-heading">IV </div>
                 <div class="panel-body">IV Access <input type = "text" id="ivAccessSelection" list = "iv-access-list"></div>
@@ -94,7 +94,7 @@
 
         </div>
 
-    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
         <div class="panel panel-default" id="panel4">
             <div class="panel-heading">Airway Control</div>
             <div class="panel-body">Control Type: <input type = "text" id="sheetIncTime" list = "air-control-list"></div>
@@ -109,7 +109,7 @@
 
 
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
         <div class="panel panel-default" id="panel5">
             <div class="panel-heading">Medication</div>
             <div class="panel-body">Medication: <input type = "text" id="sheetMedication" list = "meds-list"></div>
@@ -125,9 +125,9 @@
 
     </div>
 
-    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 row-three">
         <div class="panel panel-default" id="panel6">
-            <div class="panel-heading">Compressions/Defib:</div>
+            <div class="panel-heading">Compressions</div>
             <div>
             <span class="form-check-inline">
                       <label class="form-check-label" for="inlineRadio1">Compressions Start</label>
@@ -137,18 +137,28 @@
                       <label class="form-check-label" for="inlineRadio2">Compression End</label>
                       <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions1" id="compression-check2" value="Compressions End">
                 </span>
-
-            <span class="form-check-inline">
-                      <label class="form-check-label" for="inlineRadio2">Defib</label>
-                      <input class="form-check-input radio-inline" type="radio" name="inlineRadioOptions1" id="defib-check" value="Defib">
-                </span>
             </div>
 
                 <div class="panel-body">Rhythm: <input type = "text" id="defibRhythm"></div>
-                <div class="panel-body">Shock: <input type = "text" id="defibShock"></div>
-                <div class="panel-body">Comments: <textarea style = "width: 100%" id="defibComments"></textarea></div>
+                <div class="panel-body">Comments: <textarea style = "width: 100%" id="compComments"></textarea></div>
             <div class="panel-footer">
                 <button type="button" class="btn btn-warning edit-button" data-panel="6" onclick="panel6Pop()">Add
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+    
+        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+        <div class="panel panel-default" id="panel9">
+            <div class="panel-heading">Defib</div>
+
+                <div class="panel-body">Rhythm: <input type = "text" id="defibRhythm"></div>
+                <div class="panel-body">Shock: <input type = "text" id="defibShock"></div>
+                <div class="panel-body">Comments: <textarea style = "width: 100%" id="compComments"></textarea></div>
+            <div class="panel-footer">
+                <button type="button" class="btn btn-warning edit-button" data-panel="9" onclick="panel9Pop()">Add
                 </button>
             </div>
         </div>
@@ -306,6 +316,10 @@
     <option value = "2 gm/250 ml">
     <option value = "1gm">
     <option value = "20units">
+</datalist>
+    
+<datalist id = 'shock-list'>
+    <option value = 200>
 </datalist>
 
 <script type = "text/javascript">
@@ -486,11 +500,11 @@ function panel6Pop(){
 
     insideElem = panElem[2].children;
     var rhythm = insideElem[0].value;
-    cells[3].innerHTML = rhythm+"bmp";
+    cells[3].innerHTML = rhythm;
 
     insideElem = panElem[3].children;
     var shock = insideElem[0].value;
-    cells[4].innerHTML = shock+"Jouls";
+    cells[4].innerHTML = "";
 
     insideElem = panElem[4].children;
     var comm = insideElem[0].value;
@@ -503,6 +517,34 @@ function panel6Pop(){
         var inSpace = insideElem2[0];
         inSpace.value = "";
     }
+}
+    
+function panel9Pop(){
+    addRow();
+    
+    var panelNum = 9
+    panelNumber = panelNum;
+    var panel = document.getElementById("panel" + panelNum);
+    console.log(panel);
+    panElem = panel.children;
+
+    //set cells
+    var date = Date();
+    var cells = currRow.children;
+    
+    cells[1].innerHTML = "Defib";
+    
+    insideElem = panElem[1].children;
+    var rhythm = insideElem[0].value;
+    cells[3].innerHTML = rhythm;
+    
+    insideElem = panElem[2].children;
+    var shock = insideElem[0].value;
+    cells[4].innerHTML = shock;
+    
+    insideElem = panElem[3].children;
+    var comm = insideElem[0].value;
+    cells[5].innerHTML = "Comments: " + comm;
 }
 
 

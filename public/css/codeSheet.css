@@ -5,6 +5,12 @@
     font-family: monospace;
 }
 
+.col-lg-2{
+    width:20%;
+}
+
+
+
 .row-one{
     margin-top: 10%;
     margin-left:1%;
