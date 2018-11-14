@@ -155,7 +155,7 @@
             <div class="panel-heading">Defib</div>
 
                 <div class="panel-body">Rhythm: <input type = "text" id="defibRhythm"></div>
-                <div class="panel-body">Shock: <input type = "text" id="defibShock"></div>
+                <div class="panel-body">Shock: <input type = "text" id="defibShock" list="shock-list"></div>
                 <div class="panel-body">Comments: <textarea style = "width: 100%" id="compComments"></textarea></div>
             <div class="panel-footer">
                 <button type="button" class="btn btn-warning edit-button" data-panel="9" onclick="panel9Pop()">Add
@@ -319,7 +319,9 @@
 </datalist>
     
 <datalist id = 'shock-list'>
-    <option value = 200>
+    <option value = "200 Jouls">
+    <option value = "300 Jouls">
+    <option value = "360 Jouls">
 </datalist>
 
 <script type = "text/javascript">
