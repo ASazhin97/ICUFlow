@@ -1,3 +1,7 @@
+<!-- Administration page to be completed after code.  Recording Nurse will document code specifics like date, time, etc.
+The names of each participating medical professional will be recorded and require a signature. The outcome of the event will be recorded.
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +16,10 @@
     <script type="text/javascript" src=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
     </script>
 </head>
-<body onload="retrieveSheetData()">
+<!--Retrieves saved data when page loads-->
+<body>
+
+  <!-- Creates navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-inverse navbar-fixed-top topbar">
         <div class="container-fluid">
             <img src="css/snakes.jpg" style="width: 5%; height: 5%" class="img-circle" alt="logo">
@@ -43,6 +50,8 @@
       <div class = "row row-one">
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
           <div class="panel panel-default" id="panel2">
+
+            <!-- General information panel -->
               <div class="panel-heading">General</div>
               <div class="panel-body">Date: <input type = "text" id="sheetDate"></div>
               <div class="panel-body">Time: <input type = "text" id="sheetTime"></div>
@@ -56,6 +65,8 @@
           </div>
 
       </div>
+
+      <!-- Patient outcome panel -->
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="panel panel-default" >
                 <div class="panel-heading">Outcome</div>
@@ -103,6 +114,8 @@
               </div>
             </div>
           </div>
+
+          <!-- Team names and signatures panel -->
         <div class = "row row-two">
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
               <div class="panel panel-default" id="panel3">
@@ -140,6 +153,7 @@
               </div>
             </div>
 
+              <!-- Submission button. When clicked calls two methods: validates the inputs and saves the entered data -->
               <div class="row row-three">
                 <form >
                   <a class="finalize"><button type="button" class="btn-light" onclick="validate(); saveAdminData();">Finalize</button></a>
