@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Main flowsheet page -->
 <html>
 <head>
    <meta charset="UTF-8">
@@ -12,7 +13,7 @@
     <script src=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/finalReportScript.js"></script>
 </head>
-
+<!-- retrieves data from session storage -->
 <body onload="retrieveHomeData()">
 <nav class="navbar navbar-expand-lg navbar-inverse navbar-fixed-top topbar">
     <div class="container-fluid">
@@ -40,10 +41,14 @@
         </div>
     </div>
 </nav>
+<!-- nav bar end -->
 
+    <!-- Start code button -->
     <div class = "row row-one">
         <button class = "btn btn-warning start-btn" onclick="startCode()">Start Code</button>
     </div>
+    
+    <!-- Patient info row & Alerts space -->
     <div class="row row-two">
 
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -61,6 +66,7 @@
 
         </div>
         
+        <!-- Alerts -->
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="alert alert-danger" role="alert">
                 This patient is ALLERGIC to: PENECILIN
@@ -74,8 +80,10 @@
         </div>
     </div>
 
-
+<!-- control row -->
 <div class="row row-three">
+    
+    <!-- panel 1, IV -->
     <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
             <div class="panel panel-default" id="panel1">
                 <div class="panel-heading">IV </div>
@@ -94,6 +102,7 @@
 
         </div>
 
+    <!-- panel 4 Airway -->
     <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
         <div class="panel panel-default" id="panel4">
             <div class="panel-heading">Airway Control</div>
@@ -109,6 +118,8 @@
 
 
     </div>
+    
+    <!-- panel 5 Medication -->
     <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
         <div class="panel panel-default" id="panel5">
             <div class="panel-heading">Medication</div>
@@ -125,6 +136,7 @@
 
     </div>
 
+    <!-- compression End and Start -->
     <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 row-three">
         <div class="panel panel-default" id="panel6">
             <div class="panel-heading">Compressions</div>
@@ -150,6 +162,7 @@
 
     </div>
     
+    <!-- Defib added from comments -->
         <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
         <div class="panel panel-default" id="panel9">
             <div class="panel-heading">Defib</div>
@@ -168,6 +181,7 @@
 
 </div>
 
+<!-- report table row -->
 <div class="row row-three">
     <div class="col-sm-12">
         <div class="panel panel-default" id="panel7">
@@ -186,13 +200,14 @@
                         </tr>
                         </thead>
                         <tbody contenteditable="true" id="info-table-body" id = "info-table-body">
-
+                            <!-- empty table body to fill in -->
                         </tbody>
                     </table>
                 </div>
 
             </div>
             <div class="panel-footer">
+                <!-- button ads empty row with time stamp -->
                 <button type="button" class="btn btn-warning add-row-btn" data-panel="5" onclick="addRow()">Add Row +
                 </button>
             </div>
@@ -201,6 +216,7 @@
     </div>
 </div>
 
+    <!-- comments row with big text area for comments -->
 <div class="row row-four">
     <div class="col-sm-12">
         <div class="panel panel-default" id="panel8">
@@ -214,6 +230,7 @@
 
 </div>
 
+<!-- end code button add to table, and save all the sheet data to session storage -->
 <div class="row row-five">
     <form action = "administration.html">
         <input type="submit" class="btn btn-warning print-button" value = "End Code" onclick="endCode(); saveSheetData()">
@@ -324,31 +341,52 @@
     <option value = "360 Jouls">
 </datalist>
 
+<!-- page script for panels -->
 <script type = "text/javascript">
+//variables
 var currentRow;
 var panelNumber;
 var currRow;
 
+//adds a time stamped row to the table
 function addRow() {
+        //get the table, to put a new row in
         var tableBody = document.getElementById("info-table-body");
         var newRow = document.createElement("tr");
         currRow = newRow;
+    
+        //loop to append cells
         var i;
         for (i = 0; i < 6; i++) {
             var newCell = document.createElement("td");
             newRow.appendChild(newCell);
         }
         tableBody.appendChild(newRow);
-
+        
+    //time stamp
         var date = Date();
         var cells = currRow.children;
 
         cells[0].innerHTML = date;
 }
 
+//Panel 1 IV Add function
+/**
+This function first adds a row using addRow()
+Gets the correct panel
+Gets a list of elements from the panel
+gets the cells from the current row
+For each cell asigns input from panel
+Deletes all input in panel
+
+THE OTHER PANEL POP FUNCTIONS WORK THE SAME
+Only difference is different input must go in
+different cells, hence the different functions
+**/
 function panel1Pop() {
     addRow();
-
+    
+    //get panel
     var panelNum = 1
     panelNumber = panelNum;
     var panel = document.getElementById("panel" + panelNum);
@@ -359,10 +397,12 @@ function panel1Pop() {
     var cells = currRow.children;
 
     cells[0].innerHTML = date;
-
+    
+    //get elements inside the panel
     var insideElem = panElem[2].children;
     var input = insideElem[0].value;
-
+    
+    //for each element and cells get input and set inner html of cell
     cells[1].innerHTML = "IV:" + input;
 
     insideElem = panElem[3].children;
@@ -371,8 +411,8 @@ function panel1Pop() {
     var size = insideElem[0].value;
     cells[2].innerHTML = "Type: " + type + "\nSize: " +size;
 
-    cells[3].innerHTML = "NP";
-    cells[4].innerHTML = "NP";
+    cells[3].innerHTML = "";
+    cells[4].innerHTML = "";
 
     insideElem = panElem[1].children;
     var access = insideElem[0].value;
@@ -391,6 +431,7 @@ function panel1Pop() {
         inSpace.value = "";
     }
 }
+
 
 function panel4Pop(){
     addRow();
@@ -417,8 +458,8 @@ function panel4Pop(){
     var ett = insideElem[0].value;
     cells[2].innerHTML= "Incub Time: " + time+ "ETT Size: " + ett;
 
-    cells[3].innerHTML = "NP";
-    cells[4].innerHTML = "NP";
+    cells[3].innerHTML = "";
+    cells[4].innerHTML = "";
 
     insideElem = panElem[4].children;
     var comm = insideElem[0].value;
@@ -489,7 +530,8 @@ function panel6Pop(){
 
 
     cells[0].innerHTML = date;
-
+    
+    //SETs the intervention based on the radio button chosen
     if(document.getElementById('compression-check1').checked){
         cells[1].innerHTML = "Compressions Start";
     } else if(document.getElementById('compression-check2').checked){
@@ -549,7 +591,7 @@ function panel9Pop(){
     cells[5].innerHTML = "Comments: " + comm;
 }
 
-
+//Adds a row with "Start Code" to timestamp start of code
 function startCode(){
     addRow();
     var date = Date();
@@ -564,6 +606,7 @@ function startCode(){
     }
 }
 
+//adds a row with End code to time stamp end of code    
 function endCode(){
     addRow();
     var date = Date();
