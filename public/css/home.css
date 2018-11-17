@@ -1,3 +1,4 @@
+/*styling for the text input fields in the home page form*/
 input[type=text], select {
     width: 100%;
     padding: 12px 20px;
@@ -8,6 +9,7 @@ input[type=text], select {
     box-sizing: border-box;
 }
 
+/*styling for the submit button, which gives it a blue background and white text*/
 input[type=submit] {
     width: 30%;
     background-color: #2489CA;
@@ -19,10 +21,13 @@ input[type=submit] {
     cursor: pointer;
 }
 
+/*makes the submit button a darker shade of blue on hover*/
 input[type=submit]:hover {
     background-color: #1b6898;
 }
 
+/*styling for the div class the form on the home page is contained in, positioning
+it, giving it a white background color, etc.*/
 #formcontainer {
     border-radius: 5px;
     background-color: #f2f2f2;

@@ -46,28 +46,34 @@
         </div>
     </nav>
 
+<!--form used on the home page. sample patients will be always selectable options, and will
+autopopulate their medical record number upon being input in the patient name field-->
 <div id="formcontainer">
     <form action="codeSheet2.html">
 
-        <!-- Collects the patient's name -->
+
+        <!--field for patient's full name-->
         <div class = "form-group">
             <label>Patient's Name</label>
             <input type="text" id="patientName" placeholder="Please enter the patient's name..." class = "form-control" list="patients" oninput="onInput()" required>
         </div>
 
-        <!-- Collects the patient's medical record number -->
+        <!--field for patient's medical record number-->
+
         <div class = "form-group">
             <label>Medical Record Number</label>
             <input type="text" id="Record" placeholder="Please enter the patient's medical record number..." class = "form-control" required>
         </div>
 
+        <!--Submit button which takes the user from the help page to the code sheet page on click.-->
         <div>
             <input type="submit" class = "btn btn-primary sub-btn" id="submit" value = "Submit" onclick="homeData();">
         </div>
     </form>
 </div>
 
-<!-- Drop down options of saved patients -->
+<!--list of sample patients used for autofilling and populating the
+input fields in the submit form-->
 <!- autocomplete lists ->
 <datalist id = "patients">
   <option value="Jeff Smith" id="jeffSmith">
