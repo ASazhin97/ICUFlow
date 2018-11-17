@@ -1,8 +1,3 @@
-
-/*
-    DEMO STYLE
-*/
-
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
     font-family: 'Poppins', sans-serif;
@@ -49,6 +44,8 @@ a:focus {
     width: 100%;
 }
 
+/*styling for the sidebar on the help page, setting its height, position, background
+color, etc.*/
 #sidebar {
     width: 250px;
     position: fixed;
@@ -123,6 +120,7 @@ section {
     border-bottom: 1px solid #afaeae;
 }
 
+/*styling for the specific li elements in the AFS section of the help page*/
 #AFS li {
     font-family: 'Poppins', sans-serif;
     font-size: 1.25em;
