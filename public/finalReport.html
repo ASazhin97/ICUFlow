@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- final report page for editing -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,6 +13,7 @@
     <script src=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/finalReportScript.js"></script>
 </head>
+<!-- retrieves data from session storage -->
 <body onload="retrieveDataReport()">
 <nav class="navbar navbar-expand-lg navbar-inverse navbar-fixed-top topbar">
     <div class="container-fluid">
@@ -39,9 +41,10 @@
         </div>
     </div>
 </nav>
-
+<!-- navbar end -->
 <div class="container-fluid">
 
+    <!-- panel with Code team -->
     <div class="row row-one">
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="panel panel-default" id="panel4">
@@ -58,7 +61,8 @@
                 <div class = "panel-footer">
                     <button type="button" data-toggle="modal" data-target="#editModal" class="btn btn-primary edit-button"data-panel="4">Edit</button></div>
             </div>
-
+            
+        <!-- Pnael containing general information -->
         </div>
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="panel panel-default" id="panel2">
@@ -79,6 +83,8 @@
             </div>
 
         </div>
+        
+        <!-- contains patient Information -->
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="panel panel-default" id="panel3">
                 <div class="panel-heading">Patient Information</div>
@@ -103,6 +109,7 @@
     </div>
 </div>
 
+<!-- report table, populated from Flow sheet -->
 <div class="row row-three">
     <div class="col-sm-12">
         <div class="panel panel-default" id="panel7">
@@ -121,19 +128,13 @@
                         </tr>
                         </thead>
                         <tbody contenteditable="true" id="info-table-body">
-                        <tr>
-                            <td>5;23</td>
-                            <td>Epinephrine</td>
-                            <td>5mm</td>
-                            <td>120bpm</td>
-                            <td>1100J</td>
-                            <td>Doctor Comments</td>
-                        </tr>
+                        <!--empty table body to be set later -->
                         </tbody>
                     </table>
                 </div>
 
             </div>
+            <!-- add row to create a new event or note if needed -->
             <div class="panel-footer">
                 <button type="button" class="btn btn-warning add-row-btn" data-panel="7" onclick="addRow()">Add Row +
                 </button>
@@ -145,6 +146,7 @@
 
 <div class="row row-four">
     <div class="col-sm-6">
+        <!-- big panel for notes -->
         <div class="panel panel-default" id="panel8">
             <div class="panel-heading">Comments:</div>
             <div class="panel-body"><p id="reportFullComments"></p></div>
@@ -157,6 +159,7 @@
     </div>
 
     <div class="col-sm-6">
+        <!-- big out come panel with results of code -->
       <div class="panel panel-default" id="panel9">
           <div class="panel-heading">Outcome:</div>
           <div class="panel-body" id="label">Patient Outcome: <p id="patientOutcome"> </p></div>
@@ -176,46 +179,20 @@
     </div>
 </div>
 
+<!-- prints the page or allows to save as pdf -->
 <div class="row row-five">
-    <button onclick="printPage()" type="button" class="btn btn-warning print-button" style = "margin-left: 48%">Print</button>
+    <button onclick="printPage()" type="button" class="btn btn-warning print-button" style = "margin-left: 48%">Export</button>
     </button>
 </div>
 
-
+<!-- script to export -->
 <script>
     function printPage() {
         window.print();
     }
 </script>
 
-<!-- The Modal -->
-<div class="modal" id="saveModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Warning!</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body modal-body-save">
-                By Submitting this report you are stating that to the best of your knowledge all of the information is
-                truthful and correct. Are you sure you want to submit?
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button href="home.html" type="button" class="btn" data-dismiss="modal">Submit</button>
-
-            </div>
-
-        </div>
-    </div>
-</div>
-
+<!-- edit Modal pops up when any edit button is clicked -->
 <div class="modal" id="editModal">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -226,7 +203,8 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
-
+            <!-- empty Modal body to be filled in from panel -->
+            
             <!-- Modal footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
@@ -237,17 +215,23 @@
     </div>
 </div>
 
+<!-- main script for page -->
 <script type="text/javascript">
+    //variables
     var panelNumber;
-
+    
+    //this function takes which button it clciked,
+    //matches it with a panel, and populates the modal from there
     $('#editModal').on('show.bs.modal', function (event) {
+        //getting correct panel
         var button = $(event.relatedTarget) // Button that triggered the modal
         var panelNum = button.data('panel')
         panelNumber = panelNum;
         var panel = document.getElementById("panel" + panelNum);
         var panElem = panel.children;
         var modal = $(this);
-
+        
+        //get Modal elements
         var modalTitle = modal.find('.modal-title')
         var modalFoot = modal.find('.modal-footer');
         var modalContent = modal.find(".modal-content")
@@ -257,7 +241,7 @@
 
         modalFoot.insertAfter('.modal-body-edit');
 
-
+        //POPULATING MODAL
         //set heading
         modal.find('.modal-title').text(panElem[0].innerHTML);
 
@@ -267,10 +251,12 @@
             for (i = 1; i < (panElem.length - 1); i++) {
                 //create a div
                 var newdiv = document.createElement("div");
-
+                
+                //takes element from panel splits it to create a label and input box
                 var text = panElem[i].innerHTML;
                 var textsplit = text.split(":");
-                //console.log(textsplit);
+                
+                //creates label and input box, puts value of input box from panel
                 var label = document.createElement("label");
                 label.addClass = "label"
                 label.innerHTML = textsplit[0];
@@ -280,7 +266,8 @@
                 console.log(textForBox[0].innerHTML);
                 textbox.value = textForBox[0].innerHTML;
                 //console.log(textsplit[1]);
-
+                
+                //appends the label and input to into modal
                 var span1 = document.createElement('span')
                 span1.appendChild(label);
                 span1.appendChild(textbox);
@@ -288,7 +275,7 @@
                 modal.find('.modal-body').append(newdiv);
             }
             ;
-        } else {
+        } else { //happens for comment block
             var textArea = document.createElement("textarea");
             var textElement = panElem[1].children;
             var text = textElement[0].innerHTML;
@@ -298,8 +285,11 @@
             modal.find('.modal-body').append(textArea);
         }
     });
-
+    
+    //deletes everything from panel when it is closed
+    //and populates back to Panel
     $('#editModal').on('hide.bs.modal', function (event) {
+        //finding elements
         var modal = $(this);
         var divs = modal.find(".modal-body").children();
 
@@ -307,8 +297,8 @@
         var panelElems = panel.children;
         console.log(panelElems);
 
-
-        if (panelNumber != 8) {
+        //if it isnt the comment panel it goes through each elements and populates
+        if (panelNumber != 8) { //if it is not the comment panel
             var j;
             for (j = 0; j < divs.length; j++) {
                 var span = divs[j].children;
@@ -322,17 +312,19 @@
                 panelElems[j + 1].innerHTML = labeltext + ":";
                 panelElems[j + 1].appendChild(newparaph);
             }
-        } else {
+        } else { //if it is the comment panel
             var textArea = divs[0].value;
             console.log(textArea);
             console.log(panelElems[1].innerHTML);
             panelElems[1].innerHTML = textArea;
         }
-
+        
+        //delete the whole modal body
         modal.find(".modal-body").remove();
 
     });
-
+    
+    //add an empty row the table
     function addRow() {
         var tableBody = document.getElementById("info-table-body");
         console.log(tableBody)

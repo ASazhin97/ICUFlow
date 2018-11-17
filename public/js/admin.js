@@ -1,3 +1,5 @@
+// file that stores the validation for the administration html page.  Makes sure each input is valid.
+
 function validate(){
 
     // creates variables that hold the value of the associated ID
